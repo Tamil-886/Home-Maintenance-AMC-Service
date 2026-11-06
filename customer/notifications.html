@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications - HomeCarely Customer Portal</title>
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231068eb'><path d='M12 2L2 7v7c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z'/></svg>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a class="brand-logo" href="../index.html">
+          <div class="brand-icon"><i class="bi bi-shield-check"></i></div>
+          <span>HomeCare<span class="text-primary">ly</span></span>
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-heading">Overview</li>
+        <li class="sidebar-item"><a href="dashboard.html" class="sidebar-link"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a></li>
+        <li class="sidebar-heading">Maintenance</li>
+        <li class="sidebar-item"><a href="booking.html" class="sidebar-link"><i class="bi bi-calendar-plus-fill"></i><span>Schedule a Service</span></a></li>
+        <li class="sidebar-item"><a href="bookings.html" class="sidebar-link"><i class="bi bi-calendar2-check-fill"></i><span>My Bookings</span></a></li>
+        <li class="sidebar-item"><a href="service-history.html" class="sidebar-link"><i class="bi bi-clock-history"></i><span>Service History</span></a></li>
+        <li class="sidebar-heading">AMC & Coverage</li>
+        <li class="sidebar-item"><a href="my-plans.html" class="sidebar-link"><i class="bi bi-shield-fill-check"></i><span>My AMC Plans</span></a></li>
+        <li class="sidebar-item"><a href="contracts.html" class="sidebar-link"><i class="bi bi-file-earmark-text-fill"></i><span>Active Contracts</span></a></li>
+        <li class="sidebar-item"><a href="renewal.html" class="sidebar-link"><i class="bi bi-arrow-repeat"></i><span>Renewal & Add-ons</span></a></li>
+        <li class="sidebar-heading">Account & Help</li>
+        <li class="sidebar-item"><a href="profile.html" class="sidebar-link"><i class="bi bi-person-fill"></i><span>My Profile</span></a></li>
+        <li class="sidebar-item"><a href="notifications.html" class="sidebar-link active"><i class="bi bi-bell-fill"></i><span>Notifications</span><span class="badge bg-danger rounded-pill">3</span></a></li>
+        <li class="sidebar-item"><a href="messages.html" class="sidebar-link"><i class="bi bi-chat-dots-fill"></i><span>Support & Messages</span></a></li>
+        <li class="sidebar-item"><a href="settings.html" class="sidebar-link"><i class="bi bi-gear-fill"></i><span>Settings</span></a></li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center gap-2">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" class="rounded-circle auth-user-avatar" width="36" height="36" alt="User">
+            <div>
+              <div class="fw-bold small auth-user-name">Alex Morgan</div>
+              <span class="text-muted smaller d-block" style="font-size: 0.72rem;">Customer</span>
+            </div>
+          </div>
+          <button class="btn btn-sm btn-light border logout-trigger-btn" data-redirect="../auth/login.html" title="Logout">
+            <i class="bi bi-box-arrow-right text-danger"></i>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-sm btn-light border d-lg-none" id="sidebarToggleBtn"><i class="bi bi-list fs-5"></i></button>
+          <h5 class="fw-bold mb-0">System Notifications & Alerts</h5>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-outline-primary" onclick="showToast('All notifications marked as read', 'success'); document.querySelectorAll('.notification-unread-dot').forEach(d => d.remove());">
+            Mark All as Read
+          </button>
+          <button class="btn btn-icon-pill theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button class="btn btn-sm btn-outline-hc dir-toggle-btn"><span class="dir-toggle-text">RTL</span></button>
+        </div>
+      </header>
+
+      <main class="dashboard-body">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+              
+              <!-- Notification 1 -->
+              <div class="p-4 border-bottom d-flex gap-3 align-items-start bg-light position-relative">
+                <span class="notification-unread-dot position-absolute top-0 start-0 m-3 p-1 bg-primary rounded-circle"></span>
+                <div class="stat-icon blue flex-shrink-0"><i class="bi bi-calendar-check"></i></div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <h6 class="fw-bold mb-0">Upcoming AC Tune-up Confirmed</h6>
+                    <span class="text-muted smaller" style="font-size: 0.75rem;">Today at 09:30 AM</span>
+                  </div>
+                  <p class="text-secondary small mb-2">Master HVAC Technician Marcus Vance has confirmed appointment BK-9482 for Nov 12, 10:00 AM - 12:00 PM.</p>
+                  <a href="booking-details.html?id=BK-9482" class="btn btn-sm btn-light border">View Booking Details</a>
+                </div>
+              </div>
+
+              <!-- Notification 2 -->
+              <div class="p-4 border-bottom d-flex gap-3 align-items-start bg-light position-relative">
+                <span class="notification-unread-dot position-absolute top-0 start-0 m-3 p-1 bg-primary rounded-circle"></span>
+                <div class="stat-icon green flex-shrink-0"><i class="bi bi-file-earmark-pdf"></i></div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <h6 class="fw-bold mb-0">120-Point Baseline Audit Report Ready</h6>
+                    <span class="text-muted smaller" style="font-size: 0.75rem;">Yesterday</span>
+                  </div>
+                  <p class="text-secondary small mb-2">Your property scored 94/100 on structural, electrical, and HVAC health. Review the recommendations report.</p>
+                  <button class="btn btn-sm btn-outline-primary" onclick="showToast('Downloading inspection report...', 'info');">Download PDF Report</button>
+                </div>
+              </div>
+
+              <!-- Notification 3 -->
+              <div class="p-4 d-flex gap-3 align-items-start position-relative">
+                <div class="stat-icon orange flex-shrink-0"><i class="bi bi-tag-fill"></i></div>
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <h6 class="fw-bold mb-0">Early Renewal Discount Available</h6>
+                    <span class="text-muted smaller" style="font-size: 0.75rem;">3 days ago</span>
+                  </div>
+                  <p class="text-secondary small mb-2">Lock in 15% savings when you renew your Premium AMC contract for 2 years today.</p>
+                  <a href="renewal.html" class="btn btn-sm btn-light border">Review Renewal Offer</a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/validation.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/subscription.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/customer-dashboard.js"></script>
+</body>
+</html>

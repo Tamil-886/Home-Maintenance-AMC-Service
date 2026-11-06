@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - HomeCarely AMC Home Services</title>
+  <meta name="description" content="Discover HomeCarely's 15-year mission of revolutionizing home maintenance with annual AMC coverage, vetted master technicians, and transparent pricing.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231068eb'><path d='M12 2L2 7v7c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z'/></svg>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Main Navigation -->
+  <nav class="navbar navbar-expand-xl main-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <div class="brand-icon">
+          <i class="bi bi-shield-check"></i>
+        </div>
+        <span>HomeCare<span class="text-primary">ly</span></span>
+      </a>
+
+      <!-- Mobile Right Controls (RTL + Theme) -->
+      <div class="d-flex align-items-center gap-2 d-xl-none ms-auto me-2">
+        <button class="btn btn-sm btn-outline-hc dir-toggle-btn py-1 px-2" title="Toggle RTL / LTR layout" aria-label="Toggle RTL / LTR">
+          <i class="bi bi-globe me-1 text-primary"></i><span class="dir-toggle-text">RTL</span>
+        </button>
+        <button class="btn btn-sm btn-icon-pill theme-toggle-btn" aria-label="Toggle Theme">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+      </div>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown">Home</a>
+            <ul class="dropdown-menu dropdown-menu-custom">
+              <li><a class="dropdown-item " href="index.html"><i class="bi bi-house-door"></i> Home Page 1 (General AMC)</a></li>
+              <li><a class="dropdown-item " href="home-2.html"><i class="bi bi-building"></i> Home Page 2 (Express Service)</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="amc-plans.html">AMC Plans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-dashboard-link" href="customer/dashboard.html">Dashboard</a>
+          </li>
+        </ul>
+
+        <!-- Action Buttons -->
+        <div class="d-flex align-items-center gap-2">
+          <!-- RTL Direction Switcher -->
+          <button class="btn btn-sm btn-outline-hc dir-toggle-btn py-2 px-3 small d-none d-xl-inline-flex align-items-center" title="Toggle RTL / LTR layout">
+            <i class="bi bi-globe me-1 text-primary"></i> <span class="dir-toggle-text">RTL</span>
+          </button>
+          
+          <!-- Theme Toggle -->
+          <button class="btn btn-icon-pill theme-toggle-btn d-none d-xl-inline-flex" title="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+
+          <!-- Login / Logout Link (Based on Auth Status) -->
+          <a href="auth/login.html" class="btn btn-outline-hc py-2 px-3 small nav-auth-btn" id="navAuthBtn">
+            <i class="bi bi-person-circle me-1"></i> <span class="nav-auth-text">Log In</span>
+          </a>
+
+          <!-- Book AMC CTA Button -->
+          <a href="customer/booking.html" class="btn btn-primary-hc py-2 px-4 small">
+            Book AMC <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Banner -->
+  <section class="page-banner page-banner-about">
+    <div class="container text-center position-relative" style="z-index: 2;">
+      <h1 class="page-banner-title">About HomeCarely</h1>
+      <ul class="hc-breadcrumb justify-content-center">
+        <li><a href="index.html">Home</a></li>
+        <li><i class="bi bi-chevron-right"></i></li>
+        <li class="text-white-50">About Us</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Story & Mission Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="position-relative w-100 rounded-4 overflow-hidden shadow-lg" style="height: 520px;">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80" class="w-100 h-100 object-fit-cover" alt="HomeCarely Professional Engineering Team">
+            <div class="position-absolute bottom-0 start-0 bg-primary text-white p-4 rounded-4 shadow m-3 m-md-4 d-none d-md-block" style="max-width: 280px; backdrop-filter: blur(8px);">
+              <h3 class="display-6 fw-bold mb-0">15+</h3>
+              <p class="small mb-0 opacity-75">Years of excellence in residential facility & AMC management</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div>
+            <span class="section-subtitle">Our Journey & Purpose</span>
+            <h2 class="section-title">Redefining How Modern Families Protect Their Homes</h2>
+            <p class="text-muted mb-3">
+              Founded in 2011, HomeCarely began with one simple observation: homeowners spend endless hours finding unreliable technicians during stressful emergencies, only to be hit with exorbitant bills and poor craftsmanship.
+            </p>
+            <p class="text-muted mb-4">
+              We introduced the comprehensive <strong>Annual Maintenance Contract (AMC)</strong> model to residential spaces. With predictable subscription tiers, scheduled preventive tune-ups, and verified in-house technicians, we eliminate home stress entirely.
+            </p>
+
+            <div class="row g-3 mb-4">
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center gap-3 p-3 bg-light rounded-3 h-100 border">
+                  <i class="bi bi-check-circle-fill text-primary fs-3"></i>
+                  <div>
+                    <h6 class="fw-bold mb-0">100% In-House</h6>
+                    <span class="text-muted small">No gig middlemen</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center gap-3 p-3 bg-light rounded-3 h-100 border">
+                  <i class="bi bi-shield-fill-check text-success fs-3"></i>
+                  <div>
+                    <h6 class="fw-bold mb-0">Licensed & Insured</h6>
+                    <span class="text-muted small">$2M liability coverage</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <a href="amc-plans.html" class="btn btn-primary-hc">Explore Our AMC Plans <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Statistics Counters -->
+  <section class="section-padding bg-soft-blue">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-6 col-md-3">
+          <div class="p-4 bg-white rounded-4 shadow-sm border h-100">
+            <h2 class="display-5 fw-bold text-primary mb-1 counter-value" data-target="10000" data-suffix="+">10,000+</h2>
+            <p class="text-muted small fw-semibold mb-0">Homes Covered Under AMC</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-4 bg-white rounded-4 shadow-sm border h-100">
+            <h2 class="display-5 fw-bold text-primary mb-1 counter-value" data-target="500" data-suffix="+">500+</h2>
+            <p class="text-muted small fw-semibold mb-0">Master Certified Technicians</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-4 bg-white rounded-4 shadow-sm border h-100">
+            <h2 class="display-5 fw-bold text-primary mb-1 counter-value" data-target="99" data-suffix=".4%">99.4%</h2>
+            <p class="text-muted small fw-semibold mb-0">On-Time Arrival Rate</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-4 bg-white rounded-4 shadow-sm border h-100">
+            <h2 class="display-5 fw-bold text-primary mb-1 counter-value" data-target="45" data-suffix=" min">45 min</h2>
+            <p class="text-muted small fw-semibold mb-0">Avg Emergency SLA Response</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership & Technical Team -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center section-header">
+        <span class="section-subtitle">Dedicated Leadership</span>
+        <h2 class="section-title">Meet Our Engineering & Operations Team</h2>
+        <p class="text-muted max-w-600 mx-auto">
+          Passionate industry veterans ensuring your heating, cooling, plumbing, and electrical systems operate at peak efficiency.
+        </p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Team Member 1 -->
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden text-center h-100 w-100 d-flex flex-column team-card">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80" class="w-100" style="height: 280px; object-fit: cover;" alt="CEO">
+            <div class="card-body p-4 d-flex flex-column">
+              <h5 class="fw-bold mb-1">Jonathan Vance</h5>
+              <div class="team-role-box mb-2">
+                <span class="text-primary small fw-semibold">Founder & CEO</span>
+              </div>
+              <div class="team-desc-box">
+                <p class="text-muted small mb-0 lh-base">Former VP of Facilities Engineering with 20+ years managing enterprise infrastructure.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden text-center h-100 w-100 d-flex flex-column team-card">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" class="w-100" style="height: 280px; object-fit: cover;" alt="Operations Director">
+            <div class="card-body p-4 d-flex flex-column">
+              <h5 class="fw-bold mb-1">Sarah Jenkins</h5>
+              <div class="team-role-box mb-2">
+                <span class="text-primary small fw-semibold">Operations Director</span>
+              </div>
+              <div class="team-desc-box">
+                <p class="text-muted small mb-0 lh-base">Leads our 24/7 rapid dispatch grid and guarantees our sub-60-minute arrival times.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden text-center h-100 w-100 d-flex flex-column team-card">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80" class="w-100" style="height: 280px; object-fit: cover;" alt="Chief HVAC Engineer">
+            <div class="card-body p-4 d-flex flex-column">
+              <h5 class="fw-bold mb-1">Michael O'Connor</h5>
+              <div class="team-role-box mb-2">
+                <span class="text-primary small fw-semibold">Chief HVAC Engineer</span>
+              </div>
+              <div class="team-desc-box">
+                <p class="text-muted small mb-0 lh-base">Master certified refrigeration technician training our 150+ AC servicing specialists.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden text-center h-100 w-100 d-flex flex-column team-card">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=500&q=80" class="w-100" style="height: 280px; object-fit: cover;" alt="Head of Customer Success">
+            <div class="card-body p-4 d-flex flex-column">
+              <h5 class="fw-bold mb-1">Elena Rostova</h5>
+              <div class="team-role-box mb-2">
+                <span class="text-primary small fw-semibold">Customer Experience Lead</span>
+              </div>
+              <div class="team-desc-box">
+                <p class="text-muted small mb-0 lh-base">Ensuring every AMC subscriber receives white-glove onboarding and proactive check-in calls.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Universal Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="footer-brand">
+            <h4 class="d-flex align-items-center gap-2">
+              <i class="bi bi-shield-check text-primary"></i> HomeCare<span class="text-primary">ly</span>
+            </h4>
+            <p class="text-muted small pe-lg-4">
+              HomeCarely is your premier annual home maintenance partner. Certified technicians, guaranteed response windows, and round-the-clock emergency support for modern residences.
+            </p>
+            <div class="d-flex gap-2 mt-3">
+              <a href="#" class="social-pill-link"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="social-pill-link"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="social-pill-link"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="social-pill-link"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5 class="footer-widget-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="about.html">About Company</a></li>
+            <li><a href="amc-plans.html">AMC Plans</a></li>
+            <li><a href="pricing.html">Pricing Guide</a></li>
+            <li><a href="blog.html">Latest Articles</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h5 class="footer-widget-title">AMC Services</h5>
+          <ul class="footer-links">
+            <li><a href="service-details.html?service=ac">Air Conditioning Maintenance</a></li>
+            <li><a href="service-details.html?service=plumbing">Plumbing Inspections</a></li>
+            <li><a href="service-details.html?service=electrical">Electrical & Breaker Care</a></li>
+            <li><a href="service-details.html?service=cleaning">Deep Home Sanitization</a></li>
+            <li><a href="service-details.html?service=pest">Pest & Termite Control</a></li>
+            <li><a href="services.html">View All 10 Services</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h5 class="footer-widget-title">Newsletter & Offers</h5>
+          <p class="small text-muted mb-3">Subscribe for seasonal maintenance tips and exclusive AMC renewal discounts.</p>
+          <form class="mb-3" onsubmit="event.preventDefault(); showToast('Thank you for subscribing!', 'success');">
+            <div class="input-group">
+              <input type="email" class="form-control form-control-hc rounded-start-pill border-0" placeholder="Your email address" required>
+              <button class="btn btn-primary-hc rounded-end-pill px-3" type="submit"><i class="bi bi-send-fill"></i></button>
+            </div>
+          </form>
+          <div class="small text-muted">
+            <div class="mb-1"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (800) 555-0199</div>
+            <div><i class="bi bi-envelope-fill text-primary me-2"></i> support@homecarely.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="d-flex flex-wrap justify-content-between align-items-center">
+          <p class="mb-0 text-muted">© 2026 HomeCarely AMC Services Ltd. All Rights Reserved.</p>
+          <div class="d-flex gap-3">
+            <a href="faq.html" class="text-muted small">Privacy Policy</a>
+            <span class="text-secondary">·</span>
+            <a href="faq.html" class="text-muted small">Terms of Service</a>
+            <span class="text-secondary">·</span>
+            <a href="faq.html" class="text-muted small">AMC Agreement</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/booking.js"></script>
+  <script src="assets/js/subscription.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

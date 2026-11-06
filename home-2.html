@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeCarely - Alternative Express Maintenance & AMC Portal</title>
+  <meta name="description" content="Instant quote and express booking for home annual maintenance contracts. 24/7 on-demand dispatch for AC, plumbing, electrical, and appliance repairs.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231068eb'><path d='M12 2L2 7v7c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z'/></svg>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Main Navigation -->
+  <nav class="navbar navbar-expand-xl main-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <div class="brand-icon">
+          <i class="bi bi-shield-check"></i>
+        </div>
+        <span>HomeCare<span class="text-primary">ly</span></span>
+      </a>
+
+      <!-- Mobile Right Controls (RTL + Theme) -->
+      <div class="d-flex align-items-center gap-2 d-xl-none ms-auto me-2">
+        <button class="btn btn-sm btn-outline-hc dir-toggle-btn py-1 px-2" title="Toggle RTL / LTR layout" aria-label="Toggle RTL / LTR">
+          <i class="bi bi-globe me-1 text-primary"></i><span class="dir-toggle-text">RTL</span>
+        </button>
+        <button class="btn btn-sm btn-icon-pill theme-toggle-btn" aria-label="Toggle Theme">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+      </div>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+            <ul class="dropdown-menu dropdown-menu-custom">
+              <li><a class="dropdown-item " href="index.html"><i class="bi bi-house-door"></i> Home Page 1 (General AMC)</a></li>
+              <li><a class="dropdown-item active" href="home-2.html"><i class="bi bi-building"></i> Home Page 2 (Express Service)</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="amc-plans.html">AMC Plans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-dashboard-link" href="customer/dashboard.html">Dashboard</a>
+          </li>
+        </ul>
+
+        <!-- Action Buttons -->
+        <div class="d-flex align-items-center gap-2">
+          <!-- RTL Direction Switcher -->
+          <button class="btn btn-sm btn-outline-hc dir-toggle-btn py-2 px-3 small d-none d-xl-inline-flex align-items-center" title="Toggle RTL / LTR layout">
+            <i class="bi bi-globe me-1 text-primary"></i> <span class="dir-toggle-text">RTL</span>
+          </button>
+          
+          <!-- Theme Toggle -->
+          <button class="btn btn-icon-pill theme-toggle-btn d-none d-xl-inline-flex" title="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+
+          <!-- Login / Logout Link (Based on Auth Status) -->
+          <a href="auth/login.html" class="btn btn-outline-hc py-2 px-3 small nav-auth-btn" id="navAuthBtn">
+            <i class="bi bi-person-circle me-1"></i> <span class="nav-auth-text">Log In</span>
+          </a>
+
+          <!-- Book AMC CTA Button -->
+          <a href="customer/booking.html" class="btn btn-primary-hc py-2 px-4 small">
+            Book AMC <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Split Hero Section with Direct Quote Generator -->
+  <section class="hero-section bg-hero-mesh">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="badge-pill-soft mb-3">
+            <i class="bi bi-stopwatch-fill text-warning"></i>
+            <span>Guaranteed 60-Minute Technician Arrival</span>
+          </div>
+
+          <h1 class="hero-title">
+            Smart Care For <br>
+            <span class="text-gradient">Modern Living.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Never stress over broken ACs, burst pipes, or electrical hazards again. Get comprehensive annual maintenance packages with priority emergency response and certified technicians.
+          </p>
+
+          <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+            <a href="amc-plans.html" class="btn btn-primary-hc">
+              View AMC Packages <i class="bi bi-arrow-right"></i>
+            </a>
+            <button type="button" class="btn btn-outline-hc" data-bs-toggle="modal" data-bs-target="#videoModal">
+              <i class="bi bi-play-circle-fill text-primary fs-5"></i> Watch How It Works
+            </button>
+          </div>
+
+          <div class="d-flex align-items-center gap-3 pt-3 border-top">
+            <div class="d-flex -space-x-2">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=60&q=80" class="rounded-circle border border-white" width="40" height="40" alt="Customer">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&q=80" class="rounded-circle border border-white" width="40" height="40" alt="Customer">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=60&q=80" class="rounded-circle border border-white" width="40" height="40" alt="Customer">
+            </div>
+            <div>
+              <div class="rating-stars mb-0 small">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <span class="small text-muted">Rated 4.9/5 by 10,000+ happy households</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Instant Express Quote Form -->
+        <div class="col-lg-6">
+          <div class="card border-0 shadow-lg p-4 p-md-5 rounded-4 bg-white position-relative">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+              <div>
+                <span class="badge-tag bg-primary-subtle text-primary">Instant Quote</span>
+                <h4 class="fw-bold mt-1 mb-0">Get Your Custom AMC Price</h4>
+              </div>
+              <div class="stat-icon blue">
+                <i class="bi bi-calculator"></i>
+              </div>
+            </div>
+
+            <form id="expressQuoteForm" onsubmit="event.preventDefault(); showToast('Quote calculated! Plan Recommended: Premium AMC', 'success'); setTimeout(() => window.location.href='amc-plans.html', 1200);">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold">Property Type</label>
+                  <select class="form-select form-control-hc" required>
+                    <option value="apartment">Apartment (1-3 BHK)</option>
+                    <option value="villa">Independent Villa</option>
+                    <option value="commercial">Commercial Office</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold">Primary Need</label>
+                  <select class="form-select form-control-hc" required>
+                    <option value="full">Comprehensive All-Inclusive</option>
+                    <option value="hvac">HVAC & Air Conditioning</option>
+                    <option value="plumbing">Plumbing & Electrical</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold">Your Name</label>
+                  <input type="text" class="form-control form-control-hc" placeholder="e.g. John Doe" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-semibold">Phone Number</label>
+                  <input type="tel" class="form-control form-control-hc" placeholder="+1 (555) 000-0000" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small fw-semibold">Address / Community</label>
+                  <input type="text" class="form-control form-control-hc" placeholder="Street, Building, or Community name" required>
+                </div>
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-primary-hc w-100 justify-content-center py-3">
+                    Calculate & Lock In 20% Discount <i class="bi bi-arrow-right"></i>
+                  </button>
+                  <p class="text-center text-muted small mt-2 mb-0"><i class="bi bi-shield-check text-success"></i> No spam guarantee. Instant estimate on screen.</p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency 24/7 Hotline Strip -->
+  <section class="py-4 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div class="d-flex align-items-center gap-3">
+          <div class="stat-icon red text-white" style="background:#dc2626;">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+          </div>
+          <div>
+            <h5 class="text-white fw-bold mb-0">Facing An Urgent Home Breakdown Right Now?</h5>
+            <span class="text-white-50 small">Gas leaks, electrical spark, pipe burst, or total AC failure</span>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <a href="tel:+18005550199" class="btn btn-danger rounded-pill px-4 py-2 fw-bold">
+            <i class="bi bi-telephone-outbound-fill me-2"></i> +1 (800) 555-0199
+          </a>
+          <a href="customer/booking.html?emergency=true" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold">
+            Emergency Dispatch <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Modal -->
+  <div class="modal fade" id="videoModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded-4 overflow-hidden">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold">Inside HomeCarely AMC Service</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4 text-center">
+          <div class="ratio ratio-16x9 rounded-3 overflow-hidden bg-dark">
+            <iframe src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=0" title="Maintenance Demo Video" allowfullscreen></iframe>
+          </div>
+          <p class="text-muted small mt-3 mb-0">Watch our certified master technicians carry out a standard 120-point digital home health audit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Benefits Grid -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center section-header">
+        <span class="section-subtitle">Why Subscribe</span>
+        <h2 class="section-title">One Fixed Contract. Zero Maintenance Headaches.</h2>
+        <p class="text-muted max-w-600 mx-auto">
+          Compare the chaos of hunting for unverified local handymen with HomeCarely's guaranteed standards.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card h-100 border-0 shadow-sm p-4 rounded-4 bg-light">
+            <h5 class="fw-bold text-danger mb-3"><i class="bi bi-x-circle-fill me-2"></i> Without HomeCarely AMC</h5>
+            <ul class="list-unstyled mb-0 d-flex flex-column gap-3 text-secondary">
+              <li class="d-flex align-items-center gap-2"><i class="bi bi-dash text-danger fs-5"></i> Unpredictable bills ranging from $150 to $800 per emergency.</li>
+              <li class="d-flex align-items-center gap-2"><i class="bi bi-dash text-danger fs-5"></i> Waiting 24 to 48 hours for unvetted handymen to arrive.</li>
+              <li class="d-flex align-items-center gap-2"><i class="bi bi-dash text-danger fs-5"></i> Non-genuine, overpriced spare parts with no warranty.</li>
+              <li class="d-flex align-items-center gap-2"><i class="bi bi-dash text-danger fs-5"></i> Zero preventative care — systems breakdown without warning.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card h-100 border-2 border-primary shadow-md p-4 rounded-4 bg-white">
+            <h5 class="fw-bold text-primary mb-3"><i class="bi bi-check-circle-fill me-2"></i> With HomeCarely AMC</h5>
+            <ul class="list-unstyled mb-0 d-flex flex-column gap-3 text-dark">
+              <li class="d-flex align-items-center gap-2"><i class="bi bi-check2 text-success fs-5 fw-bold"></i> Predictable low annual fee covering all visits and labor.</li>
+              <li class="d-flex align-items-center gap-2"><i class="bi bi-check2 text-success fs-5 fw-bold"></i> Guaranteed 60-minute emergency dispatch window.</li>
+              <li class="d-flex align-items-center gap-2"><i class="bi bi-check2 text-success fs-5 fw-bold"></i> 100% genuine OEM parts with 20% AMC discount and warranty.</li>
+              <li class="d-flex align-items-center gap-2"><i class="bi bi-check2 text-success fs-5 fw-bold"></i> Quarterly scheduled tune-ups keep your appliances lasting 5+ years longer.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== NEW SECTION 1: EXPRESS PRIORITY SERVICES GRID ==================== -->
+  <section class="section-padding bg-light-subtle border-top border-bottom">
+    <div class="container">
+      <div class="text-center section-header mb-5">
+        <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-2">
+          <i class="bi bi-lightning-charge-fill me-1"></i> Rapid On-Demand & Annual Maintenance
+        </span>
+        <h2 class="section-title fw-bold">Certified Emergency & Scheduled Maintenance Visits</h2>
+        <p class="text-muted max-w-600 mx-auto">
+          Book verified technicians dispatched in mobile workshops equipped with OEM parts and calibrated diagnostic tools.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Service Card 1: AC Repair -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden service-hover-card bg-white">
+            <div class="position-relative overflow-hidden" style="height: 220px;">
+              <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Air Conditioning Repair">
+              <span class="position-absolute top-0 end-0 m-3 badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold shadow-sm">
+                <i class="bi bi-stopwatch-fill me-1"></i> < 60 Min Arrival
+              </span>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-primary-subtle text-primary px-2 py-1 small fw-semibold">HVAC & Cooling</span>
+                <span class="text-muted small"><i class="bi bi-star-fill text-warning me-1"></i> 4.95 (1.8k reviews)</span>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Emergency AC Repair & Gas Refill</h5>
+              <p class="text-muted small mb-3 flex-grow-1">
+                Precision compressor diagnostics, coil chemical descaling, precision thermostatic calibration, and zero-loss refrigerant top-up.
+              </p>
+              <ul class="list-unstyled small text-secondary mb-4">
+                <li class="mb-1"><i class="bi bi-check2-circle text-primary me-2"></i> 100% Pure Virgin R410A / R32 Gas</li>
+                <li class="mb-1"><i class="bi bi-check2-circle text-primary me-2"></i> 30-Day Chilling Workmanship Guarantee</li>
+                <li><i class="bi bi-check2-circle text-primary me-2"></i> Included in AMC with $0 Service Fee</li>
+              </ul>
+              <a href="customer/booking.html?service=ac" class="btn btn-outline-primary rounded-pill w-100 fw-semibold">
+                Book Express Visit <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 2: Plumbing -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden service-hover-card bg-white">
+            <div class="position-relative overflow-hidden" style="height: 220px;">
+              <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Master Plumbing">
+              <span class="position-absolute top-0 end-0 m-3 badge bg-info text-white px-3 py-2 rounded-pill fw-bold shadow-sm">
+                <i class="bi bi-droplet-fill me-1"></i> 24/7 Leak Dispatch
+              </span>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-info-subtle text-info px-2 py-1 small fw-semibold">Plumbing Systems</span>
+                <span class="text-muted small"><i class="bi bi-star-fill text-warning me-1"></i> 4.92 (2.1k reviews)</span>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Pipe Burst & High-Pressure Leak Care</h5>
+              <p class="text-muted small mb-3 flex-grow-1">
+                Acoustic pipe leak pinpointing, pressure pump overhaul, concealed pipeline repairs, and instant drain snake unblocking.
+              </p>
+              <ul class="list-unstyled small text-secondary mb-4">
+                <li class="mb-1"><i class="bi bi-check2-circle text-info me-2"></i> Non-Invasive Acoustic & Thermal Scan</li>
+                <li class="mb-1"><i class="bi bi-check2-circle text-info me-2"></i> Certified High-Grade Brass Valves</li>
+                <li><i class="bi bi-check2-circle text-info me-2"></i> Zero Callout Charge for Subscribers</li>
+              </ul>
+              <a href="customer/booking.html?service=plumbing" class="btn btn-outline-primary rounded-pill w-100 fw-semibold">
+                Book Express Visit <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 3: Electrical -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden service-hover-card bg-white">
+            <div class="position-relative overflow-hidden" style="height: 220px;">
+              <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Electrical Safety">
+              <span class="position-absolute top-0 end-0 m-3 badge bg-danger text-white px-3 py-2 rounded-pill fw-bold shadow-sm">
+                <i class="bi bi-shield-lock-fill me-1"></i> Licensed Master Wiremen
+              </span>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-danger-subtle text-danger px-2 py-1 small fw-semibold">Electrical Diagnostics</span>
+                <span class="text-muted small"><i class="bi bi-star-fill text-warning me-1"></i> 4.97 (1.5k reviews)</span>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Breaker Tripping & Load Balancing</h5>
+              <p class="text-muted small mb-3 flex-grow-1">
+                Fast diagnosis of erratic trip switches, distribution box rewiring, thermal hot-spot detection, and whole-house surge defense.
+              </p>
+              <ul class="list-unstyled small text-secondary mb-4">
+                <li class="mb-1"><i class="bi bi-check2-circle text-danger me-2"></i> Fluke Thermal Infrared Imaging</li>
+                <li class="mb-1"><i class="bi bi-check2-circle text-danger me-2"></i> IEC Certified Grounding & Earthing</li>
+                <li><i class="bi bi-check2-circle text-danger me-2"></i> Emergency 45-Min Arrival Guarantee</li>
+              </ul>
+              <a href="customer/booking.html?service=electrical" class="btn btn-outline-primary rounded-pill w-100 fw-semibold">
+                Book Express Visit <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 4: Deep Sanitization -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden service-hover-card bg-white">
+            <div class="position-relative overflow-hidden" style="height: 220px;">
+              <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Deep Cleaning">
+              <span class="position-absolute top-0 end-0 m-3 badge bg-success text-white px-3 py-2 rounded-pill fw-bold shadow-sm">
+                <i class="bi bi-stars me-1"></i> 140°C Steam Wash
+              </span>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-success-subtle text-success px-2 py-1 small fw-semibold">Sanitization</span>
+                <span class="text-muted small"><i class="bi bi-star-fill text-warning me-1"></i> 4.88 (980 reviews)</span>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Intensive Deep Home Sanitization</h5>
+              <p class="text-muted small mb-3 flex-grow-1">
+                Clinical-level pressure steam sanitization for kitchens, tile grout, furniture upholstery, AC vent ducts, and sanitizing touchpoints.
+              </p>
+              <ul class="list-unstyled small text-secondary mb-4">
+                <li class="mb-1"><i class="bi bi-check2-circle text-success me-2"></i> Eco-Safe Child & Pet Safe Chemicals</li>
+                <li class="mb-1"><i class="bi bi-check2-circle text-success me-2"></i> Eliminates 99.9% Bacteria & Dust Mites</li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i> Free Annual Session with Premium AMC</li>
+              </ul>
+              <a href="customer/booking.html?service=cleaning" class="btn btn-outline-primary rounded-pill w-100 fw-semibold">
+                Book Express Visit <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 5: Water Tank Sanitization -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden service-hover-card bg-white">
+            <div class="position-relative overflow-hidden" style="height: 220px;">
+              <img src="https://images.unsplash.com/photo-1584467735815-f778f274e296?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Water Tank Cleaning">
+              <span class="position-absolute top-0 end-0 m-3 badge bg-primary text-white px-3 py-2 rounded-pill fw-bold shadow-sm">
+                <i class="bi bi-shield-check me-1"></i> 6-Stage Pure Process
+              </span>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-primary-subtle text-primary px-2 py-1 small fw-semibold">Water Hygiene</span>
+                <span class="text-muted small"><i class="bi bi-star-fill text-warning me-1"></i> 4.96 (840 reviews)</span>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Water Tank & Reservoir Cleaning</h5>
+              <p class="text-muted small mb-3 flex-grow-1">
+                Sediment extraction, anti-bacterial UV surface treatment, rotary high-pressure wall scouring, and certified laboratory water test.
+              </p>
+              <ul class="list-unstyled small text-secondary mb-4">
+                <li class="mb-1"><i class="bi bi-check2-circle text-primary me-2"></i> Complete Sludge & Algae Eradication</li>
+                <li class="mb-1"><i class="bi bi-check2-circle text-primary me-2"></i> Municipal Safety Clearance Certificate</li>
+                <li><i class="bi bi-check2-circle text-primary me-2"></i> 2 Free Visits Included in Villa Plans</li>
+              </ul>
+              <a href="customer/booking.html?service=watertank" class="btn btn-outline-primary rounded-pill w-100 fw-semibold">
+                Book Express Visit <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 6: Carpentry & Structural -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden service-hover-card bg-white">
+            <div class="position-relative overflow-hidden" style="height: 220px;">
+              <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Carpentry Services">
+              <span class="position-absolute top-0 end-0 m-3 badge bg-secondary text-white px-3 py-2 rounded-pill fw-bold shadow-sm">
+                <i class="bi bi-tools me-1"></i> Precision Fitting
+              </span>
+            </div>
+            <div class="card-body p-4 d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-secondary-subtle text-secondary px-2 py-1 small fw-semibold">Carpentry & Hardware</span>
+                <span class="text-muted small"><i class="bi bi-star-fill text-warning me-1"></i> 4.90 (1.1k reviews)</span>
+              </div>
+              <h5 class="fw-bold text-dark mb-2">Precision Carpentry & Door Hardware</h5>
+              <p class="text-muted small mb-3 flex-grow-1">
+                Door lock replacement, hydraulic hinge alignment, kitchen drawer runner overhaul, furniture tightening, and squeak elimination.
+              </p>
+              <ul class="list-unstyled small text-secondary mb-4">
+                <li class="mb-1"><i class="bi bi-check2-circle text-secondary me-2"></i> Heavy-Duty Soft-Close Hardware</li>
+                <li class="mb-1"><i class="bi bi-check2-circle text-secondary me-2"></i> Emergency Lockout Service Support</li>
+                <li><i class="bi bi-check2-circle text-secondary me-2"></i> 100% Workmanship Guarantee</li>
+              </ul>
+              <a href="customer/booking.html?service=carpentry" class="btn btn-outline-primary rounded-pill w-100 fw-semibold">
+                Book Express Visit <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="services.html" class="btn btn-primary rounded-pill px-5 py-3 fw-semibold shadow-sm">
+          Explore All 10 Annual Maintenance Services <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== NEW SECTION 2: HOW EXPRESS AMC WORKS ==================== -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="text-center section-header mb-5">
+        <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-2">
+          <i class="bi bi-arrow-repeat me-1"></i> Effortless Protocol
+        </span>
+        <h2 class="section-title fw-bold">How HomeCarely Express Maintenance Works</h2>
+        <p class="text-muted max-w-600 mx-auto">
+          From panic to peace of mind in 4 streamlined steps with real-time technician GPS tracking and digital logs.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm p-4 rounded-4 text-center bg-light-subtle position-relative">
+            <div class="rounded-circle bg-primary text-white mx-auto mb-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 64px; height: 64px; font-size: 1.5rem; font-weight: 800;">
+              01
+            </div>
+            <h5 class="fw-bold mb-2">1-Click Booking</h5>
+            <p class="text-muted small mb-0">
+              Select your service or plan in seconds from your mobile or laptop. No waiting on phone queues or negotiating prices.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm p-4 rounded-4 text-center bg-light-subtle position-relative">
+            <div class="rounded-circle bg-primary text-white mx-auto mb-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 64px; height: 64px; font-size: 1.5rem; font-weight: 800;">
+              02
+            </div>
+            <h5 class="fw-bold mb-2">GPS Mobile Van Dispatch</h5>
+            <p class="text-muted small mb-0">
+              Our automated system routes the nearest certified technician in a fully equipped van directly to your address within 60 minutes.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm p-4 rounded-4 text-center bg-light-subtle position-relative">
+            <div class="rounded-circle bg-primary text-white mx-auto mb-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 64px; height: 64px; font-size: 1.5rem; font-weight: 800;">
+              03
+            </div>
+            <h5 class="fw-bold mb-2">Precision Service & Spares</h5>
+            <p class="text-muted small mb-0">
+              Certified master technicians execute repairs following strict SOPs with genuine OEM replacement parts backed by warranties.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm p-4 rounded-4 text-center bg-light-subtle position-relative">
+            <div class="rounded-circle bg-primary text-white mx-auto mb-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 64px; height: 64px; font-size: 1.5rem; font-weight: 800;">
+              04
+            </div>
+            <h5 class="fw-bold mb-2">Digital Log & Warranty</h5>
+            <p class="text-muted small mb-0">
+              Receive a 120-point digital signoff report in your customer dashboard with a 30-day post-service satisfaction guarantee.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== NEW SECTION 3: 120-POINT AUDIT SHOWCASE ==================== -->
+  <section class="section-padding bg-light-subtle border-top border-bottom">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5">
+          <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-2">
+            <i class="bi bi-clipboard2-check-fill me-1"></i> Standard Preventive Protocol
+          </span>
+          <h2 class="section-title fw-bold">The 120-Point Preventive Health Audit</h2>
+          <p class="text-muted">
+            Every HomeCarely quarterly visit includes comprehensive diagnostic checks that eliminate breakdowns before they happen, slashing unexpected repair costs by up to 78%.
+          </p>
+
+          <div class="d-flex flex-column gap-3 mt-4">
+            <div class="d-flex align-items-start gap-3">
+              <div class="rounded-circle bg-white border p-2 text-primary shadow-sm"><i class="bi bi-thermometer-half fs-5"></i></div>
+              <div>
+                <strong class="d-block text-dark">Thermal Imaging & Energy Efficiency</strong>
+                <span class="text-muted small">Detect hidden electrical hotspots and HVAC refrigerant thermal loss.</span>
+              </div>
+            </div>
+            <div class="d-flex align-items-start gap-3">
+              <div class="rounded-circle bg-white border p-2 text-primary shadow-sm"><i class="bi bi-speedometer fs-5"></i></div>
+              <div>
+                <strong class="d-block text-dark">Hydrostatic Pressure & Valve Integrity</strong>
+                <span class="text-muted small">Prevent micro-leaks, water hammer damage, and pump motor burnout.</span>
+              </div>
+            </div>
+            <div class="d-flex align-items-start gap-3">
+              <div class="rounded-circle bg-white border p-2 text-primary shadow-sm"><i class="bi bi-shield-check fs-5"></i></div>
+              <div>
+                <strong class="d-block text-dark">Life Safety & GFCI Grounding Checks</strong>
+                <span class="text-muted small">Protect family members against silent electrical shock and short circuits.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-2">
+            <a href="customer/booking.html" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold">
+              Schedule Your 120-Point Audit <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="card border-0 shadow-lg rounded-4 overflow-hidden bg-white p-4">
+            <ul class="nav nav-pills nav-fill mb-4 p-1 bg-light rounded-pill" id="auditTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active rounded-pill fw-semibold py-2" id="hvac-tab" data-bs-toggle="pill" data-bs-target="#hvac-panel" type="button" role="tab">HVAC & Cooling</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-pill fw-semibold py-2" id="plumbing-tab" data-bs-toggle="pill" data-bs-target="#plumbing-panel" type="button" role="tab">Plumbing</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-pill fw-semibold py-2" id="electric-tab" data-bs-toggle="pill" data-bs-target="#electric-panel" type="button" role="tab">Electrical</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-pill fw-semibold py-2" id="safety-tab" data-bs-toggle="pill" data-bs-target="#safety-panel" type="button" role="tab">Water & Safety</button>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="auditTabsContent">
+              <div class="tab-pane fade show active" id="hvac-panel" role="tabpanel">
+                <div class="row g-3">
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Compressor Amp Draw & Current Testing</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Dual-Zone Evaporator Coil Descaling</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Blower Motor Capacitor Health Rating</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Condensate Drain Chemical Flushing</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Thermostat Micro-Calibration & Hysteresis</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Airflow CFM & Duct Static Pressure Test</div></div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="plumbing-panel" role="tabpanel">
+                <div class="row g-3">
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Main Line Water Pressure Regulator Check</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Concealed Pipe Acoustic Leak Inspection</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Water Heater Relief Valve Pressure Safety</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Kitchen Sink & Dishwasher Trap Clearance</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Toilet Flapper & Fill Valve Seal Inspection</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> External Garden Bibb & Hose Anti-Siphon Check</div></div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="electric-panel" role="tabpanel">
+                <div class="row g-3">
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Infrared Thermal Scan of Breaker Busbars</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Earth Resistance & Ground Rod Megger Test</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> RCD / GFCI High-Speed Trip Time Calibration</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Main Isolation Switch Mechanical Tightness</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> High-Load Appliance Circuit Wire Gauging</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Whole-House Voltage Fluctuation Stability</div></div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="safety-panel" role="tabpanel">
+                <div class="row g-3">
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Overhead Water Tank Turbidity & Algae Scan</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Smoke & Carbon Monoxide Detector Sensor Test</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Domestic Gas Line Pressure Drop Sniff Test</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Kitchen Exhaust Grease Build-up Assessment</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Foundation Moisture & Wall Seepage Probe</div></div>
+                  <div class="col-sm-6"><div class="p-3 bg-light rounded-3 small fw-medium"><i class="bi bi-check-circle-fill text-success me-2"></i> Digital PDF Health Certificate in Dashboard</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== NEW SECTION 4: PACKAGES & PRICING ==================== -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="text-center section-header mb-5">
+        <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-2">
+          <i class="bi bi-shield-fill-check me-1"></i> Fixed-Price Coverage
+        </span>
+        <h2 class="section-title fw-bold">Select Your Annual Maintenance Plan</h2>
+        <p class="text-muted max-w-600 mx-auto">
+          Predictable flat-rate packages designed for apartments, residences, and luxury villas. Cancel or transfer anytime.
+        </p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Plan 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 border-0 shadow-sm rounded-4 p-4 p-xl-5 bg-light-subtle d-flex flex-column">
+            <span class="badge bg-secondary-subtle text-secondary px-3 py-1 rounded-pill fw-semibold align-self-start mb-3">Essential Care</span>
+            <div class="d-flex align-items-baseline mb-2">
+              <span class="display-5 fw-bold text-dark">$199</span>
+              <span class="text-muted ms-1">/year</span>
+            </div>
+            <p class="text-muted small mb-4">Ideal for modern apartments and rental properties needing essential peace of mind.</p>
+            <ul class="list-unstyled d-flex flex-column gap-2 small text-secondary mb-4 flex-grow-1">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 2 Comprehensive Seasonal Maintenance Visits</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Guaranteed 2-Hour Emergency Dispatch</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> AC Filter Washing & Gas Level Diagnostics</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Plumbing & Drain Unblocking Service</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Electrical Breaker Safety Inspection</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 10% Discount on OEM Replacement Parts</li>
+            </ul>
+            <a href="customer/booking.html?plan=essential" class="btn btn-outline-primary rounded-pill w-100 py-2 fw-semibold">
+              Choose Essential <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Plan 2: Most Popular -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 border-2 border-primary shadow-lg rounded-4 p-4 p-xl-5 bg-white position-relative d-flex flex-column">
+            <span class="position-absolute top-0 start-50 translate-middle badge bg-primary text-white px-3 py-2 rounded-pill fw-bold shadow-sm">
+              <i class="bi bi-star-fill text-warning me-1"></i> MOST POPULAR CHOICE
+            </span>
+            <span class="badge bg-primary-subtle text-primary px-3 py-1 rounded-pill fw-semibold align-self-start mb-3 mt-1">Standard Protection</span>
+            <div class="d-flex align-items-baseline mb-2">
+              <span class="display-5 fw-bold text-primary">$349</span>
+              <span class="text-muted ms-1">/year</span>
+            </div>
+            <p class="text-muted small mb-4">Complete all-season protection for townhomes, duplexes, and suburban family residences.</p>
+            <ul class="list-unstyled d-flex flex-column gap-2 small text-dark mb-4 flex-grow-1">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>4 Quarterly Scheduled Tune-Up Visits</strong></li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Guaranteed 60-Minute Rapid Dispatch</strong></li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Unlimited Emergency Labor Included ($0 Callout)</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 1 Free Deep Steam Sanitization Session</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Comprehensive 120-Point Health Audit</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>20% Discount on Genuine OEM Spare Parts</strong></li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Dedicated Lead Engineer on Speed Dial</li>
+            </ul>
+            <a href="customer/booking.html?plan=standard" class="btn btn-primary rounded-pill w-100 py-3 fw-bold shadow-sm">
+              Activate Standard Protection <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Plan 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 border-0 shadow-sm rounded-4 p-4 p-xl-5 bg-light-subtle d-flex flex-column">
+            <span class="badge bg-dark-subtle text-dark px-3 py-1 rounded-pill fw-semibold align-self-start mb-3">Premium Villa Care</span>
+            <div class="d-flex align-items-baseline mb-2">
+              <span class="display-5 fw-bold text-dark">$599</span>
+              <span class="text-muted ms-1">/year</span>
+            </div>
+            <p class="text-muted small mb-4">White-glove priority maintenance for luxury standalone villas, estates, and smart homes.</p>
+            <ul class="list-unstyled d-flex flex-column gap-2 small text-secondary mb-4 flex-grow-1">
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Unlimited Maintenance & Repair Visits</strong></li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Under 45-Minute Emergency Priority Arrival</strong></li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 2 Full Water Tank & Overhead Reservoir Washes</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Termite & Pest Preventive Perimeter Barrier</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> Carpentry, Cabinetry & Window Hardware Tune-up</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 30% Off Replacement Hardware & Appliances</li>
+              <li><i class="bi bi-check-circle-fill text-success me-2"></i> 24/7 VIP Personal Facility Manager</li>
+            </ul>
+            <a href="customer/booking.html?plan=premium" class="btn btn-outline-primary rounded-pill w-100 py-2 fw-semibold">
+              Choose Premium Villa <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== NEW SECTION 5: SAVINGS CALCULATOR ==================== -->
+  <section class="section-padding bg-light-subtle border-top border-bottom">
+    <div class="container">
+      <div class="card border-0 shadow-lg rounded-4 overflow-hidden bg-white p-4 p-md-5">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill fw-semibold mb-2">
+              <i class="bi bi-piggy-bank-fill me-1"></i> Cost Benefit Analysis
+            </span>
+            <h3 class="fw-bold text-dark mb-3">See How Much You Save Every Year</h3>
+            <p class="text-muted mb-4">
+              Single emergency repairs without an AMC add up to hundreds of dollars in callouts, weekend surge fees, and overpriced parts. Compare the difference:
+            </p>
+
+            <div class="table-responsive">
+              <table class="table table-borderless align-middle mb-0">
+                <thead>
+                  <tr class="border-bottom text-muted small">
+                    <th>Service Category</th>
+                    <th>Average On-Demand Cost</th>
+                    <th>With HomeCarely AMC</th>
+                  </tr>
+                </thead>
+                <tbody class="small">
+                  <tr class="border-bottom">
+                    <td class="fw-semibold">Emergency AC Compressor & Gas Repair</td>
+                    <td class="text-danger fw-bold">$450.00</td>
+                    <td class="text-success fw-bold">$0.00 (Included)</td>
+                  </tr>
+                  <tr class="border-bottom">
+                    <td class="fw-semibold">Burst Pipe & Concealed Leak Repair</td>
+                    <td class="text-danger fw-bold">$380.00</td>
+                    <td class="text-success fw-bold">$0.00 (Included)</td>
+                  </tr>
+                  <tr class="border-bottom">
+                    <td class="fw-semibold">Main Breaker Tripping & Rewiring</td>
+                    <td class="text-danger fw-bold">$290.00</td>
+                    <td class="text-success fw-bold">$0.00 (Included)</td>
+                  </tr>
+                  <tr class="border-bottom">
+                    <td class="fw-semibold">Water Tank Cleaning & Lab Quality Test</td>
+                    <td class="text-danger fw-bold">$350.00</td>
+                    <td class="text-success fw-bold">$0.00 (Included)</td>
+                  </tr>
+                  <tr class="border-bottom">
+                    <td class="fw-semibold">Whole-House Deep Steam Sanitization</td>
+                    <td class="text-danger fw-bold">$380.00</td>
+                    <td class="text-success fw-bold">$0.00 (Included)</td>
+                  </tr>
+                  <tr class="table-light fw-bold">
+                    <td>Total Estimated Annual Cost</td>
+                    <td class="text-danger fs-6">$1,850.00</td>
+                    <td class="text-success fs-5">$349.00 / year</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="col-lg-5 text-center">
+            <div class="p-4 rounded-4 bg-primary text-white shadow">
+              <i class="bi bi-wallet2 display-3 text-warning mb-2"></i>
+              <h4 class="fw-bold mb-1">Total Net Annual Savings</h4>
+              <div class="display-4 fw-extrabold text-warning my-2">$1,501</div>
+              <p class="text-white-50 small mb-4">Plus over 25 hours saved avoiding unreliable handymen and emergency stress.</p>
+              <a href="customer/booking.html" class="btn btn-warning text-dark fw-bold rounded-pill px-4 py-2 w-100 shadow-sm">
+                Lock In Your AMC Savings Today <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== NEW SECTION 6: VERIFIED HOMEOWNER REVIEWS ==================== -->
+  <section class="section-padding bg-white">
+    <div class="container">
+      <div class="text-center section-header mb-5">
+        <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-2">
+          <i class="bi bi-chat-quote-fill me-1"></i> Real Stories
+        </span>
+        <h2 class="section-title fw-bold">Trusted by 10,000+ Modern Homeowners</h2>
+        <p class="text-muted max-w-600 mx-auto">
+          Read how HomeCarely protects residences from domestic breakdowns with speed, transparency, and certified care.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="card h-100 border-0 shadow-sm p-4 rounded-4 bg-light-subtle d-flex flex-column">
+            <div class="d-flex align-items-center gap-1 text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-muted small mb-4 flex-grow-1">
+              "When our central AC stopped cooling on the hottest Saturday in July, Marcus from HomeCarely was at our front door within 42 minutes. He replaced a blown capacitor with an OEM part and had ice-cold air flowing before our guests arrived. Incredible service!"
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" class="rounded-circle" width="48" height="48" alt="Sarah Jenkins">
+              <div>
+                <strong class="d-block text-dark small">Sarah Jenkins</strong>
+                <span class="text-muted smaller">Suburban Villa Owner, Oakridge</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card h-100 border-0 shadow-sm p-4 rounded-4 bg-light-subtle d-flex flex-column">
+            <div class="d-flex align-items-center gap-1 text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-muted small mb-4 flex-grow-1">
+              "We manage three rental duplexes and having the Standard Protection AMC has eliminated midnight landlord emergency calls completely. The digital inspection reports in the dashboard give us total visibility on every visit."
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" class="rounded-circle" width="48" height="48" alt="Marcus Bennett">
+              <div>
+                <strong class="d-block text-dark small">Marcus Bennett</strong>
+                <span class="text-muted smaller">Property Investor & Homeowner</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card h-100 border-0 shadow-sm p-4 rounded-4 bg-light-subtle d-flex flex-column">
+            <div class="d-flex align-items-center gap-1 text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-muted small mb-4 flex-grow-1">
+              "The water tank cleaning and quarterly electrical checkups caught an arcing connection in our main breaker box that could have caused a house fire. The peace of mind for our family is worth ten times the price of the AMC."
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" class="rounded-circle" width="48" height="48" alt="David Sterling">
+              <div>
+                <strong class="d-block text-dark small">David Sterling</strong>
+                <span class="text-muted smaller">Penthouse Resident, Downtown</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== NEW SECTION 7: FAQ ACCORDION ==================== -->
+  <section class="section-padding bg-light-subtle border-top border-bottom">
+    <div class="container" style="max-width: 860px;">
+      <div class="text-center section-header mb-5">
+        <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-2">
+          <i class="bi bi-question-circle-fill me-1"></i> Common Inquiries
+        </span>
+        <h2 class="section-title fw-bold">Frequently Asked Questions</h2>
+        <p class="text-muted max-w-600 mx-auto">
+          Everything you need to know about HomeCarely Express Maintenance and Annual Maintenance Contracts.
+        </p>
+      </div>
+
+      <div class="accordion accordion-flush bg-white rounded-4 shadow-sm p-3 p-md-4" id="home2FaqAccordion">
+        <!-- FAQ 1 -->
+        <div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden">
+          <h2 class="accordion-header" id="faqHeading1">
+            <button class="accordion-button rounded-3 fw-bold bg-light text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+              How fast can a technician arrive at my property for an emergency?
+            </button>
+          </h2>
+          <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#home2FaqAccordion">
+            <div class="accordion-body text-secondary small pt-3">
+              For active AMC subscribers, emergency dispatch is guaranteed within 45 to 60 minutes for high-priority incidents such as total AC cooling failure in peak season, major water leaks or pipe bursts, and main electrical breaker tripping. Our vans are GPS-tracked and pre-loaded with common OEM parts.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden">
+          <h2 class="accordion-header" id="faqHeading2">
+            <button class="accordion-button collapsed rounded-3 fw-bold bg-light text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+              Are replacement spare parts included in my AMC subscription?
+            </button>
+          </h2>
+          <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#home2FaqAccordion">
+            <div class="accordion-body text-secondary small pt-3">
+              All technician labor, callout fees, diagnostics, and routine consumables (AC coil wash chemicals, minor seals, lubrication, cleaning agents) are 100% included with $0 extra fee. Any major replacement parts (compressors, new pumps, breaker units) are provided at a transparent 10% to 30% contract discount with genuine manufacturer warranties.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden">
+          <h2 class="accordion-header" id="faqHeading3">
+            <button class="accordion-button collapsed rounded-3 fw-bold bg-light text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+              Can I transfer my AMC contract if I move or sell my home?
+            </button>
+          </h2>
+          <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#home2FaqAccordion">
+            <div class="accordion-body text-secondary small pt-3">
+              Yes, absolutely. You can transfer your remaining contract duration to your new residential property within our service areas at no cost, or transfer it to the new homeowner as a premium selling feature for your property.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden">
+          <h2 class="accordion-header" id="faqHeading4">
+            <button class="accordion-button collapsed rounded-3 fw-bold bg-light text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+              What background checks and certifications do technicians have?
+            </button>
+          </h2>
+          <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#home2FaqAccordion">
+            <div class="accordion-body text-secondary small pt-3">
+              Every HomeCarely technician is full-time employed, background-checked, insured, and certified in their trade (HVAC licensed technicians, certified master plumbers, and licensed wiremen). They arrive in full uniform with digital ID badges and protective shoe coverings.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="accordion-item border-0 rounded-3 overflow-hidden">
+          <h2 class="accordion-header" id="faqHeading5">
+            <button class="accordion-button collapsed rounded-3 fw-bold bg-light text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+              How do I view my upcoming visits and digital audit reports?
+            </button>
+          </h2>
+          <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#home2FaqAccordion">
+            <div class="accordion-body text-secondary small pt-3">
+              Your HomeCarely Customer Dashboard gives you 24/7 access to your active AMC contract, remaining visits, upcoming technician arrival dates, digital 120-point health certificates, and one-click rescheduling.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== NEW SECTION 8: BOTTOM CONVERSION CTA BANNER ==================== -->
+  <section class="py-5 bg-primary text-white position-relative overflow-hidden">
+    <div class="container position-relative z-1 py-4">
+      <div class="row align-items-center justify-content-between g-4">
+        <div class="col-lg-8">
+          <span class="badge bg-white text-primary px-3 py-2 rounded-pill fw-bold mb-2">
+            <i class="bi bi-shield-check me-1"></i> Guaranteed 100% Home Protection
+          </span>
+          <h2 class="display-6 fw-bold text-white mb-2">Ready to Live Completely Free of Domestic Breakdowns?</h2>
+          <p class="text-white-50 lead fs-6 mb-0">
+            Join over 10,000 households enjoying on-time certified maintenance, 60-minute emergency arrival, and zero surprise bills.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <div class="d-flex flex-column flex-sm-row justify-content-lg-end gap-2">
+            <a href="customer/booking.html" class="btn btn-warning text-dark fw-bold rounded-pill px-4 py-3 shadow">
+              <i class="bi bi-calendar2-check-fill me-1"></i> Book Your First Service
+            </a>
+            <a href="tel:+18005550199" class="btn btn-outline-light rounded-pill px-4 py-3 fw-semibold">
+              <i class="bi bi-telephone-fill me-1"></i> Call 24/7 Hotline
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Universal Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="footer-brand">
+            <h4 class="d-flex align-items-center gap-2">
+              <i class="bi bi-shield-check text-primary"></i> HomeCare<span class="text-primary">ly</span>
+            </h4>
+            <p class="text-muted small pe-lg-4">
+              HomeCarely is your premier annual home maintenance partner. Certified technicians, guaranteed response windows, and round-the-clock emergency support for modern residences.
+            </p>
+            <div class="d-flex gap-2 mt-3">
+              <a href="#" class="social-pill-link"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="social-pill-link"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="social-pill-link"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="social-pill-link"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5 class="footer-widget-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="about.html">About Company</a></li>
+            <li><a href="amc-plans.html">AMC Plans</a></li>
+            <li><a href="pricing.html">Pricing Guide</a></li>
+            <li><a href="blog.html">Latest Articles</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h5 class="footer-widget-title">AMC Services</h5>
+          <ul class="footer-links">
+            <li><a href="service-details.html?service=ac">Air Conditioning Maintenance</a></li>
+            <li><a href="service-details.html?service=plumbing">Plumbing Inspections</a></li>
+            <li><a href="service-details.html?service=electrical">Electrical & Breaker Care</a></li>
+            <li><a href="service-details.html?service=cleaning">Deep Home Sanitization</a></li>
+            <li><a href="service-details.html?service=pest">Pest & Termite Control</a></li>
+            <li><a href="services.html">View All 10 Services</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h5 class="footer-widget-title">Newsletter & Offers</h5>
+          <p class="small text-muted mb-3">Subscribe for seasonal maintenance tips and exclusive AMC renewal discounts.</p>
+          <form class="mb-3" onsubmit="event.preventDefault(); showToast('Thank you for subscribing!', 'success');">
+            <div class="input-group">
+              <input type="email" class="form-control form-control-hc rounded-start-pill border-0" placeholder="Your email address" required>
+              <button class="btn btn-primary-hc rounded-end-pill px-3" type="submit"><i class="bi bi-send-fill"></i></button>
+            </div>
+          </form>
+          <div class="small text-muted">
+            <div class="mb-1"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (800) 555-0199</div>
+            <div><i class="bi bi-envelope-fill text-primary me-2"></i> support@homecarely.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="d-flex flex-wrap justify-content-between align-items-center">
+          <p class="mb-0 text-muted">© 2026 HomeCarely AMC Services Ltd. All Rights Reserved.</p>
+          <div class="d-flex gap-3">
+            <a href="faq.html" class="text-muted small">Privacy Policy</a>
+            <span class="text-secondary">·</span>
+            <a href="faq.html" class="text-muted small">Terms of Service</a>
+            <span class="text-secondary">·</span>
+            <a href="faq.html" class="text-muted small">AMC Agreement</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/booking.js"></script>
+  <script src="assets/js/subscription.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

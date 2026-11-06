@@ -1,0 +1,148 @@
+/* ===================================================================
+   HomeCarely - RTL (Right-to-Left) Stylesheet
+   Activated when [dir="rtl"] is on <html> or <body>
+   =================================================================== */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .main-navbar .navbar-nav {
+  padding-right: 0;
+}
+
+[dir="rtl"] .dropdown-menu-custom {
+  text-align: right;
+}
+
+[dir="rtl"] .dropdown-menu-custom .dropdown-item {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .dropdown-menu-custom .dropdown-item:hover {
+  transform: translateX(-3px);
+}
+
+[dir="rtl"] .hero-visual-card {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .floating-stat-badge.badge-top-left {
+  left: auto;
+  right: -25px;
+}
+
+[dir="rtl"] .floating-stat-badge.badge-bottom-right {
+  right: auto;
+  left: -20px;
+}
+
+[dir="rtl"] .service-card .service-icon-pill {
+  right: auto;
+  left: 25px;
+}
+
+[dir="rtl"] .service-features-list li,
+[dir="rtl"] .pricing-features-list li {
+  direction: rtl;
+}
+
+[dir="rtl"] .pricing-features-list li i {
+  margin-left: 0.5rem;
+}
+
+[dir="rtl"] .input-icon-group i {
+  left: auto;
+  right: 1rem;
+}
+
+[dir="rtl"] .input-icon-group .form-control-hc {
+  padding-left: 1rem;
+  padding-right: 2.75rem;
+}
+
+[dir="rtl"] .hc-toast-container {
+  right: auto;
+  left: 25px;
+}
+
+[dir="rtl"] .hc-toast {
+  border-left: none;
+  border-right: 4px solid var(--hc-primary);
+  animation-name: slideInLeft;
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Dashboard RTL */
+[dir="rtl"] .dashboard-sidebar {
+  left: auto;
+  right: 0;
+  border-right: none;
+  border-left: 1px solid var(--hc-border);
+}
+
+[dir="rtl"] .dashboard-main {
+  margin-left: 0;
+  margin-right: 270px;
+}
+
+@media (max-width: 991.98px) {
+  [dir="rtl"] .dashboard-sidebar {
+    right: -280px;
+    left: auto;
+  }
+  [dir="rtl"] .dashboard-sidebar.show {
+    right: 0;
+  }
+  [dir="rtl"] .dashboard-main {
+    margin-right: 0 !important;
+  }
+}
+
+[dir="rtl"] .dashboard-search-box i {
+  left: auto;
+  right: 1rem;
+}
+
+[dir="rtl"] .dashboard-search-box input {
+  padding-left: 1rem;
+  padding-right: 2.6rem;
+}
+
+[dir="rtl"] .sidebar-link .badge {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+[dir="rtl"] .chat-contacts-pane {
+  border-right: none;
+  border-left: 1px solid var(--hc-border);
+}
+
+[dir="rtl"] .chat-bubble.incoming {
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 4px;
+  align-self: flex-start;
+}
+
+[dir="rtl"] .chat-bubble.outgoing {
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 4px;
+  align-self: flex-end;
+}
+
+[dir="rtl"] .timeline-stepper::before {
+  left: 30px;
+  right: 30px;
+}
+
+[dir="rtl"] .back-to-top-btn {
+  right: auto;
+  left: 25px;
+}

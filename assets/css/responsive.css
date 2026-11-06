@@ -1,0 +1,241 @@
+/* ===================================================================
+   HomeCarely - Responsive Stylesheet
+   Optimized for 320px, 360px, 375px, 390px, 414px, 576px, 768px, 
+   992px, 1024px, 1152px, 1280px, 1366px, 1440px, 1920px
+   =================================================================== */
+
+/* Large Desktops (1440px - 1920px+) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+  .hero-title {
+    font-size: 3.8rem;
+  }
+}
+
+/* Desktops & Laptops (1200px - 1399px) */
+@media (max-width: 1399.98px) {
+  .hero-title {
+    font-size: 3.2rem;
+  }
+}
+
+/* Medium Desktops & Small Laptops (992px - 1199px) */
+@media (max-width: 1199.98px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  .hero-visual-card {
+    max-width: 440px;
+  }
+  .nav-link {
+    padding: 0.4rem 0.5rem !important;
+    font-size: 0.84rem;
+  }
+  .main-navbar .btn-primary-hc,
+  .main-navbar .btn-outline-hc {
+    padding: 0.4rem 0.75rem !important;
+    font-size: 0.8rem;
+  }
+  .main-navbar .dir-toggle-btn {
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.78rem;
+  }
+}
+
+/* Tablets & Mobile Navigation (<= 991px) */
+@media (max-width: 991.98px) {
+  .main-navbar .navbar-collapse {
+    background: #ffffff;
+    border-radius: var(--hc-radius-lg);
+    box-shadow: var(--hc-shadow-lg);
+    padding: 1.25rem;
+    margin-top: 0.75rem;
+    border: 1px solid var(--hc-border);
+  }
+  .main-navbar .navbar-nav {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    align-items: flex-start;
+  }
+  .main-navbar .navbar-nav .nav-link {
+    padding: 0.65rem 1rem !important;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+  .main-navbar .d-flex.align-items-center.gap-2 {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--hc-border);
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .hero-section {
+    padding: 3.5rem 0 4rem 0;
+    text-align: center;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-stats-row {
+    justify-content: center;
+  }
+  .hero-visual-card {
+    margin: 3.5rem auto 0 auto;
+    max-width: 480px;
+  }
+  .section-title {
+    font-size: 2.1rem;
+  }
+  .cta-banner {
+    padding: 3rem 1.75rem;
+    text-align: center;
+  }
+  .cta-banner .d-flex {
+    justify-content: center !important;
+  }
+  /* Dashboard layout */
+  .dashboard-sidebar {
+    position: fixed;
+    left: -280px;
+    top: 0;
+    bottom: 0;
+    z-index: 1050;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .dashboard-sidebar.show {
+    left: 0;
+  }
+  .dashboard-main {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+  .testimonial-quote-box {
+    min-height: auto;
+  }
+}
+
+/* Mobile Landscape & Large Phones (576px - 767px) */
+@media (max-width: 767.98px) {
+  .hero-title {
+    font-size: 2.15rem;
+  }
+  .section-padding {
+    padding: 3.5rem 0;
+  }
+  .section-title {
+    font-size: 1.85rem;
+  }
+  .page-banner {
+    padding: 2.5rem 0 2rem 0;
+  }
+  .page-banner-title {
+    font-size: 2rem;
+  }
+  .hero-stats-row {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .hero-stat-item {
+    flex: 1 1 40%;
+  }
+  .hero-stat-item h3 {
+    font-size: 1.7rem;
+  }
+  .calculator-card,
+  .calc-summary-card,
+  .process-step-card {
+    padding: 1.5rem;
+  }
+  .cta-banner {
+    padding: 2.5rem 1.25rem;
+  }
+  .comparison-table th, 
+  .comparison-table td {
+    padding: 0.85rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Small to Medium Mobile Phones (375px - 575px) */
+@media (max-width: 575.98px) {
+  .hero-title {
+    font-size: 1.85rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .hero-visual-card {
+    padding: 0.85rem;
+  }
+  .hero-image-wrap {
+    height: 320px;
+  }
+  .floating-stat-badge {
+    position: static;
+    margin: 0.75rem auto;
+    max-width: 290px;
+    animation: none;
+  }
+  .btn-primary-hc, 
+  .btn-outline-hc {
+    width: 100%;
+    justify-content: center;
+  }
+  .pricing-amount {
+    font-size: 2.4rem;
+  }
+  .pricing-card {
+    padding: 1.75rem 1.25rem;
+  }
+  .service-card .card-thumb {
+    height: 170px;
+  }
+  .main-footer {
+    padding: 3.5rem 0 1.5rem 0;
+    text-align: center;
+  }
+  .footer-links a {
+    justify-content: center;
+  }
+  .social-pill-link {
+    margin: 0 4px;
+  }
+  .footer-bottom .d-flex {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center !important;
+  }
+}
+
+/* Extra Small Phones (320px - 360px) */
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.65rem;
+  }
+  .brand-logo {
+    font-size: 1.3rem;
+  }
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .pricing-switch-btn {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.8rem;
+  }
+  .calculator-card,
+  .calc-summary-card,
+  .process-step-card {
+    padding: 1.25rem;
+  }
+}

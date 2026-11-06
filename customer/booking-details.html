@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Details - HomeCarely Customer Portal</title>
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231068eb'><path d='M12 2L2 7v7c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z'/></svg>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a class="brand-logo" href="../index.html">
+          <div class="brand-icon"><i class="bi bi-shield-check"></i></div>
+          <span>HomeCare<span class="text-primary">ly</span></span>
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-heading">Overview</li>
+        <li class="sidebar-item"><a href="dashboard.html" class="sidebar-link"><i class="bi bi-grid-1x2-fill"></i><span>Dashboard</span></a></li>
+        <li class="sidebar-heading">Maintenance</li>
+        <li class="sidebar-item"><a href="booking.html" class="sidebar-link"><i class="bi bi-calendar-plus-fill"></i><span>Schedule a Service</span></a></li>
+        <li class="sidebar-item"><a href="bookings.html" class="sidebar-link active"><i class="bi bi-calendar2-check-fill"></i><span>My Bookings</span></a></li>
+        <li class="sidebar-item"><a href="service-history.html" class="sidebar-link"><i class="bi bi-clock-history"></i><span>Service History</span></a></li>
+        <li class="sidebar-heading">AMC & Coverage</li>
+        <li class="sidebar-item"><a href="my-plans.html" class="sidebar-link"><i class="bi bi-shield-fill-check"></i><span>My AMC Plans</span></a></li>
+        <li class="sidebar-item"><a href="contracts.html" class="sidebar-link"><i class="bi bi-file-earmark-text-fill"></i><span>Active Contracts</span></a></li>
+        <li class="sidebar-item"><a href="renewal.html" class="sidebar-link"><i class="bi bi-arrow-repeat"></i><span>Renewal & Add-ons</span></a></li>
+        <li class="sidebar-heading">Account & Help</li>
+        <li class="sidebar-item"><a href="profile.html" class="sidebar-link"><i class="bi bi-person-fill"></i><span>My Profile</span></a></li>
+        <li class="sidebar-item"><a href="notifications.html" class="sidebar-link"><i class="bi bi-bell-fill"></i><span>Notifications</span><span class="badge bg-danger rounded-pill">3</span></a></li>
+        <li class="sidebar-item"><a href="messages.html" class="sidebar-link"><i class="bi bi-chat-dots-fill"></i><span>Support & Messages</span></a></li>
+        <li class="sidebar-item"><a href="settings.html" class="sidebar-link"><i class="bi bi-gear-fill"></i><span>Settings</span></a></li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center gap-2">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" class="rounded-circle auth-user-avatar" width="36" height="36" alt="User">
+            <div>
+              <div class="fw-bold small auth-user-name">Alex Morgan</div>
+              <span class="text-muted smaller d-block" style="font-size: 0.72rem;">Customer</span>
+            </div>
+          </div>
+          <button class="btn btn-sm btn-light border logout-trigger-btn" data-redirect="../auth/login.html" title="Logout">
+            <i class="bi bi-box-arrow-right text-danger"></i>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-sm btn-light border d-lg-none" id="sidebarToggleBtn"><i class="bi bi-list fs-5"></i></button>
+          <a href="bookings.html" class="btn btn-sm btn-light border"><i class="bi bi-arrow-left"></i> All Bookings</a>
+          <h5 class="fw-bold mb-0">Visit Details: <span class="detail-booking-id">BK-9482</span></h5>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-icon-pill theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button class="btn btn-sm btn-outline-hc dir-toggle-btn"><span class="dir-toggle-text">RTL</span></button>
+        </div>
+      </header>
+
+      <main class="dashboard-body">
+        
+        <!-- Live Timeline Stepper -->
+        <div class="card border-0 shadow-sm p-4 rounded-4 bg-white mb-4">
+          <h6 class="fw-bold mb-3">Live Service Status Stepper</h6>
+          <div class="timeline-stepper">
+            <div class="step-item completed">
+              <div class="step-bubble"><i class="bi bi-check-lg"></i></div>
+              <div class="step-label">Visit Requested</div>
+              <span class="text-muted smaller d-block" style="font-size: 0.72rem;">Nov 02</span>
+            </div>
+            <div class="step-item completed">
+              <div class="step-bubble"><i class="bi bi-check-lg"></i></div>
+              <div class="step-label">Confirmed</div>
+              <span class="text-muted smaller d-block" style="font-size: 0.72rem;">Slot Assigned</span>
+            </div>
+            <div class="step-item active">
+              <div class="step-bubble"><i class="bi bi-truck"></i></div>
+              <div class="step-label">Tech Dispatched</div>
+              <span class="text-muted smaller d-block" style="font-size: 0.72rem;">On Schedule</span>
+            </div>
+            <div class="step-item">
+              <div class="step-bubble">4</div>
+              <div class="step-label">Completed</div>
+              <span class="text-muted smaller d-block" style="font-size: 0.72rem;">Pending Signoff</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4" id="bookingDetailCard">
+          
+          <!-- Left Main Card -->
+          <div class="col-lg-8">
+            <div class="card border-0 shadow-sm p-4 p-md-5 rounded-4 bg-white mb-4">
+              <div class="d-flex justify-content-between align-items-start pb-3 mb-4 border-bottom">
+                <div>
+                  <span class="badge bg-primary-subtle text-primary mb-1 detail-service-category">HVAC System</span>
+                  <h3 class="fw-bold mb-1 detail-service-title">Air Conditioning Maintenance</h3>
+                  <span class="text-muted small">Appointment Slot: <strong class="text-dark detail-date">2026-11-12</strong> (<span class="detail-slot">10:00 AM - 12:00 PM</span>)</span>
+                </div>
+                <span class="badge-status" id="detailStatusBadge">Confirmed</span>
+              </div>
+
+              <h6 class="fw-bold mb-2">Service Location</h6>
+              <p class="text-secondary small mb-4 p-3 bg-light rounded-3">
+                <i class="bi bi-geo-alt-fill text-primary me-2"></i> <span class="detail-address">742 Evergreen Terrace, Springfield, IL</span>
+              </p>
+
+              <h6 class="fw-bold mb-2">Customer Problem Description & Notes</h6>
+              <p class="text-secondary small mb-4 p-3 bg-light rounded-3">
+                <i class="bi bi-chat-quote-fill text-muted me-2"></i> <span class="detail-notes">Quarterly filter replacement and compressor diagnostics.</span>
+              </p>
+
+              <h6 class="fw-bold mb-3">Service Scope Checklist</h6>
+              <div class="row g-2 mb-4">
+                <div class="col-md-6">
+                  <div class="d-flex align-items-center gap-2 small text-secondary">
+                    <i class="bi bi-check-circle-fill text-success"></i> High-pressure jet coil wash
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex align-items-center gap-2 small text-secondary">
+                    <i class="bi bi-check-circle-fill text-success"></i> Refrigerant pressure test
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex align-items-center gap-2 small text-secondary">
+                    <i class="bi bi-check-circle-fill text-success"></i> Drain pipe chemical flush
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex align-items-center gap-2 small text-secondary">
+                    <i class="bi bi-check-circle-fill text-success"></i> Electrical capacitor audit
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center pt-3 border-top">
+                <span class="badge bg-success-subtle text-success py-2 px-3 fw-bold">Covered under AMC ($0 Extra Charge)</span>
+                <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#ratingModal">
+                  <i class="bi bi-star me-1"></i> Rate Technician
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Assigned Tech Card -->
+          <div class="col-lg-4">
+            <div class="card border-0 shadow-sm p-4 rounded-4 bg-white text-center mb-4">
+              <span class="badge-tag bg-primary-subtle text-primary mb-3 align-self-center">Assigned Specialist</span>
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" class="rounded-circle border border-3 border-primary p-1 mx-auto mb-3 detail-technician-avatar" width="90" height="90" alt="Tech">
+              <h5 class="fw-bold mb-1 detail-technician-name">Marcus Vance</h5>
+              <span class="text-muted small d-block mb-3">Master HVAC Engineer · License #HV-8841</span>
+
+              <div class="p-3 bg-light rounded-3 text-start small mb-4">
+                <div class="d-flex justify-content-between mb-1">
+                  <span>Police Verification:</span>
+                  <strong class="text-success"><i class="bi bi-shield-fill-check"></i> Cleared</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <span>Average Rating:</span>
+                  <strong class="text-warning">4.95 / 5 (380+ visits)</strong>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span>Arrival ETA:</span>
+                  <strong class="text-primary">On Schedule</strong>
+                </div>
+              </div>
+
+              <a href="messages.html" class="btn btn-primary-hc w-100 justify-content-center mb-2">
+                <i class="bi bi-chat-text"></i> Message Technician
+              </a>
+              <a href="tel:+18005550199" class="btn btn-outline-hc w-100 justify-content-center">
+                <i class="bi bi-telephone"></i> Call Dispatch
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Rating Modal -->
+  <div class="modal fade" id="ratingModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 p-3">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold">Rate Technician Service</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+          <div class="fs-2 text-warning mb-3">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <textarea class="form-control form-control-hc mb-3" rows="3" placeholder="Share your feedback on punctuality, cleanliness, and expertise..."></textarea>
+          <button class="btn btn-primary-hc w-100 justify-content-center" onclick="showToast('Thank you! Your 5-star rating has been recorded.', 'success'); bootstrap.Modal.getInstance(document.getElementById('ratingModal')).hide();">
+            Submit Rating
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/validation.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/booking.js"></script>
+  <script src="../assets/js/subscription.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/customer-dashboard.js"></script>
+</body>
+</html>

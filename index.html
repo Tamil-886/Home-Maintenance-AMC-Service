@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeCarely - Multipurpose Home Maintenance AMC Service Template</title>
+  <meta name="description" content="Professional Annual Maintenance Contract (AMC) & Home Services Website Template. Fast, reliable, and expert maintenance for AC, plumbing, electrical, and deep cleaning.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231068eb'><path d='M12 2L2 7v7c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z'/></svg>">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- ================= Main Navigation ================= -->
+  <nav class="navbar navbar-expand-xl main-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <div class="brand-icon">
+          <i class="bi bi-shield-check"></i>
+        </div>
+        <span>HomeCare<span class="text-primary">ly</span></span>
+      </a>
+
+      <!-- Mobile Right Controls (RTL + Theme) -->
+      <div class="d-flex align-items-center gap-2 d-xl-none ms-auto me-2">
+        <button class="btn btn-sm btn-outline-hc dir-toggle-btn py-1 px-2" title="Toggle RTL / LTR layout" aria-label="Toggle RTL / LTR">
+          <i class="bi bi-globe me-1 text-primary"></i><span class="dir-toggle-text">RTL</span>
+        </button>
+        <button class="btn btn-sm btn-icon-pill theme-toggle-btn" aria-label="Toggle Theme">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+      </div>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+            <ul class="dropdown-menu dropdown-menu-custom">
+              <li><a class="dropdown-item active" href="index.html"><i class="bi bi-house-door"></i> Home Page 1 (General AMC)</a></li>
+              <li><a class="dropdown-item " href="home-2.html"><i class="bi bi-building"></i> Home Page 2 (Express Service)</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="amc-plans.html">AMC Plans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-dashboard-link" href="customer/dashboard.html">Dashboard</a>
+          </li>
+        </ul>
+
+        <!-- Action Buttons -->
+        <div class="d-flex align-items-center gap-2">
+          <!-- RTL Direction Switcher -->
+          <button class="btn btn-sm btn-outline-hc dir-toggle-btn py-2 px-3 small d-none d-xl-inline-flex align-items-center" title="Toggle RTL / LTR layout">
+            <i class="bi bi-globe me-1 text-primary"></i> <span class="dir-toggle-text">RTL</span>
+          </button>
+          
+          <!-- Theme Toggle -->
+          <button class="btn btn-icon-pill theme-toggle-btn d-none d-xl-inline-flex" title="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+
+          <!-- Login / Logout Link (Based on Auth Status) -->
+          <a href="auth/login.html" class="btn btn-outline-hc py-2 px-3 small nav-auth-btn" id="navAuthBtn">
+            <i class="bi bi-person-circle me-1"></i> <span class="nav-auth-text">Log In</span>
+          </a>
+
+          <!-- Book AMC CTA Button -->
+          <a href="customer/booking.html" class="btn btn-primary-hc py-2 px-4 small">
+            Book AMC <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= Hero Section (Reference Style) ================= -->
+  <section class="hero-section bg-hero-mesh">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Left Content -->
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="badge-pill-soft mb-3">
+            <i class="bi bi-shield-fill-check"></i>
+            <span>Your Trusted Home Services Partner</span>
+          </div>
+
+          <h1 class="hero-title">
+            Fix it. Clean it. <br>
+            <span class="text-gradient">Repeat it.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Expert home services at your fingertips. From AC repair to plumbing, electrical safety to deep home cleaning — subscribe to our annual maintenance contracts and book certified professionals instantly.
+          </p>
+
+          <div class="d-flex flex-wrap align-items-center gap-3">
+            <a href="services.html" class="btn btn-primary-hc">
+              Find Services <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="#amc-plans" class="btn btn-outline-hc">
+              <i class="bi bi-shield-check text-primary"></i> Explore AMC Plans
+            </a>
+          </div>
+
+          <!-- Hero Floating Stats Row -->
+          <div class="hero-stats-row">
+            <div class="hero-stat-item">
+              <h3 class="counter-value" data-target="500" data-suffix="+">500+</h3>
+              <p>Service Providers</p>
+            </div>
+            <div class="hero-stat-item">
+              <h3 class="counter-value" data-target="10" data-suffix="k+">10k+</h3>
+              <p>Happy Customers</p>
+            </div>
+            <div class="hero-stat-item">
+              <h3 class="counter-value" data-target="50" data-suffix="+">50+</h3>
+              <p>Services Offered</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Showcase (Matching Reference Image) -->
+        <div class="col-lg-6">
+          <div class="hero-visual-card">
+            <!-- Main Technician Image -->
+            <div class="hero-image-wrap">
+              <img src="https://plus.unsplash.com/premium_photo-1683140911652-9eccabee148f?auto=format&fit=crop&w=1200&q=80" alt="HomeCarely Certified Home Maintenance AMC Service Specialist">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Services Grid Section ================= -->
+  <section class="section-padding" id="services">
+    <div class="container">
+      <div class="text-center section-header">
+        <span class="section-subtitle">Comprehensive Coverage</span>
+        <h2 class="section-title">Specialized Home Maintenance Services</h2>
+        <p class="text-muted max-w-600 mx-auto">
+          Every critical system in your home covered by certified, insured master specialists. Available as standalone visits or bundled into your annual AMC package.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Service 1: Electrical -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="card-thumb">
+              <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80" alt="Electrical Maintenance">
+              <div class="service-icon-pill">
+                <i class="bi bi-lightning-charge"></i>
+              </div>
+            </div>
+            <div class="card-body">
+              <h4 class="h5 fw-bold mb-2">Electrical Maintenance</h4>
+              <p class="text-muted small mb-3">Breaker panel testing, short-circuit diagnostics, rewiring, and appliance surge protection.</p>
+              <ul class="service-features-list">
+                <li><i class="bi bi-check-circle-fill"></i> Circuit load balancing & thermal audit</li>
+                <li><i class="bi bi-check-circle-fill"></i> Switchboard & earthing inspection</li>
+                <li><i class="bi bi-check-circle-fill"></i> Emergency short-circuit callout</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                <span class="fw-bold text-primary">From $49 / visit</span>
+                <a href="service-details.html?service=electrical" class="btn btn-sm btn-outline-hc">Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2: Plumbing -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="card-thumb">
+              <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=600&q=80" alt="Plumbing Services">
+              <div class="service-icon-pill">
+                <i class="bi bi-droplet"></i>
+              </div>
+            </div>
+            <div class="card-body">
+              <h4 class="h5 fw-bold mb-2">Plumbing Services</h4>
+              <p class="text-muted small mb-3">Pipe leak repair, drain unclogging, water pressure tuning, fixture updates, and water heaters.</p>
+              <ul class="service-features-list">
+                <li><i class="bi bi-check-circle-fill"></i> Acoustic pipe leak detection</li>
+                <li><i class="bi bi-check-circle-fill"></i> Water heater & geyser descaling</li>
+                <li><i class="bi bi-check-circle-fill"></i> Main line water pressure testing</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                <span class="fw-bold text-primary">From $55 / visit</span>
+                <a href="service-details.html?service=plumbing" class="btn btn-sm btn-outline-hc">Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3: AC Maintenance -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="card-thumb">
+              <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=600&q=80" alt="Air Conditioning Maintenance">
+              <div class="service-icon-pill">
+                <i class="bi bi-snow"></i>
+              </div>
+            </div>
+            <div class="card-body">
+              <h4 class="h5 fw-bold mb-2">Air Conditioning (HVAC)</h4>
+              <p class="text-muted small mb-3">Deep chemical jet wash, refrigerant top-up, compressor health checks, and filter sanitization.</p>
+              <ul class="service-features-list">
+                <li><i class="bi bi-check-circle-fill"></i> High-pressure jet pump cleaning</li>
+                <li><i class="bi bi-check-circle-fill"></i> Gas pressure & amp diagnostics</li>
+                <li><i class="bi bi-check-circle-fill"></i> Thermostat calibration & anti-bacterial</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                <span class="fw-bold text-primary">From $59 / visit</span>
+                <a href="service-details.html?service=ac" class="btn btn-sm btn-outline-hc">Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4: Deep Cleaning -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="card-thumb">
+              <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80" alt="Deep Home Cleaning">
+              <div class="service-icon-pill">
+                <i class="bi bi-stars"></i>
+              </div>
+            </div>
+            <div class="card-body">
+              <h4 class="h5 fw-bold mb-2">Deep Home Cleaning</h4>
+              <p class="text-muted small mb-3">Comprehensive single-day rejuvenation of bathrooms, kitchens, tile scrubbing, and upholstery sanitizing.</p>
+              <ul class="service-features-list">
+                <li><i class="bi bi-check-circle-fill"></i> Kitchen degreasing & chimney cleaning</li>
+                <li><i class="bi bi-check-circle-fill"></i> Hospital-grade bathroom sanitization</li>
+                <li><i class="bi bi-check-circle-fill"></i> Sofa & mattress steam extraction</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                <span class="fw-bold text-primary">From $89 / visit</span>
+                <a href="service-details.html?service=cleaning" class="btn btn-sm btn-outline-hc">Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 5: Pest Control -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="card-thumb">
+              <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=600&q=80" alt="Pest Control">
+              <div class="service-icon-pill">
+                <i class="bi bi-bug"></i>
+              </div>
+            </div>
+            <div class="card-body">
+              <h4 class="h5 fw-bold mb-2">Pest Control & Termite Care</h4>
+              <p class="text-muted small mb-3">Eco-friendly odorless sprays, gel baiting for cockroaches, ant barriers, and seasonal termite protection.</p>
+              <ul class="service-features-list">
+                <li><i class="bi bi-check-circle-fill"></i> Child & pet safe organic chemicals</li>
+                <li><i class="bi bi-check-circle-fill"></i> Cockroach, rodent & bedbug eradication</li>
+                <li><i class="bi bi-check-circle-fill"></i> 90-day re-service warranty guarantee</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                <span class="fw-bold text-primary">From $65 / visit</span>
+                <a href="service-details.html?service=pest" class="btn btn-sm btn-outline-hc">Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 6: General Home Inspection -->
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="card-thumb">
+              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="General Home Inspection">
+              <div class="service-icon-pill">
+                <i class="bi bi-clipboard2-check"></i>
+              </div>
+            </div>
+            <div class="card-body">
+              <h4 class="h5 fw-bold mb-2">General Home Inspection</h4>
+              <p class="text-muted small mb-3">A thorough 120-point digital structural, electrical, moisture, and plumbing health audit with full PDF report.</p>
+              <ul class="service-features-list">
+                <li><i class="bi bi-check-circle-fill"></i> Thermal imaging for hidden seepage</li>
+                <li><i class="bi bi-check-circle-fill"></i> Roof, gutter & wall dampness check</li>
+                <li><i class="bi bi-check-circle-fill"></i> Comprehensive digital health score</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                <span class="fw-bold text-primary">From $79 / audit</span>
+                <a href="service-details.html?service=inspection" class="btn btn-sm btn-outline-hc">Details <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="services.html" class="btn btn-outline-hc">
+          View All 10 Maintenance Services <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= AMC Plans & Pricing Section ================= -->
+  <section class="section-padding bg-soft-blue" id="amc-plans">
+    <div class="container">
+      <div class="text-center section-header">
+        <span class="section-subtitle">Affordable Peace of Mind</span>
+        <h2 class="section-title">Annual Maintenance Contract (AMC) Plans</h2>
+        <p class="text-muted max-w-600 mx-auto">
+          Save up to 60% compared to ad-hoc repair emergencies. Enjoy scheduled preventive visits, guaranteed response windows, and zero hidden charges.
+        </p>
+
+        <!-- Monthly / Annual Toggle Switch -->
+        <div class="pricing-switch-wrapper mt-4">
+          <button class="pricing-switch-btn active" data-billing="annual">Annual Billing <span class="badge bg-success ms-1">Save 20%</span></button>
+          <button class="pricing-switch-btn" data-billing="monthly">Monthly Billing</button>
+        </div>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Basic Plan -->
+        <div class="col-lg-3 col-md-6 d-flex">
+          <div class="pricing-card w-100">
+            <div class="rounded-3 overflow-hidden mb-3" style="height: 120px;">
+              <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Apartment Maintenance Plan">
+            </div>
+            <div class="pricing-title-box">
+              <h4 class="fw-bold mb-1">Basic Plan</h4>
+              <p class="text-muted small mb-0">Ideal for compact apartments & rentals</p>
+            </div>
+            <div class="pricing-price-box">
+              <span class="pricing-currency">$</span>
+              <span class="pricing-amount" data-annual="199" data-monthly="19">199</span>
+              <span class="pricing-period">/ year</span>
+            </div>
+            <ul class="pricing-features-list">
+              <li><i class="bi bi-check-circle-fill check"></i> <strong>2 Maintenance Visits</strong> / Year</li>
+              <li><i class="bi bi-check-circle-fill check"></i> AC Filter & Cleaning Check</li>
+              <li><i class="bi bi-check-circle-fill check"></i> Basic Plumbing Inspection</li>
+              <li><i class="bi bi-check-circle-fill check"></i> Electrical Safety Testing</li>
+              <li><i class="bi bi-check-circle-fill check"></i> 24-hr Emergency Response</li>
+              <li class="disabled"><i class="bi bi-x-circle cross"></i> Deep Cleaning Included</li>
+              <li class="disabled"><i class="bi bi-x-circle cross"></i> Pest Control Treatment</li>
+              <li class="disabled"><i class="bi bi-x-circle cross"></i> Free Consumable Parts</li>
+            </ul>
+            <a href="customer/booking.html?plan=Basic" class="btn btn-outline-hc w-100 justify-content-center">Subscribe Now</a>
+          </div>
+        </div>
+
+        <!-- Standard Plan -->
+        <div class="col-lg-3 col-md-6 d-flex">
+          <div class="pricing-card w-100">
+            <div class="rounded-3 overflow-hidden mb-3" style="height: 120px;">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Townhouse & Residence Plan">
+            </div>
+            <div class="pricing-title-box">
+              <h4 class="fw-bold mb-1">Standard Plan</h4>
+              <p class="text-muted small mb-0">Complete care for 2-3 BHK homes</p>
+            </div>
+            <div class="pricing-price-box">
+              <span class="pricing-currency">$</span>
+              <span class="pricing-amount" data-annual="349" data-monthly="35">349</span>
+              <span class="pricing-period">/ year</span>
+            </div>
+            <ul class="pricing-features-list">
+              <li><i class="bi bi-check-circle-fill check"></i> <strong>4 Maintenance Visits</strong> / Year</li>
+              <li><i class="bi bi-check-circle-fill check"></i> Bi-Annual AC Jet Servicing</li>
+              <li><i class="bi bi-check-circle-fill check"></i> Full Plumbing Fixture Overhaul</li>
+              <li><i class="bi bi-check-circle-fill check"></i> Electrical Panel & Earthing</li>
+              <li><i class="bi bi-check-circle-fill check"></i> Water Tank Cleaning (1x)</li>
+              <li><i class="bi bi-check-circle-fill check"></i> 4-hr Response Guarantee</li>
+              <li class="disabled"><i class="bi bi-x-circle cross"></i> Deep Cleaning Included</li>
+              <li class="disabled"><i class="bi bi-x-circle cross"></i> Unlimited Free Emergency</li>
+            </ul>
+            <a href="customer/booking.html?plan=Standard" class="btn btn-outline-hc w-100 justify-content-center">Subscribe Now</a>
+          </div>
+        </div>
+
+        <!-- Premium Plan (Featured) -->
+        <div class="col-lg-3 col-md-6 d-flex">
+          <div class="pricing-card featured w-100">
+            <div class="rounded-3 overflow-hidden mb-3" style="height: 120px;">
+              <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Villa & Luxury Home Plan">
+            </div>
+            <div class="pricing-title-box">
+              <h4 class="fw-bold mb-1">Premium Plan</h4>
+              <p class="text-muted small mb-0">Full protection for villas & large homes</p>
+            </div>
+            <div class="pricing-price-box">
+              <span class="pricing-currency">$</span>
+              <span class="pricing-amount text-primary" data-annual="599" data-monthly="59">599</span>
+              <span class="pricing-period">/ year</span>
+            </div>
+            <ul class="pricing-features-list">
+              <li><i class="bi bi-check-circle-fill check"></i> <strong>8 Visits + Unlimited Emergency</strong></li>
+              <li><i class="bi bi-check-circle-fill check"></i> Quarterly AC Deep Jet Cleaning</li>
+              <li><i class="bi bi-check-circle-fill check"></i> Water Tank Sanitization (2x)</li>
+              <li><i class="bi bi-check-circle-fill check"></i> Full Home Pest Control (2x)</li>
+              <li><i class="bi bi-check-circle-fill check"></i> Priority 60-Min Dispatch</li>
+              <li><i class="bi bi-check-circle-fill check"></i> 20% Spare Parts Discount</li>
+              <li><i class="bi bi-check-circle-fill check"></i> Dedicated Property Manager</li>
+              <li class="disabled"><i class="bi bi-x-circle cross"></i> Free Major Compressor Spare</li>
+            </ul>
+            <a href="customer/booking.html?plan=Premium" class="btn btn-primary-hc w-100 justify-content-center">Subscribe Now</a>
+          </div>
+        </div>
+
+        <!-- Comprehensive Plan -->
+        <div class="col-lg-3 col-md-6 d-flex">
+          <div class="pricing-card w-100">
+            <div class="rounded-3 overflow-hidden mb-3" style="height: 120px;">
+              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80" class="w-100 h-100 object-fit-cover" alt="Estate & Commercial Plan">
+            </div>
+            <div class="pricing-title-box">
+              <h4 class="fw-bold mb-1">Comprehensive</h4>
+              <p class="text-muted small mb-0">VIP luxury maintenance coverage</p>
+            </div>
+            <div class="pricing-price-box">
+              <span class="pricing-currency">$</span>
+              <span class="pricing-amount" data-annual="999" data-monthly="99">999</span>
+              <span class="pricing-period">/ year</span>
+            </div>
+            <ul class="pricing-features-list">
+              <li><i class="bi bi-check-circle-fill check"></i> <strong>Unlimited Visits & Emergencies</strong></li>
+              <li><i class="bi bi-check-circle-fill check"></i> Monthly Preventive System Checks</li>
+              <li><i class="bi bi-check-circle-fill check"></i> Deep Home Cleaning (2x / Year)</li>
+              <li><i class="bi bi-check-circle-fill check"></i> Full Termite & Pest Warranty</li>
+              <li><i class="bi bi-check-circle-fill check"></i> Immediate 30-Min Dispatch</li>
+              <li><i class="bi bi-check-circle-fill check"></i> 30% Parts Discount + $200 Free Spares</li>
+              <li><i class="bi bi-check-circle-fill check"></i> Senior Master Technician Exclusively</li>
+              <li><i class="bi bi-check-circle-fill check"></i> 24/7 Concierge Hotline</li>
+            </ul>
+            <a href="customer/booking.html?plan=Comprehensive" class="btn btn-outline-hc w-100 justify-content-center">Subscribe VIP</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="amc-plans.html" class="btn btn-link text-primary fw-bold">
+          Compare all AMC features in full detail table <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Interactive AMC Savings Calculator ================= -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center section-header mb-5">
+        <span class="section-subtitle">Real Cost Analysis</span>
+        <h2 class="section-title">Calculate How Much You Save With HomeCarely AMC</h2>
+        <p class="text-muted max-w-600 mx-auto">
+          Ad-hoc repair technicians charge heavy inspection fees, emergency markups, and hourly labor. See your exact annual savings with an all-inclusive AMC plan.
+        </p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-6 d-flex">
+          <div class="calculator-card w-100 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold mb-3">1. Select Your Property Type</h5>
+              <div class="row g-2 mb-4">
+                <div class="col-3">
+                  <button type="button" class="calc-option-btn calc-home-type-btn" data-multiplier="0.8">1 BHK</button>
+                </div>
+                <div class="col-3">
+                  <button type="button" class="calc-option-btn calc-home-type-btn selected" data-multiplier="1.0">2 BHK</button>
+                </div>
+                <div class="col-3">
+                  <button type="button" class="calc-option-btn calc-home-type-btn" data-multiplier="1.3">3 BHK</button>
+                </div>
+                <div class="col-3">
+                  <button type="button" class="calc-option-btn calc-home-type-btn" data-multiplier="1.6">Villa</button>
+                </div>
+              </div>
+
+              <h5 class="fw-bold mb-3">2. Appliances & Annual Requirements</h5>
+              <div class="mb-3">
+                <label class="form-label small fw-semibold">Number of Air Conditioners (Split / Window):</label>
+                <input type="range" class="form-range" id="calcACUnits" min="1" max="8" value="3">
+                <div class="d-flex justify-content-between text-muted small">
+                  <span>1 Unit</span>
+                  <span>3 Units</span>
+                  <span>8 Units</span>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label small fw-semibold">Estimated Emergency Calls Per Year:</label>
+                <input type="range" class="form-range" id="calcEmergencyCallouts" min="0" max="6" value="2">
+                <div class="d-flex justify-content-between text-muted small">
+                  <span>0 Calls</span>
+                  <span>2 Calls</span>
+                  <span>6 Calls</span>
+                </div>
+              </div>
+
+              <div class="row g-2">
+                <div class="col-6">
+                  <div class="form-check p-2 border rounded">
+                    <input class="form-check-input ms-0 me-2" type="checkbox" id="calcDeepCleaning" checked>
+                    <label class="form-check-label small fw-semibold" for="calcDeepCleaning">Deep Cleaning</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-check p-2 border rounded">
+                    <input class="form-check-input ms-0 me-2" type="checkbox" id="calcPestControl" checked>
+                    <label class="form-check-label small fw-semibold" for="calcPestControl">Pest Control</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Output Summary Card -->
+        <div class="col-lg-6 d-flex">
+          <div class="calc-summary-card w-100 d-flex flex-column justify-content-between">
+            <div>
+              <span class="badge bg-primary px-3 py-2 rounded-pill mb-3">Instant Estimated Savings</span>
+              <h3 class="text-white fw-bold mb-4">Your Estimated Annual Comparison</h3>
+
+              <div class="d-flex justify-content-between align-items-center py-3 border-bottom border-secondary">
+                <span class="text-light">One-off Ad-Hoc Market Repairs:</span>
+                <span class="h4 mb-0 text-white" id="calcOneOffCost">$1,080</span>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center py-3 border-bottom border-secondary">
+                <span class="text-light">HomeCarely AMC Contract:</span>
+                <span class="h4 mb-0 text-info" id="calcAmcCost">$349</span>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center py-4">
+                <div>
+                  <h4 class="text-success fw-bold mb-0">Total Money Saved:</h4>
+                  <span class="small text-white-50">Includes spare parts discount & zero inspection fees</span>
+                </div>
+                <div class="text-end">
+                  <span class="display-6 fw-bold text-success" id="calcTotalSavings">$731</span>
+                  <div class="badge bg-success" id="calcSavingsPercent">68% Saved</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-top border-secondary">
+              <a href="customer/booking.html" class="btn btn-primary-hc w-100 justify-content-center py-3">
+                Lock In This AMC Savings Rate <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Why Choose HomeCarely ================= -->
+  <section class="section-padding bg-soft-blue">
+    <div class="container">
+      <div class="text-center section-header">
+        <span class="section-subtitle">The HomeCarely Standard</span>
+        <h2 class="section-title">Why 10,000+ Homeowners Trust Us</h2>
+        <p class="text-muted max-w-600 mx-auto">
+          We treat your residence like our own. Transparent contracts, police-cleared master technicians, and rock-solid service warranties.
+        </p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="trust-item-card w-100">
+            <div class="trust-icon-box">
+              <i class="bi bi-shield-lock-fill"></i>
+            </div>
+            <div class="trust-title-box mb-2">
+              <h5 class="fw-bold mb-0">100% Police Verified</h5>
+            </div>
+            <p class="text-muted small mb-0 lh-base">Every technician undergoes background verification, drug screening, and identity certification.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="trust-item-card w-100">
+            <div class="trust-icon-box">
+              <i class="bi bi-alarm-fill"></i>
+            </div>
+            <div class="trust-title-box mb-2">
+              <h5 class="fw-bold mb-0">60-Min Emergency SLA</h5>
+            </div>
+            <p class="text-muted small mb-0 lh-base">Burst pipe or power blackout? Our emergency rapid-response team arrives at your door within the hour.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="trust-item-card w-100">
+            <div class="trust-icon-box">
+              <i class="bi bi-award-fill"></i>
+            </div>
+            <div class="trust-title-box mb-2">
+              <h5 class="fw-bold mb-0">30-Day Service Warranty</h5>
+            </div>
+            <p class="text-muted small mb-0 lh-base">If the exact same issue reoccurs within 30 days of service, we return and resolve it at zero extra charge.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="trust-item-card w-100">
+            <div class="trust-icon-box">
+              <i class="bi bi-receipt-cutoff"></i>
+            </div>
+            <div class="trust-title-box mb-2">
+              <h5 class="fw-bold mb-0">Zero Surprise Fees</h5>
+            </div>
+            <p class="text-muted small mb-0 lh-base">All visits, inspections, and labor are covered under your fixed AMC fee. Transparent parts pricing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= How It Works ================= -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center section-header">
+        <span class="section-subtitle">Effortless Onboarding</span>
+        <h2 class="section-title">How HomeCarely AMC Works</h2>
+        <p class="text-muted max-w-600 mx-auto">
+          Getting complete maintenance coverage for your house takes less than 3 minutes.
+        </p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="process-step-card w-100">
+            <div class="step-number-bubble">1</div>
+            <div class="step-title-box mb-2">
+              <h5 class="fw-bold mb-0">Select AMC Plan</h5>
+            </div>
+            <div class="step-desc-box">
+              <p class="text-muted small mb-0 lh-base">Choose Basic, Standard, Premium or Comprehensive based on your home size.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="process-step-card w-100">
+            <div class="step-number-bubble">2</div>
+            <div class="step-title-box mb-2">
+              <h5 class="fw-bold mb-0">Welcome Audit</h5>
+            </div>
+            <div class="step-desc-box">
+              <p class="text-muted small mb-0 lh-base">Our master technician conducts a free 120-point baseline inspection of your property.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="process-step-card w-100">
+            <div class="step-number-bubble">3</div>
+            <div class="step-title-box mb-2">
+              <h5 class="fw-bold mb-0">Book Any Visit</h5>
+            </div>
+            <div class="step-desc-box">
+              <p class="text-muted small mb-0 lh-base">Schedule maintenance visits and emergency callouts whenever convenient via your dashboard.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="process-step-card w-100">
+            <div class="step-number-bubble">4</div>
+            <div class="step-title-box mb-2">
+              <h5 class="fw-bold mb-0">365-Day Peace of Mind</h5>
+            </div>
+            <div class="step-desc-box">
+              <p class="text-muted small mb-0 lh-base">Rest easy knowing your AC, plumbing, electrical, and sanitization are fully handled.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Customer Testimonials ================= -->
+  <section class="section-padding bg-soft-blue">
+    <div class="container">
+      <div class="text-center section-header">
+        <span class="section-subtitle">Real Experiences</span>
+        <h2 class="section-title">Loved by Residential & Commercial Clients</h2>
+        <p class="text-muted max-w-600 mx-auto">
+          Read what genuine homeowners and property managers say about our proactive AMC maintenance service.
+        </p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-4 d-flex">
+          <div class="testimonial-card w-100">
+            <div>
+              <div class="rating-stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <div class="testimonial-quote-box">
+                <p class="text-secondary">
+                  "Our AC broke down during a sweltering July heatwave. Because of our Premium AMC, HomeCarely dispatched a master HVAC tech to our villa in 45 minutes. Fixed with zero emergency callout fees!"
+                </p>
+              </div>
+            </div>
+            <div class="testimonial-client">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Sarah Jenkins">
+              <div>
+                <h6 class="mb-0 fw-bold">Sarah Jenkins</h6>
+                <span class="text-muted small">Homeowner, Oakridge Villas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 d-flex">
+          <div class="testimonial-card w-100">
+            <div>
+              <div class="rating-stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <div class="testimonial-quote-box">
+                <p class="text-secondary">
+                  "I manage 8 residential apartments. Enrolling every unit into HomeCarely's Standard AMC plan cut my tenant maintenance complaints by 85%. The digital dashboard and automatic visit reminders are unmatched."
+                </p>
+              </div>
+            </div>
+            <div class="testimonial-client">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Marcus Bennett">
+              <div>
+                <h6 class="mb-0 fw-bold">Marcus Bennett</h6>
+                <span class="text-muted small">Property Portfolio Manager</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 d-flex">
+          <div class="testimonial-card w-100">
+            <div>
+              <div class="rating-stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <div class="testimonial-quote-box">
+                <p class="text-secondary">
+                  "The 120-point welcome audit uncovered an electrical thermal overload behind our kitchen wall that could have caused a fire. Their master electrician rewired it immediately. Truly life-saving service."
+                </p>
+              </div>
+            </div>
+            <div class="testimonial-client">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="David Sterling">
+              <div>
+                <h6 class="mb-0 fw-bold">David Sterling</h6>
+                <span class="text-muted small">Resident, Highland Park</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Latest Articles / Blog ================= -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-end section-header">
+        <div>
+          <span class="section-subtitle">Maintenance Insights</span>
+          <h2 class="section-title mb-0">Home Care Advice & Guides</h2>
+        </div>
+        <a href="blog.html" class="btn btn-outline-hc mt-3 mt-md-0">
+          View All Articles <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="blog-card w-100">
+            <div class="blog-thumb">
+              <a href="blog-details-ac-maintenance.html">
+                <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=600&q=80" alt="AC Maintenance Guide">
+              </a>
+              <span class="blog-badge">HVAC & Cooling</span>
+            </div>
+            <div class="blog-body d-flex flex-column">
+              <div class="blog-meta">
+                <span><i class="bi bi-calendar3"></i> Nov 02, 2026</span>
+                <span><i class="bi bi-clock"></i> 6 min read</span>
+              </div>
+              <div class="blog-title-box">
+                <h5 class="fw-bold mb-0">
+                  <a href="blog-details-ac-maintenance.html" class="blog-title">7 Warning Signs Your Air Conditioner Needs Immediate Servicing</a>
+                </h5>
+              </div>
+              <div class="blog-excerpt-box">
+                <p class="blog-excerpt">Learn why strange odors, weak airflow, and unusual buzzing sounds indicate coil or compressor strain.</p>
+              </div>
+              <div class="blog-footer-box">
+                <a href="blog-details-ac-maintenance.html">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="blog-card w-100">
+            <div class="blog-thumb">
+              <a href="blog-details-plumbing-tips.html">
+                <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=600&q=80" alt="Plumbing Preventive Tips">
+              </a>
+              <span class="blog-badge">Plumbing</span>
+            </div>
+            <div class="blog-body d-flex flex-column">
+              <div class="blog-meta">
+                <span><i class="bi bi-calendar3"></i> Oct 28, 2026</span>
+                <span><i class="bi bi-clock"></i> 5 min read</span>
+              </div>
+              <div class="blog-title-box">
+                <h5 class="fw-bold mb-0">
+                  <a href="blog-details-plumbing-tips.html" class="blog-title">How Regular Plumbing AMC Prevents Catastrophic Water Seepage</a>
+                </h5>
+              </div>
+              <div class="blog-excerpt-box">
+                <p class="blog-excerpt">Hidden wall leaks cause severe structural damage. Discover how acoustic detection saves thousands.</p>
+              </div>
+              <div class="blog-footer-box">
+                <a href="blog-details-plumbing-tips.html">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 d-flex">
+          <div class="blog-card w-100">
+            <div class="blog-thumb">
+              <a href="blog-details-electrical-safety.html">
+                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80" alt="Electrical Safety">
+              </a>
+              <span class="blog-badge">Electrical Safety</span>
+            </div>
+            <div class="blog-body d-flex flex-column">
+              <div class="blog-meta">
+                <span><i class="bi bi-calendar3"></i> Oct 19, 2026</span>
+                <span><i class="bi bi-clock"></i> 7 min read</span>
+              </div>
+              <div class="blog-title-box">
+                <h5 class="fw-bold mb-0">
+                  <a href="blog-details-electrical-safety.html" class="blog-title">Electrical Safety Checklist: Protect Your High-Value Appliances</a>
+                </h5>
+              </div>
+              <div class="blog-excerpt-box">
+                <p class="blog-excerpt">Voltage surges destroy smart appliances and inverter fridges. Whole-home surge protection saves repairs.</p>
+              </div>
+              <div class="blog-footer-box">
+                <a href="blog-details-electrical-safety.html">Read Full Article <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA Banner ================= -->
+  <section class="container pb-5">
+    <div class="cta-banner">
+      <div class="row align-items-center">
+        <div class="col-lg-8 mb-4 mb-lg-0">
+          <span class="badge bg-primary px-3 py-2 rounded-pill mb-3">Protect Your Home Today</span>
+          <h2 class="display-6 fw-bold mb-2">Ready to Put Your Home Maintenance on Autopilot?</h2>
+          <p class="text-light opacity-75 mb-0">
+            Join over 10,000 satisfied families. Subscribe to an AMC plan today and receive your complimentary 120-point digital home health audit.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+            <a href="amc-plans.html" class="btn btn-primary-hc py-3 px-4">
+              Get Started Now <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="contact.html" class="btn btn-outline-light rounded-pill py-3 px-4 fw-semibold">
+              Contact Sales
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Footer ================= -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Brand Info -->
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="footer-brand">
+            <h4 class="d-flex align-items-center gap-2">
+              <i class="bi bi-shield-check text-primary"></i> HomeCare<span class="text-primary">ly</span>
+            </h4>
+            <p class="text-muted small pe-lg-4">
+              HomeCarely is your premier annual home maintenance partner. Certified technicians, guaranteed response windows, and round-the-clock emergency support for modern residences.
+            </p>
+            <div class="d-flex gap-2 mt-3">
+              <a href="#" class="social-pill-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="social-pill-link" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="social-pill-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="social-pill-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5 class="footer-widget-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="about.html">About Company</a></li>
+            <li><a href="amc-plans.html">AMC Plans</a></li>
+            <li><a href="pricing.html">Pricing Guide</a></li>
+            <li><a href="blog.html">Latest Articles</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="col-6 col-md-3 col-lg-3">
+          <h5 class="footer-widget-title">AMC Services</h5>
+          <ul class="footer-links">
+            <li><a href="service-details.html?service=ac">Air Conditioning Maintenance</a></li>
+            <li><a href="service-details.html?service=plumbing">Plumbing Inspections</a></li>
+            <li><a href="service-details.html?service=electrical">Electrical & Breaker Care</a></li>
+            <li><a href="service-details.html?service=cleaning">Deep Home Sanitization</a></li>
+            <li><a href="service-details.html?service=pest">Pest & Termite Control</a></li>
+            <li><a href="services.html">View All 10 Services</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter & Contact -->
+        <div class="col-md-6 col-lg-3">
+          <h5 class="footer-widget-title">Newsletter & Offers</h5>
+          <p class="small text-muted mb-3">Subscribe for seasonal maintenance tips and exclusive AMC renewal discounts.</p>
+          <form class="mb-3" onsubmit="event.preventDefault(); showToast('Thank you for subscribing!', 'success');">
+            <div class="input-group">
+              <input type="email" class="form-control form-control-hc rounded-start-pill border-0" placeholder="Your email address" required>
+              <button class="btn btn-primary-hc rounded-end-pill px-3" type="submit"><i class="bi bi-send-fill"></i></button>
+            </div>
+          </form>
+          <div class="small text-muted">
+            <div class="mb-1"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (800) 555-0199</div>
+            <div><i class="bi bi-envelope-fill text-primary me-2"></i> support@homecarely.com</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="d-flex flex-wrap justify-content-between align-items-center">
+          <p class="mb-0 text-muted">© 2026 HomeCarely AMC Services Ltd. All Rights Reserved.</p>
+          <div class="d-flex gap-3">
+            <a href="faq.html" class="text-muted small">Privacy Policy</a>
+            <span class="text-secondary">·</span>
+            <a href="faq.html" class="text-muted small">Terms of Service</a>
+            <span class="text-secondary">·</span>
+            <a href="faq.html" class="text-muted small">AMC Agreement</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Template Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/booking.js"></script>
+  <script src="assets/js/subscription.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Blog Posts - HomeCarely Admin Portal</title>
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231068eb'><path d='M12 2L2 7v7c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z'/></svg>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a class="brand-logo" href="../index.html">
+          <div class="brand-icon"><i class="bi bi-shield-check"></i></div>
+          <span>HomeCare<span class="text-primary">ly</span></span>
+        </a>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-heading">Admin Overview</li>
+        <li class="sidebar-item"><a href="dashboard.html" class="sidebar-link"><i class="bi bi-speedometer2"></i><span>Overview</span></a></li>
+        <li class="sidebar-item"><a href="analytics.html" class="sidebar-link"><i class="bi bi-graph-up-arrow"></i><span>Analytics & Reports</span></a></li>
+        <li class="sidebar-heading">Core Management</li>
+        <li class="sidebar-item"><a href="customers.html" class="sidebar-link"><i class="bi bi-people-fill"></i><span>Customers</span></a></li>
+        <li class="sidebar-item"><a href="services.html" class="sidebar-link"><i class="bi bi-grid-fill"></i><span>Manage Services</span></a></li>
+        <li class="sidebar-item"><a href="plans.html" class="sidebar-link"><i class="bi bi-shield-check"></i><span>AMC Plans</span></a></li>
+        <li class="sidebar-item"><a href="contracts.html" class="sidebar-link"><i class="bi bi-file-earmark-check-fill"></i><span>Subscriptions</span></a></li>
+        <li class="sidebar-item"><a href="bookings.html" class="sidebar-link"><i class="bi bi-calendar2-range-fill"></i><span>Bookings</span></a></li>
+        <li class="sidebar-item"><a href="maintenance-visits.html" class="sidebar-link"><i class="bi bi-truck"></i><span>Field Visits</span></a></li>
+        <li class="sidebar-heading">Operations</li>
+        <li class="sidebar-item"><a href="payments.html" class="sidebar-link"><i class="bi bi-credit-card-2-front-fill"></i><span>Payments (Demo)</span></a></li>
+        <li class="sidebar-item"><a href="blogs.html" class="sidebar-link active"><i class="bi bi-journal-richtext"></i><span>Blog Posts</span></a></li>
+        <li class="sidebar-item"><a href="testimonials.html" class="sidebar-link"><i class="bi bi-chat-quote-fill"></i><span>Testimonials</span></a></li>
+        <li class="sidebar-item"><a href="messages.html" class="sidebar-link"><i class="bi bi-inbox-fill"></i><span>Contact Messages</span></a></li>
+        <li class="sidebar-item"><a href="notifications.html" class="sidebar-link"><i class="bi bi-broadcast"></i><span>Notifications</span></a></li>
+        <li class="sidebar-heading">Admin Setup</li>
+        <li class="sidebar-item"><a href="profile.html" class="sidebar-link"><i class="bi bi-person-badge-fill"></i><span>Admin Profile</span></a></li>
+        <li class="sidebar-item"><a href="settings.html" class="sidebar-link"><i class="bi bi-sliders"></i><span>Settings</span></a></li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center gap-2">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=80&q=80" class="rounded-circle auth-user-avatar" width="36" height="36" alt="Admin">
+            <div>
+              <div class="fw-bold small auth-user-name">Sarah Jenkins</div>
+              <span class="text-danger smaller fw-bold d-block" style="font-size: 0.72rem;">ADMINISTRATOR</span>
+            </div>
+          </div>
+          <button class="btn btn-sm btn-light border logout-trigger-btn" data-redirect="../auth/login.html" title="Logout">
+            <i class="bi bi-box-arrow-right text-danger"></i>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-sm btn-light border d-lg-none" id="sidebarToggleBtn"><i class="bi bi-list fs-5"></i></button>
+          <h5 class="fw-bold mb-0">Blog & Content Management</h5>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-primary-hc py-1 px-3 small" data-bs-toggle="modal" data-bs-target="#newBlogModal">
+            <i class="bi bi-plus-circle me-1"></i> New Article
+          </button>
+          <button class="btn btn-icon-pill theme-toggle-btn" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button class="btn btn-sm btn-outline-hc dir-toggle-btn"><span class="dir-toggle-text">RTL</span></button>
+        </div>
+      </header>
+
+      <main class="dashboard-body">
+        
+        <div class="table-card shadow-sm border">
+          <div class="card-header bg-white py-3">
+            <h5 class="fw-bold mb-0">Published Articles & Guides</h5>
+          </div>
+          <div class="table-responsive">
+            <table class="hc-table">
+              <thead>
+                <tr>
+                  <th>Article</th>
+                  <th>Category</th>
+                  <th>Author</th>
+                  <th>Published Date</th>
+                  <th>Views</th>
+                  <th>Status</th>
+                  <th class="text-end">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1200&q=80" class="rounded-3 object-fit-cover" width="46" height="46" alt="Thumb">
+                      <div>
+                        <strong class="d-block line-clamp-1">7 Warning Signs Your Air Conditioner Needs Immediate Servicing</strong>
+                        <span class="d-block text-muted smaller line-clamp-1">Strange odors, weak airflow, and unusual buzzing sounds indicate coil or compressor strain. Learn when to schedule a jet wash.</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-light text-dark border">HVAC & Cooling</span></td>
+                  <td>Marcus Vance</td>
+                  <td>Nov 02, 2026</td>
+                  <td><strong>2,090</strong></td>
+                  <td><span class="badge-status active">Published</span></td>
+                  <td class="text-end">
+                    <a href="../blog-details-ac-maintenance.html" target="_blank" class="btn btn-sm btn-outline-primary py-0 px-2 me-1" title="View Article"><i class="bi bi-box-arrow-up-right"></i> View</a>
+                    <button class="btn btn-sm btn-light border py-0 px-2" onclick="showToast('Article editor opened for 7 Warning Signs Your Air Conditioner Needs Immediate Servicing', 'info');">Edit</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=80" class="rounded-3 object-fit-cover" width="46" height="46" alt="Thumb">
+                      <div>
+                        <strong class="d-block line-clamp-1">How Regular Plumbing AMC Prevents Catastrophic Water Seepage</strong>
+                        <span class="d-block text-muted smaller line-clamp-1">Hidden pipe joints erode silently inside walls. Discover how acoustic inspection catches leaks before walls peel and mold forms.</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-light text-dark border">Plumbing</span></td>
+                  <td>David Miller</td>
+                  <td>Oct 28, 2026</td>
+                  <td><strong>2,526</strong></td>
+                  <td><span class="badge-status active">Published</span></td>
+                  <td class="text-end">
+                    <a href="../blog-details-plumbing-tips.html" target="_blank" class="btn btn-sm btn-outline-primary py-0 px-2 me-1" title="View Article"><i class="bi bi-box-arrow-up-right"></i> View</a>
+                    <button class="btn btn-sm btn-light border py-0 px-2" onclick="showToast('Article editor opened for How Regular Plumbing AMC Prevents Catastrophic Water Seepage', 'info');">Edit</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80" class="rounded-3 object-fit-cover" width="46" height="46" alt="Thumb">
+                      <div>
+                        <strong class="d-block line-clamp-1">Electrical Safety Checklist: Protect Your High-Value Appliances</strong>
+                        <span class="d-block text-muted smaller line-clamp-1">Voltage fluctuations destroy delicate inverter boards in modern appliances. Here is how whole-house surge arrestors operate.</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-light text-dark border">Electrical Safety</span></td>
+                  <td>Robert Chen</td>
+                  <td>Oct 19, 2026</td>
+                  <td><strong>3,153</strong></td>
+                  <td><span class="badge-status active">Published</span></td>
+                  <td class="text-end">
+                    <a href="../blog-details-electrical-safety.html" target="_blank" class="btn btn-sm btn-outline-primary py-0 px-2 me-1" title="View Article"><i class="bi bi-box-arrow-up-right"></i> View</a>
+                    <button class="btn btn-sm btn-light border py-0 px-2" onclick="showToast('Article editor opened for Electrical Safety Checklist: Protect Your High-Value Appliances', 'info');">Edit</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" class="rounded-3 object-fit-cover" width="46" height="46" alt="Thumb">
+                      <div>
+                        <strong class="d-block line-clamp-1">The Complete Annual Home Maintenance Checklist for Modern Residential Properties</strong>
+                        <span class="d-block text-muted smaller line-clamp-1">Quarterly inspection workflows protect foundations, HVAC, breakers, and roof integrity. Download our 120-point property checklist.</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-light text-dark border">Home Maintenance</span></td>
+                  <td>Elena Rostova</td>
+                  <td>Oct 15, 2026</td>
+                  <td><strong>1,637</strong></td>
+                  <td><span class="badge-status active">Published</span></td>
+                  <td class="text-end">
+                    <a href="../blog-details-home-maintenance.html" target="_blank" class="btn btn-sm btn-outline-primary py-0 px-2 me-1" title="View Article"><i class="bi bi-box-arrow-up-right"></i> View</a>
+                    <button class="btn btn-sm btn-light border py-0 px-2" onclick="showToast('Article editor opened for The Complete Annual Home Maintenance Checklist for Modern Residential Properties', 'info');">Edit</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80" class="rounded-3 object-fit-cover" width="46" height="46" alt="Thumb">
+                      <div>
+                        <strong class="d-block line-clamp-1">Documented Maintenance Contracts Boost Your Property Resale Value</strong>
+                        <span class="d-block text-muted smaller line-clamp-1">Buyers pay up to 12% more for properties with documented digital maintenance logs and certified structural health reports.</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-light text-dark border">AMC Benefits</span></td>
+                  <td>Jonathan Vance</td>
+                  <td>Oct 11, 2026</td>
+                  <td><strong>1,811</strong></td>
+                  <td><span class="badge-status active">Published</span></td>
+                  <td class="text-end">
+                    <a href="../blog-details-property-value.html" target="_blank" class="btn btn-sm btn-outline-primary py-0 px-2 me-1" title="View Article"><i class="bi bi-box-arrow-up-right"></i> View</a>
+                    <button class="btn btn-sm btn-light border py-0 px-2" onclick="showToast('Article editor opened for Documented Maintenance Contracts Boost Your Property Resale Value', 'info');">Edit</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1200&q=80" class="rounded-3 object-fit-cover" width="46" height="46" alt="Thumb">
+                      <div>
+                        <strong class="d-block line-clamp-1">Professional Wall Painting & Moisture Barrier Finishing Guide</strong>
+                        <span class="d-block text-muted smaller line-clamp-1">Anti-fungal primers, elastomeric sealants, and precision topcoats defend walls from humidity, peeling, and hairline masonry cracks.</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-light text-dark border">Painting & Finishing</span></td>
+                  <td>Carlos Mendez</td>
+                  <td>Oct 05, 2026</td>
+                  <td><strong>1,972</strong></td>
+                  <td><span class="badge-status active">Published</span></td>
+                  <td class="text-end">
+                    <a href="../blog-details-painting-guide.html" target="_blank" class="btn btn-sm btn-outline-primary py-0 px-2 me-1" title="View Article"><i class="bi bi-box-arrow-up-right"></i> View</a>
+                    <button class="btn btn-sm btn-light border py-0 px-2" onclick="showToast('Article editor opened for Professional Wall Painting & Moisture Barrier Finishing Guide', 'info');">Edit</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80" class="rounded-3 object-fit-cover" width="46" height="46" alt="Thumb">
+                      <div>
+                        <strong class="d-block line-clamp-1">Residential Deep Cleaning: Transforming Indoor Air & Hygiene Quality</strong>
+                        <span class="d-block text-muted smaller line-clamp-1">HEPA vacuuming, hospital-grade steam disinfection, and micro-particle extraction eradicate deep dust mites and invisible allergens.</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-light text-dark border">Deep Cleaning</span></td>
+                  <td>Priya Sharma</td>
+                  <td>Sep 30, 2026</td>
+                  <td><strong>1,838</strong></td>
+                  <td><span class="badge-status active">Published</span></td>
+                  <td class="text-end">
+                    <a href="../blog-details-deep-cleaning.html" target="_blank" class="btn btn-sm btn-outline-primary py-0 px-2 me-1" title="View Article"><i class="bi bi-box-arrow-up-right"></i> View</a>
+                    <button class="btn btn-sm btn-light border py-0 px-2" onclick="showToast('Article editor opened for Residential Deep Cleaning: Transforming Indoor Air & Hygiene Quality', 'info');">Edit</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80" class="rounded-3 object-fit-cover" width="46" height="46" alt="Thumb">
+                      <div>
+                        <strong class="d-block line-clamp-1">The Real Math Behind AC Efficiency: Cut Your Power Bill by 25%</strong>
+                        <span class="d-block text-muted smaller line-clamp-1">A dirty cooling coil forces the compressor to draw 30% more electricity. Learn why regular chemical cleaning pays for itself.</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-light text-dark border">HVAC & Cooling</span></td>
+                  <td>Marcus Vance</td>
+                  <td>Sep 24, 2026</td>
+                  <td><strong>1,699</strong></td>
+                  <td><span class="badge-status active">Published</span></td>
+                  <td class="text-end">
+                    <a href="../blog-details-ac-efficiency.html" target="_blank" class="btn btn-sm btn-outline-primary py-0 px-2 me-1" title="View Article"><i class="bi bi-box-arrow-up-right"></i> View</a>
+                    <button class="btn btn-sm btn-light border py-0 px-2" onclick="showToast('Article editor opened for The Real Math Behind AC Efficiency: Cut Your Power Bill by 25%', 'info');">Edit</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="https://images.unsplash.com/photo-1542013936693-884638332954?auto=format&fit=crop&w=1200&q=80" class="rounded-3 object-fit-cover" width="46" height="46" alt="Thumb">
+                      <div>
+                        <strong class="d-block line-clamp-1">Why Your Rooftop Water Tank Needs Mechanized UV Scrubbing</strong>
+                        <span class="d-block text-muted smaller line-clamp-1">Sediment, biofilm, and algae accumulate inside domestic storage tanks. Understand our 6-stage clinical disinfection protocol.</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-light text-dark border">Plumbing & Hygiene</span></td>
+                  <td>David Miller</td>
+                  <td>Sep 18, 2026</td>
+                  <td><strong>2,153</strong></td>
+                  <td><span class="badge-status active">Published</span></td>
+                  <td class="text-end">
+                    <a href="../blog-details-water-tank.html" target="_blank" class="btn btn-sm btn-outline-primary py-0 px-2 me-1" title="View Article"><i class="bi bi-box-arrow-up-right"></i> View</a>
+                    <button class="btn btn-sm btn-light border py-0 px-2" onclick="showToast('Article editor opened for Why Your Rooftop Water Tank Needs Mechanized UV Scrubbing', 'info');">Edit</button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=80" class="rounded-3 object-fit-cover" width="46" height="46" alt="Thumb">
+                      <div>
+                        <strong class="d-block line-clamp-1">Essential Carpentry & Wooden Fixture Care to Prevent Termites and Warping</strong>
+                        <span class="d-block text-muted smaller line-clamp-1">Seasonal humidity changes warp solid doors and cabinets. Learn preventative oiling, alignment adjustments, and anti-termite seals.</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="badge bg-light text-dark border">Carpentry & Woodcare</span></td>
+                  <td>Arthur Pendelton</td>
+                  <td>Sep 12, 2026</td>
+                  <td><strong>2,388</strong></td>
+                  <td><span class="badge-status active">Published</span></td>
+                  <td class="text-end">
+                    <a href="../blog-details-carpentry-guide.html" target="_blank" class="btn btn-sm btn-outline-primary py-0 px-2 me-1" title="View Article"><i class="bi bi-box-arrow-up-right"></i> View</a>
+                    <button class="btn btn-sm btn-light border py-0 px-2" onclick="showToast('Article editor opened for Essential Carpentry & Wooden Fixture Care to Prevent Termites and Warping', 'info');">Edit</button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- New Blog Modal -->
+  <div class="modal fade" id="newBlogModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-4 border-0 p-3">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold">Create New Blog Article</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form onsubmit="event.preventDefault(); showToast('Article published to public blog!', 'success'); bootstrap.Modal.getInstance(document.getElementById('newBlogModal')).hide();">
+            <div class="mb-3">
+              <label class="form-label small fw-semibold">Article Title</label>
+              <input type="text" class="form-control form-control-hc" placeholder="e.g. 5 Energy Saving HVAC Hacks" required>
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-6">
+                <label class="form-label small fw-semibold">Category</label>
+                <select class="form-select form-control-hc">
+                  <option value="HVAC">HVAC & Cooling</option>
+                  <option value="Plumbing">Plumbing</option>
+                  <option value="Electrical">Electrical Safety</option>
+                  <option value="AMC">AMC Benefits</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label class="form-label small fw-semibold">Author</label>
+                <input type="text" class="form-control form-control-hc" value="Sarah Jenkins" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-semibold">Content Summary</label>
+              <textarea class="form-control form-control-hc" rows="4" placeholder="Write article content here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary-hc w-100 justify-content-center">Publish Article</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/validation.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+</body>
+</html>

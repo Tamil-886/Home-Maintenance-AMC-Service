@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Maintenance Service - HomeCarely</title>
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231068eb'><path d='M12 2L2 7v7c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z'/></svg>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+  <style>
+    .booking-card {
+      background: var(--card-bg, #ffffff);
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      transition: all 0.25s ease;
+    }
+    .booking-summary-card {
+      background: linear-gradient(135deg, rgba(16, 104, 235, 0.04) 0%, rgba(14, 165, 233, 0.08) 100%);
+      border: 1px solid rgba(16, 104, 235, 0.15);
+      border-radius: 1rem;
+    }
+    .summary-badge-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.65rem 0;
+      border-bottom: 1px dashed rgba(148, 163, 184, 0.25);
+    }
+    .summary-badge-item:last-child {
+      border-bottom: none;
+    }
+    .step-number {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: var(--primary, #1068eb);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-right: 0.6rem;
+    }
+    .form-section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-heading, #0f172a);
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+    [data-theme="dark"] .booking-card {
+      background: #111827;
+      border-color: #1e293b;
+    }
+    [data-theme="dark"] .booking-summary-card {
+      background: rgba(16, 104, 235, 0.08);
+      border-color: #1e293b;
+    }
+    [data-theme="dark"] .form-section-title {
+      color: #f8fafc;
+    }
+  </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement-bar py-2 text-white text-center small fw-medium" style="background: linear-gradient(90deg, #1068eb, #0ea5e9);">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-none d-md-flex align-items-center gap-3">
+        <span><i class="bi bi-clock-history me-1"></i> 24/7 Emergency Dispatch</span>
+        <span><i class="bi bi-telephone-fill me-1"></i> Priority Support: +1 (800) 555-0199</span>
+      </div>
+      <div class="mx-auto mx-md-0 d-flex align-items-center gap-2">
+        <span class="badge bg-white text-primary fw-bold">AMC 2026</span>
+        <span>Guaranteed 60-Minute Technician Arrival Guarantee</span>
+      </div>
+      <div class="d-none d-lg-flex align-items-center gap-3">
+        <a href="dashboard.html" class="text-white text-decoration-none hover-underline"><i class="bi bi-grid-1x2 me-1"></i> Customer Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Website Navbar -->
+  <header class="main-header sticky-top bg-white border-bottom shadow-sm">
+    <nav class="navbar navbar-expand-lg py-3 main-navbar">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-4 text-dark" href="../index.html">
+          <div class="brand-icon-box bg-primary text-white rounded-3 p-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;">
+            <i class="bi bi-shield-check fs-5"></i>
+          </div>
+          <span>HomeCare<span class="text-primary">ly</span></span>
+        </a>
+
+        <div class="d-flex align-items-center gap-2 order-lg-last">
+          <button class="theme-toggle-btn btn btn-light border btn-sm p-2 rounded-circle" id="themeToggleBtn" title="Toggle Theme" aria-label="Toggle Dark Mode">
+            <i class="bi bi-moon-stars-fill text-muted"></i>
+          </button>
+          <a href="dashboard.html" class="btn btn-outline-primary btn-sm px-3 d-none d-sm-inline-flex align-items-center gap-2">
+            <i class="bi bi-person-circle"></i> <span>Customer Portal</span>
+          </a>
+          <button class="navbar-toggler border-0 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarNav" aria-controls="mainNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="mainNavbarNav">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+            <li class="nav-item"><a class="nav-link px-3" href="../index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="../about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="../services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="../amc-plans.html">AMC Plans</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="../blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="../contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link px-3 nav-dashboard-link" href="dashboard.html">Dashboard</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Breadcrumb & Header -->
+  <section class="py-4 py-lg-5 bg-light-subtle border-bottom">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-2 small">
+          <li class="breadcrumb-item"><a href="../index.html" class="text-decoration-none">Home</a></li>
+          <li class="breadcrumb-item"><a href="../services.html" class="text-decoration-none">Services</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Book Service</li>
+        </ol>
+      </nav>
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-2">
+            <i class="bi bi-shield-fill-check me-1"></i> Dedicated Booking Portal
+          </span>
+          <h1 class="display-6 fw-bold text-dark mb-2">Book Your Maintenance Service</h1>
+          <p class="text-muted lead fs-6 mb-0">
+            Schedule certified technicians for preventive home maintenance, emergency fixes, and contract AMC inspections. Fast confirmation & guaranteed on-time arrival.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+          <div class="d-inline-flex align-items-center gap-2 px-3 py-2 bg-white rounded-3 border shadow-sm">
+            <i class="bi bi-clock text-success fs-4"></i>
+            <div class="text-start">
+              <span class="small d-block text-muted">Arrival Guarantee</span>
+              <strong class="text-dark small">Under 60 Minutes Available</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Booking Section -->
+  <main class="py-5 flex-grow-1">
+    <div class="container">
+      <div class="row g-4">
+        
+        <!-- Left: Booking Form -->
+        <div class="col-lg-8">
+          <div class="booking-card p-4 p-md-5">
+            <form id="dedicatedBookingForm" novalidate>
+              
+              <!-- Section 1: Customer Contact Information -->
+              <div class="mb-4 pb-3 border-bottom">
+                <div class="form-section-title">
+                  <span class="step-number">1</span>
+                  <span>Customer Contact Details</span>
+                </div>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="customerName" class="form-label fw-semibold">Customer Full Name <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-light text-muted"><i class="bi bi-person"></i></span>
+                      <input type="text" class="form-control" id="customerName" placeholder="e.g. Alexander Wright" required>
+                    </div>
+                    <div class="invalid-feedback">Please enter your full name.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="customerEmail" class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-light text-muted"><i class="bi bi-envelope"></i></span>
+                      <input type="email" class="form-control" id="customerEmail" placeholder="e.g. customer@example.com" required>
+                    </div>
+                    <div class="invalid-feedback">Please provide a valid email address.</div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <label for="customerPhone" class="form-label fw-semibold">Phone Number <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-light text-muted"><i class="bi bi-telephone"></i></span>
+                      <input type="tel" class="form-control" id="customerPhone" placeholder="e.g. +1 (555) 234-5678" required>
+                    </div>
+                    <div class="invalid-feedback">Please enter a valid contact phone number.</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section 2: Service & AMC Plan Selection -->
+              <div class="mb-4 pb-3 border-bottom">
+                <div class="form-section-title">
+                  <span class="step-number">2</span>
+                  <span>Select Maintenance Service & AMC Plan</span>
+                </div>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="selectService" class="form-label fw-semibold">Select Service <span class="text-danger">*</span></label>
+                    <select class="form-select" id="selectService" required>
+                      <option value="" disabled selected>-- Choose Maintenance Service --</option>
+                      <option value="Air Conditioning Maintenance" data-category="HVAC">Air Conditioning Maintenance</option>
+                      <option value="Plumbing Inspections & Leak Repair" data-category="Plumbing">Plumbing Inspections & Leak Repair</option>
+                      <option value="Electrical Care & Circuit Diagnostics" data-category="Electrical">Electrical Care & Circuit Diagnostics</option>
+                      <option value="Deep Home Cleaning & Sanitization" data-category="Cleaning">Deep Home Cleaning & Sanitization</option>
+                      <option value="Pest & Termite Control" data-category="Inspection">Pest & Termite Control</option>
+                      <option value="General Residential Home Inspection" data-category="Inspection">General Residential Home Inspection</option>
+                      <option value="Carpentry & Furniture Repair" data-category="General">Carpentry & Furniture Repair</option>
+                      <option value="Professional Painting & Wall Finishing" data-category="General">Professional Painting & Wall Finishing</option>
+                      <option value="Home Appliance Repair & Servicing" data-category="General">Home Appliance Repair & Servicing</option>
+                      <option value="Water Tank & Overhead Reservoir Cleaning" data-category="Cleaning">Water Tank & Overhead Reservoir Cleaning</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a service.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="selectAmcPlan" class="form-label fw-semibold">Select AMC Plan <span class="text-muted fw-normal">(Optional)</span></label>
+                    <select class="form-select" id="selectAmcPlan">
+                      <option value="None / Pay-Per-Visit" selected>None / Pay-Per-Visit (Demo Visit)</option>
+                      <option value="Essential Care Plan ($199/yr)">Essential Care Plan (1 Included Visit)</option>
+                      <option value="Standard Protection Plan ($349/yr)">Standard Protection Plan (2 Included Visits)</option>
+                      <option value="Premium Comprehensive AMC ($599/yr)">Premium Comprehensive AMC (Active Plan)</option>
+                      <option value="Enterprise Villa Care ($999/yr)">Enterprise Villa Care (Unlimited Priority)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section 3: Schedule, Time & Property Address -->
+              <div class="mb-4 pb-3 border-bottom">
+                <div class="form-section-title">
+                  <span class="step-number">3</span>
+                  <span>Preferred Schedule & Property Address</span>
+                </div>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="bookingDate" class="form-label fw-semibold">Preferred Booking Date <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-light text-muted"><i class="bi bi-calendar-event"></i></span>
+                      <input type="date" class="form-control" id="bookingDate" required>
+                    </div>
+                    <div class="invalid-feedback">Please select a valid future date.</div>
+                    <small class="text-muted">Past dates are automatically disabled.</small>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="bookingTimeSlot" class="form-label fw-semibold">Preferred Time Slot <span class="text-danger">*</span></label>
+                    <select class="form-select" id="bookingTimeSlot" required>
+                      <option value="" disabled selected>-- Select Arrival Window --</option>
+                      <option value="08:00 AM - 10:00 AM">08:00 AM - 10:00 AM (Early Morning)</option>
+                      <option value="10:00 AM - 12:00 PM">10:00 AM - 12:00 PM (Morning Priority)</option>
+                      <option value="01:00 PM - 03:00 PM">01:00 PM - 03:00 PM (Afternoon)</option>
+                      <option value="03:00 PM - 05:00 PM">03:00 PM - 05:00 PM (Late Afternoon)</option>
+                      <option value="05:00 PM - 07:00 PM">05:00 PM - 07:00 PM (Evening Express)</option>
+                    </select>
+                    <div class="invalid-feedback">Please choose a preferred time slot.</div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <label for="propertyAddress" class="form-label fw-semibold">Property Address <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-light text-muted"><i class="bi bi-geo-alt"></i></span>
+                      <input type="text" class="form-control" id="propertyAddress" placeholder="e.g. 742 Evergreen Terrace, Springfield, IL 62704" required>
+                    </div>
+                    <div class="invalid-feedback">Please specify your property location address.</div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <label for="additionalInstructions" class="form-label fw-semibold">Additional Instructions <span class="text-muted fw-normal">(Optional)</span></label>
+                    <textarea class="form-control" id="additionalInstructions" rows="3" placeholder="Provide any details: specific noise/leak symptom, gate access codes, pet warnings, parking notes, or preferred technician..."></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Form Buttons -->
+              <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-2">
+                <a href="dashboard.html" class="btn btn-outline-secondary px-4 py-2" id="btnCancelBooking">
+                  <i class="bi bi-x-circle me-1"></i> Cancel / Back
+                </a>
+                <button type="submit" class="btn btn-primary px-5 py-2 fw-semibold d-inline-flex align-items-center gap-2" id="btnSubmitBooking">
+                  <i class="bi bi-calendar2-check-fill"></i>
+                  <span>Submit Booking</span>
+                </button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <!-- Right: Live Booking Summary & Guarantee Sidebar -->
+        <div class="col-lg-4">
+          <div class="sticky-top" style="top: 100px;">
+            <div class="booking-summary-card p-4 mb-4">
+              <h5 class="fw-bold text-dark d-flex align-items-center gap-2 mb-3">
+                <i class="bi bi-receipt-cutoff text-primary"></i>
+                <span>Booking Summary</span>
+              </h5>
+              
+              <div class="summary-badge-item">
+                <span class="text-muted small">Service:</span>
+                <span class="fw-bold text-dark text-end small" id="sumService">Select a service</span>
+              </div>
+
+              <div class="summary-badge-item">
+                <span class="text-muted small">AMC Plan:</span>
+                <span class="fw-semibold text-primary text-end small" id="sumAmcPlan">None / Pay-Per-Visit</span>
+              </div>
+
+              <div class="summary-badge-item">
+                <span class="text-muted small">Booking Date:</span>
+                <span class="fw-semibold text-dark text-end small" id="sumDate">Not scheduled yet</span>
+              </div>
+
+              <div class="summary-badge-item">
+                <span class="text-muted small">Time Slot:</span>
+                <span class="fw-semibold text-dark text-end small" id="sumTimeSlot">Not selected</span>
+              </div>
+
+              <div class="summary-badge-item">
+                <span class="text-muted small">Property Location:</span>
+                <span class="fw-semibold text-dark text-end small text-truncate" style="max-width: 170px;" id="sumAddress">Pending address</span>
+              </div>
+
+              <div class="summary-badge-item">
+                <span class="text-muted small">Visit Fee:</span>
+                <span class="badge bg-success-subtle text-success fw-bold px-2 py-1" id="sumCost">Included in AMC ($0)</span>
+              </div>
+
+              <div class="mt-4 p-3 bg-white rounded-3 border">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <i class="bi bi-patch-check-fill text-primary fs-5"></i>
+                  <span class="fw-bold small text-dark">HomeCarely Guarantee</span>
+                </div>
+                <ul class="list-unstyled mb-0 small text-muted">
+                  <li class="mb-1"><i class="bi bi-check2 text-success me-1"></i> Background-verified master technicians</li>
+                  <li class="mb-1"><i class="bi bi-check2 text-success me-1"></i> 30-day post-service warranty</li>
+                  <li><i class="bi bi-check2 text-success me-1"></i> Transparent digital report & receipt</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Need Emergency Help Card -->
+            <div class="card border-0 bg-primary text-white p-4 rounded-4 shadow-sm">
+              <div class="d-flex align-items-center gap-3 mb-2">
+                <div class="rounded-circle bg-white text-primary p-2 d-flex align-items-center justify-content-center" style="width: 44px; height: 44px;">
+                  <i class="bi bi-telephone-inbound-fill fs-5"></i>
+                </div>
+                <div>
+                  <h6 class="mb-0 fw-bold">Emergency Repair?</h6>
+                  <small class="text-white-50">Active water leak or power hazard</small>
+                </div>
+              </div>
+              <p class="small text-white-50 mb-3">Skip scheduling for active domestic emergencies. Call our rapid hotline directly for 30-min urgent dispatch.</p>
+              <a href="tel:+18005550199" class="btn btn-light text-primary fw-bold w-100 btn-sm py-2">
+                <i class="bi bi-telephone-fill me-1"></i> Call +1 (800) 555-0199
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Confirmation Modal -->
+  <div class="modal fade" id="bookingSuccessModal" tabindex="-1" aria-labelledby="bookingSuccessModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+        <div class="modal-header bg-success text-white py-3 border-0">
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-check-circle-fill fs-4"></i>
+            <h5 class="modal-title fw-bold mb-0" id="bookingSuccessModalLabel">Booking Confirmed</h5>
+          </div>
+        </div>
+        <div class="modal-body p-4 p-md-5">
+          <div class="text-center mb-4">
+            <div class="d-inline-flex align-items-center justify-content-center bg-success-subtle text-success rounded-circle mb-3" style="width: 72px; height: 72px;">
+              <i class="bi bi-check-lg display-5 fw-bold"></i>
+            </div>
+            <h3 class="fw-bold text-dark mb-1">Booking Successful!</h3>
+            <p class="lead text-muted fs-6 mb-0">Your booking has been successfully submitted!</p>
+          </div>
+
+          <!-- Summary Box Required by User -->
+          <div class="card border rounded-3 p-3 p-md-4 mb-4 bg-light-subtle">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <span class="text-muted small d-block mb-1">Booking Reference ID</span>
+                <span class="badge bg-primary text-white fs-6 fw-bold px-3 py-2" id="confirmRefId">HC-2026-000000</span>
+              </div>
+              <div class="col-sm-6">
+                <span class="text-muted small d-block mb-1">Booking Status</span>
+                <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 fw-semibold fs-6">
+                  <i class="bi bi-check-circle-fill me-1"></i> Confirmed (Demo)
+                </span>
+              </div>
+              <div class="col-sm-6 border-top pt-2">
+                <span class="text-muted small d-block">Customer Name</span>
+                <strong class="text-dark" id="confirmCustomerName">-</strong>
+              </div>
+              <div class="col-sm-6 border-top pt-2">
+                <span class="text-muted small d-block">Selected Service</span>
+                <strong class="text-dark" id="confirmService">-</strong>
+              </div>
+              <div class="col-sm-6 border-top pt-2">
+                <span class="text-muted small d-block">Booking Date</span>
+                <strong class="text-dark" id="confirmDate">-</strong>
+              </div>
+              <div class="col-sm-6 border-top pt-2">
+                <span class="text-muted small d-block">Preferred Time</span>
+                <strong class="text-dark" id="confirmTimeSlot">-</strong>
+              </div>
+              <div class="col-12 border-top pt-2">
+                <span class="text-muted small d-block">Property Address</span>
+                <span class="text-dark" id="confirmAddress">-</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal Action Buttons -->
+          <div class="d-flex flex-wrap align-items-center justify-content-center gap-3">
+            <a href="bookings.html" class="btn btn-primary px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2">
+              <i class="bi bi-calendar2-check-fill"></i>
+              <span>View My Bookings</span>
+            </a>
+            <button type="button" class="btn btn-outline-secondary px-4 py-2" id="btnBookAnother">
+              <i class="bi bi-plus-circle me-1"></i> Book Another Service
+            </button>
+            <a href="dashboard.html" class="btn btn-outline-primary px-4 py-2">
+              <i class="bi bi-grid-1x2-fill me-1"></i> Go to Dashboard
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Website High-Contrast Footer -->
+  <footer class="main-footer mt-auto">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Col 1: Brand & Bio -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand mb-3">
+            <h4 class="d-flex align-items-center gap-2">
+              <i class="bi bi-shield-check text-primary fs-3"></i>
+              <span>HomeCare<span class="text-primary">ly</span></span>
+            </h4>
+            <p class="pe-lg-4">
+              HomeCarely is your premier annual home maintenance partner. Certified technicians, guaranteed response windows, and round-the-clock emergency support for modern residences.
+            </p>
+          </div>
+          <div class="d-flex gap-2">
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle" style="width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center;" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle" style="width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center;" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle" style="width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center;" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="btn btn-sm btn-outline-light rounded-circle" style="width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center;" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-widget-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="../index.html"><i class="bi bi-chevron-right small text-primary"></i> Home Overview</a></li>
+            <li><a href="../about.html"><i class="bi bi-chevron-right small text-primary"></i> About Company</a></li>
+            <li><a href="../amc-plans.html"><i class="bi bi-chevron-right small text-primary"></i> AMC Plans</a></li>
+            <li><a href="../pricing.html"><i class="bi bi-chevron-right small text-primary"></i> Pricing Guide</a></li>
+            <li><a href="../blog.html"><i class="bi bi-chevron-right small text-primary"></i> Latest Articles</a></li>
+            <li><a href="../contact.html"><i class="bi bi-chevron-right small text-primary"></i> Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: AMC Services -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-widget-title">AMC Services</h5>
+          <ul class="footer-links">
+            <li><a href="../service-details.html?service=ac"><i class="bi bi-chevron-right small text-primary"></i> Air Conditioning Maintenance</a></li>
+            <li><a href="../service-details.html?service=plumbing"><i class="bi bi-chevron-right small text-primary"></i> Plumbing Inspections</a></li>
+            <li><a href="../service-details.html?service=electrical"><i class="bi bi-chevron-right small text-primary"></i> Electrical & Breaker Care</a></li>
+            <li><a href="../service-details.html?service=cleaning"><i class="bi bi-chevron-right small text-primary"></i> Deep Home Sanitization</a></li>
+            <li><a href="../service-details.html?service=pest"><i class="bi bi-chevron-right small text-primary"></i> Pest & Termite Control</a></li>
+            <li><a href="../services.html"><i class="bi bi-arrow-right small text-primary"></i> View All 10 Services</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter & Contact Info -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-widget-title">Newsletter & Offers</h5>
+          <p>Subscribe for seasonal maintenance tips and exclusive AMC renewal discounts.</p>
+          <form class="mb-3" onsubmit="event.preventDefault(); alert('Thank you for subscribing to HomeCarely AMC updates!');">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Your email address" required aria-label="Email address">
+              <button class="btn btn-primary" type="submit" aria-label="Subscribe"><i class="bi bi-send-fill"></i></button>
+            </div>
+          </form>
+          <div class="d-flex flex-column gap-1 small text-muted">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-telephone-fill text-primary"></i>
+              <span>+1 (800) 555-0199</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-envelope-fill text-primary"></i>
+              <span>support@homecarely.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <p class="mb-0">&copy; 2026 HomeCarely AMC Services Ltd. All Rights Reserved.</p>
+        <div class="d-flex gap-3">
+          <a href="../faq.html">Privacy Policy</a>
+          <span>&bull;</span>
+          <a href="../faq.html">Terms of Service</a>
+          <span>&bull;</span>
+          <a href="../faq.html">AMC Agreement</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/booking.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // 1. Min Date: Prevent Past Dates
+      const dateInput = document.getElementById('bookingDate');
+      const todayStr = new Date().toISOString().split('T')[0];
+      if (dateInput) {
+        dateInput.min = todayStr;
+      }
+
+      // 2. Pre-fill customer details if logged in
+      const user = window.HomeCarelyAuth ? window.HomeCarelyAuth.getCurrentUser() : null;
+      if (user) {
+        if (user.name) document.getElementById('customerName').value = user.name;
+        if (user.email) document.getElementById('customerEmail').value = user.email;
+        if (user.phone) document.getElementById('customerPhone').value = user.phone;
+      } else {
+        // Sample default prefill for pleasant demo experience
+        const nameField = document.getElementById('customerName');
+        const emailField = document.getElementById('customerEmail');
+        const phoneField = document.getElementById('customerPhone');
+        const addressField = document.getElementById('propertyAddress');
+        if (nameField && !nameField.value) nameField.value = 'Alexander Wright';
+        if (emailField && !emailField.value) emailField.value = 'alex.wright@example.com';
+        if (phoneField && !phoneField.value) phoneField.value = '+1 (555) 392-8174';
+        if (addressField && !addressField.value) addressField.value = '742 Evergreen Terrace, Springfield, IL 62704';
+      }
+
+      // 3. Handle URL parameters (e.g. ?service=Air+Conditioning+Maintenance or ?plan=Premium)
+      const urlParams = new URLSearchParams(window.location.search);
+      const paramService = urlParams.get('service');
+      const paramPlan = urlParams.get('plan');
+
+      const selectService = document.getElementById('selectService');
+      if (paramService && selectService) {
+        for (let option of selectService.options) {
+          if (option.value.toLowerCase().includes(paramService.toLowerCase())) {
+            option.selected = true;
+            break;
+          }
+        }
+      }
+
+      const selectAmcPlan = document.getElementById('selectAmcPlan');
+      if (paramPlan && selectAmcPlan) {
+        for (let option of selectAmcPlan.options) {
+          if (option.value.toLowerCase().includes(paramPlan.toLowerCase())) {
+            option.selected = true;
+            break;
+          }
+        }
+      }
+
+      // 4. Live Booking Summary Updates
+      function updateLiveSummary() {
+        const sVal = selectService.value || 'Select a service';
+        document.getElementById('sumService').textContent = sVal;
+
+        const pVal = selectAmcPlan.value || 'None / Pay-Per-Visit';
+        document.getElementById('sumAmcPlan').textContent = pVal;
+
+        const dVal = dateInput.value;
+        if (dVal) {
+          const parts = dVal.split('-');
+          const dObj = new Date(parts[0], parts[1] - 1, parts[2]);
+          document.getElementById('sumDate').textContent = dObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        } else {
+          document.getElementById('sumDate').textContent = 'Not scheduled yet';
+        }
+
+        const tVal = document.getElementById('bookingTimeSlot').value || 'Not selected';
+        document.getElementById('sumTimeSlot').textContent = tVal;
+
+        const aVal = document.getElementById('propertyAddress').value || 'Pending address';
+        document.getElementById('sumAddress').textContent = aVal;
+      }
+
+      ['change', 'input'].forEach(evt => {
+        selectService.addEventListener(evt, updateLiveSummary);
+        selectAmcPlan.addEventListener(evt, updateLiveSummary);
+        dateInput.addEventListener(evt, updateLiveSummary);
+        document.getElementById('bookingTimeSlot').addEventListener(evt, updateLiveSummary);
+        document.getElementById('propertyAddress').addEventListener(evt, updateLiveSummary);
+      });
+      updateLiveSummary();
+
+      // 5. Form Submission & Validation
+      const form = document.getElementById('dedicatedBookingForm');
+      const successModalEl = document.getElementById('bookingSuccessModal');
+      const successModal = new bootstrap.Modal(successModalEl);
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (!form.checkValidity()) {
+          form.classList.add('was-validated');
+          return;
+        }
+
+        const customerName = document.getElementById('customerName').value.trim();
+        const customerEmail = document.getElementById('customerEmail').value.trim();
+        const customerPhone = document.getElementById('customerPhone').value.trim();
+        const service = selectService.value;
+        const selectedOption = selectService.options[selectService.selectedIndex];
+        const serviceCategory = selectedOption ? selectedOption.getAttribute('data-category') || 'General' : 'General';
+        const amcPlan = selectAmcPlan.value;
+        const date = dateInput.value;
+        const timeSlot = document.getElementById('bookingTimeSlot').value;
+        const address = document.getElementById('propertyAddress').value.trim();
+        const instructions = document.getElementById('additionalInstructions').value.trim();
+
+        // Generate unique reference number: HC-2026-XXXXXX
+        const refNum = 'HC-2026-' + Math.floor(100000 + Math.random() * 900000);
+
+        // Store into localStorage via window.HomeCarelyBooking or fallback
+        const bookingRecord = {
+          id: refNum,
+          customerName: customerName,
+          customerEmail: customerEmail,
+          customerPhone: customerPhone,
+          service: service,
+          serviceCategory: serviceCategory,
+          amcPlan: amcPlan,
+          date: date,
+          timeSlot: timeSlot,
+          address: address,
+          notes: instructions,
+          status: 'Confirmed',
+          createdAt: new Date().toISOString()
+        };
+
+        if (window.HomeCarelyBooking && typeof window.HomeCarelyBooking.createBooking === 'function') {
+          window.HomeCarelyBooking.createBooking(bookingRecord);
+        } else {
+          const stored = JSON.parse(localStorage.getItem('homecarely_bookings') || '[]');
+          stored.unshift(bookingRecord);
+          localStorage.setItem('homecarely_bookings', JSON.stringify(stored));
+        }
+
+        // Populate Confirmation Modal Details
+        document.getElementById('confirmRefId').textContent = refNum;
+        document.getElementById('confirmCustomerName').textContent = customerName;
+        document.getElementById('confirmService').textContent = service;
+        
+        const parts = date.split('-');
+        const dateFormatted = new Date(parts[0], parts[1] - 1, parts[2]).toLocaleDateString('en-US', {
+          weekday: 'short', month: 'short', day: 'numeric', year: 'numeric'
+        });
+        document.getElementById('confirmDate').textContent = dateFormatted;
+        document.getElementById('confirmTimeSlot').textContent = timeSlot;
+        document.getElementById('confirmAddress').textContent = address;
+
+        // Show Modal
+        successModal.show();
+      });
+
+      // 6. Book Another Service Handler
+      document.getElementById('btnBookAnother').addEventListener('click', function () {
+        successModal.hide();
+        form.reset();
+        form.classList.remove('was-validated');
+        updateLiveSummary();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Details - HomeCarely AMC Services</title>
+  <meta name="description" content="In-depth service specifications, checklists, pricing, and AMC coverage details for home air conditioning, plumbing, electrical, and sanitization services.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231068eb'><path d='M12 2L2 7v7c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z'/></svg>">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Main Navigation -->
+  <nav class="navbar navbar-expand-xl main-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="index.html">
+        <div class="brand-icon"><i class="bi bi-shield-check"></i></div>
+        <span>HomeCare<span class="text-primary">ly</span></span>
+      </a>
+
+      <!-- Mobile Right Controls (RTL + Theme) -->
+      <div class="d-flex align-items-center gap-2 d-xl-none ms-auto me-2">
+        <button class="btn btn-sm btn-outline-hc dir-toggle-btn py-1 px-2" title="Toggle RTL / LTR layout" aria-label="Toggle RTL / LTR">
+          <i class="bi bi-globe me-1 text-primary"></i><span class="dir-toggle-text">RTL</span>
+        </button>
+        <button class="btn btn-sm btn-icon-pill theme-toggle-btn" aria-label="Toggle Theme">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+      </div>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown">Home</a>
+            <ul class="dropdown-menu dropdown-menu-custom">
+              <li><a class="dropdown-item " href="index.html"><i class="bi bi-house-door"></i> Home Page 1 (General AMC)</a></li>
+              <li><a class="dropdown-item " href="home-2.html"><i class="bi bi-building"></i> Home Page 2 (Express Service)</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="amc-plans.html">AMC Plans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-dashboard-link" href="customer/dashboard.html">Dashboard</a>
+          </li>
+        </ul>
+
+        <!-- Action Buttons -->
+        <div class="d-flex align-items-center gap-2">
+          <!-- RTL Direction Switcher -->
+          <button class="btn btn-sm btn-outline-hc dir-toggle-btn py-2 px-3 small d-none d-xl-inline-flex align-items-center" title="Toggle RTL / LTR layout">
+            <i class="bi bi-globe me-1 text-primary"></i> <span class="dir-toggle-text">RTL</span>
+          </button>
+          
+          <!-- Theme Toggle -->
+          <button class="btn btn-icon-pill theme-toggle-btn d-none d-xl-inline-flex" title="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+
+          <!-- Login / Logout Link (Based on Auth Status) -->
+          <a href="auth/login.html" class="btn btn-outline-hc py-2 px-3 small nav-auth-btn" id="navAuthBtn">
+            <i class="bi bi-person-circle me-1"></i> <span class="nav-auth-text">Log In</span>
+          </a>
+
+          <!-- Book AMC CTA Button -->
+          <a href="customer/booking.html" class="btn btn-primary-hc py-2 px-4 small">
+            Book AMC <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Banner -->
+  <section class="page-banner page-banner-service-details">
+    <div class="container text-center position-relative" style="z-index: 2;">
+      <h1 class="page-banner-title" id="serviceHeroTitle">Air Conditioning Maintenance</h1>
+      <ul class="hc-breadcrumb justify-content-center">
+        <li><a href="index.html">Home</a></li>
+        <li><i class="bi bi-chevron-right"></i></li>
+        <li><a href="services.html">Services</a></li>
+        <li><i class="bi bi-chevron-right"></i></li>
+        <li class="text-white-50" id="serviceBreadcrumb">AC Maintenance</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Service Details Content -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row g-5">
+        
+        <!-- Left Main Content Column -->
+        <div class="col-lg-8">
+          <div class="mb-4 rounded-4 overflow-hidden shadow-sm" style="max-height: 420px;">
+            <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1200&q=80" id="serviceMainImage" class="w-100 h-100 object-fit-cover" alt="Service Photo">
+          </div>
+
+          <div class="badge-pill-soft mb-3" id="serviceCategoryBadge">
+            <i class="bi bi-snow"></i> HVAC & Cooling Systems
+          </div>
+
+          <h2 class="fw-bold mb-3" id="serviceHeadline">Precision Preventive Air Conditioning Maintenance</h2>
+          <p class="text-secondary lead fs-6 mb-4" id="serviceLeadParagraph">
+            Keep your residence cool, clean, and energy-efficient. Our certified HVAC master technicians carry out high-pressure jet pump wash, compressor diagnostics, and duct sanitization to extend equipment lifespan by 40%.
+          </p>
+
+          <!-- Key Scope Checklist -->
+          <div class="card border-0 shadow-sm p-4 rounded-4 mb-4 bg-light">
+            <h4 class="fw-bold mb-3"><i class="bi bi-clipboard2-check-fill text-primary me-2"></i> What Is Included in Every AMC Visit:</h4>
+            <div class="row g-3" id="serviceScopeList">
+              <div class="col-md-6">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                  <span class="small fw-semibold">Indoor evaporator coil antibacterial foam cleaning</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                  <span class="small fw-semibold">Outdoor condenser jet pump pressure wash</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                  <span class="small fw-semibold">R410A / R32 refrigerant pressure & gas leak test</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                  <span class="small fw-semibold">Drainage pipe flush to prevent indoor water dripping</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                  <span class="small fw-semibold">Compressor amperage draw & capacitor audit</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                  <span class="small fw-semibold">Thermostat accuracy calibration & digital log report</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4-Step Technical Workflow -->
+          <h4 class="fw-bold mb-3 mt-5">Step-by-Step Maintenance Workflow</h4>
+          <div class="row g-3 mb-5">
+            <div class="col-md-3">
+              <div class="p-3 border rounded-3 bg-white text-center h-100">
+                <span class="badge bg-primary rounded-circle mb-2" style="width:32px;height:32px;line-height:22px;">1</span>
+                <h6 class="fw-bold small mb-1">Pre-Check</h6>
+                <p class="text-muted smaller mb-0" style="font-size:0.75rem;">Temperature drop & amp readings logged</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="p-3 border rounded-3 bg-white text-center h-100">
+                <span class="badge bg-primary rounded-circle mb-2" style="width:32px;height:32px;line-height:22px;">2</span>
+                <h6 class="fw-bold small mb-1">Jet Wash</h6>
+                <p class="text-muted smaller mb-0" style="font-size:0.75rem;">Coil chemical scrub & drain flushing</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="p-3 border rounded-3 bg-white text-center h-100">
+                <span class="badge bg-primary rounded-circle mb-2" style="width:32px;height:32px;line-height:22px;">3</span>
+                <h6 class="fw-bold small mb-1">Electrical Audit</h6>
+                <p class="text-muted smaller mb-0" style="font-size:0.75rem;">Capacitor test & wire tightness verification</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="p-3 border rounded-3 bg-white text-center h-100">
+                <span class="badge bg-primary rounded-circle mb-2" style="width:32px;height:32px;line-height:22px;">4</span>
+                <h6 class="fw-bold small mb-1">Digital Signoff</h6>
+                <p class="text-muted smaller mb-0" style="font-size:0.75rem;">Service report emailed with photos</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Specific FAQ Accordion -->
+          <h4 class="fw-bold mb-3">Frequently Asked Questions</h4>
+          <div class="accordion mb-4" id="serviceFaqAccordion">
+            <div class="accordion-item border rounded-3 mb-2">
+              <h2 class="accordion-header">
+                <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#sfaq1">
+                  How often should residential AC units be serviced?
+                </button>
+              </h2>
+              <div id="sfaq1" class="accordion-collapse collapse show" data-bs-parent="#serviceFaqAccordion">
+                <div class="accordion-body text-secondary small">
+                  In hot and dusty climates, residential units require chemical coil servicing at least once every 3 to 4 months. Our Standard and Premium AMC packages schedule these automatically so you never have to remember.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border rounded-3 mb-2">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#sfaq2">
+                  Are replacement spare parts covered under AMC contracts?
+                </button>
+              </h2>
+              <div id="sfaq2" class="accordion-collapse collapse" data-bs-parent="#serviceFaqAccordion">
+                <div class="accordion-body text-secondary small">
+                  All labor, diagnostics, and routine chemical consumables are 100% free under your AMC. When major hardware parts like capacitors, fan motors, or compressors need replacement, AMC members receive an exclusive 15% to 30% discount on genuine manufacturer parts.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border rounded-3 mb-2">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#sfaq3">
+                  What if my AC stops cooling on a weekend?
+                </button>
+              </h2>
+              <div id="sfaq3" class="accordion-collapse collapse" data-bs-parent="#serviceFaqAccordion">
+                <div class="accordion-body text-secondary small">
+                  Our emergency dispatch operates 24/7/365. AMC subscribers have priority dispatch queue status with technician arrival within 60 minutes.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Sticky Sidebar Column -->
+        <div class="col-lg-4">
+          <!-- Quick Booking Card -->
+          <div class="card border-0 shadow-lg p-4 rounded-4 mb-4 bg-white sticky-top" style="top: 100px;">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge-tag bg-success-subtle text-success">AMC Free / One-Off $59</span>
+              <div class="rating-stars mb-0 small">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+
+            <h4 class="fw-bold mb-2">Book This Service</h4>
+            <p class="text-muted small mb-4">Book a single standalone visit or sign up for an AMC contract for unlimited protection.</p>
+
+            <a href="customer/booking.html?service=Air%20Conditioning%20Maintenance" id="scheduleServiceBtn" class="btn btn-primary-hc w-100 justify-content-center mb-3">
+              Schedule Maintenance Visit <i class="bi bi-arrow-right"></i>
+            </a>
+
+            <a href="amc-plans.html" class="btn btn-outline-hc w-100 justify-content-center mb-4">
+              <i class="bi bi-shield-check text-primary"></i> Get Free with AMC Plan
+            </a>
+
+            <!-- Other Services List -->
+            <h6 class="fw-bold mb-3 pt-3 border-top">Switch Service View</h6>
+            <div class="d-flex flex-column gap-2">
+              <a href="service-details.html?service=ac" class="btn btn-sm text-start btn-light border py-2"><i class="bi bi-snow text-primary me-2"></i> Air Conditioning Maintenance</a>
+              <a href="service-details.html?service=plumbing" class="btn btn-sm text-start btn-light border py-2"><i class="bi bi-droplet text-info me-2"></i> Plumbing Services</a>
+              <a href="service-details.html?service=electrical" class="btn btn-sm text-start btn-light border py-2"><i class="bi bi-lightning text-warning me-2"></i> Electrical Maintenance</a>
+              <a href="service-details.html?service=cleaning" class="btn btn-sm text-start btn-light border py-2"><i class="bi bi-stars text-success me-2"></i> Deep Home Cleaning</a>
+              <a href="service-details.html?service=pest" class="btn btn-sm text-start btn-light border py-2"><i class="bi bi-bug text-danger me-2"></i> Pest Control Service</a>
+              <a href="services.html" class="btn btn-sm text-start text-primary fw-semibold pt-2"><i class="bi bi-arrow-right-circle me-1"></i> View All 10 Services</a>
+            </div>
+
+            <!-- Emergency Hotline Card -->
+            <div class="p-3 bg-dark text-white rounded-3 mt-4 text-center">
+              <i class="bi bi-headset fs-2 text-primary"></i>
+              <h6 class="fw-bold text-white mt-1 mb-1">Need Urgent Help?</h6>
+              <p class="small text-white-50 mb-2">Speak directly with our on-duty HVAC engineer</p>
+              <a href="tel:+18005550199" class="btn btn-sm btn-outline-light rounded-pill px-3">+1 (800) 555-0199</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- URL Param Dynamic Service Switcher Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const serviceKey = urlParams.get('service') || 'ac';
+
+      const serviceData = {
+        ac: {
+          title: 'Air Conditioning Maintenance',
+          category: 'HVAC & Cooling Systems',
+          image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1200&q=80',
+          headline: 'Precision Preventive Air Conditioning Maintenance',
+          lead: 'Keep your residence cool, clean, and energy-efficient. Our certified HVAC master technicians carry out high-pressure jet pump wash, compressor diagnostics, and duct sanitization to extend equipment lifespan by 40%.'
+        },
+        plumbing: {
+          title: 'Plumbing Services & Leak Inspection',
+          category: 'Plumbing & Hydraulic Care',
+          image: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=80',
+          headline: 'Comprehensive Residential Plumbing Overhauls',
+          lead: 'From acoustic pipe leak detection to geyser descaling and mainline drain pressure flushing, our master licensed plumbers ensure seamless water delivery with zero leak seepage.'
+        },
+        electrical: {
+          title: 'Electrical Maintenance & Circuit Safety',
+          category: 'Electrical & Earthing Safety',
+          image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80',
+          headline: 'Full Electrical Load Balancing & Surge Protection',
+          lead: 'Prevent electrical fires and protect expensive smart home appliances. We inspect breaker panels with thermal infrared imaging, verify earth resistance, and eliminate short-circuit hazards.'
+        },
+        cleaning: {
+          title: 'Deep Home Cleaning & Sanitization',
+          category: 'Deep Cleaning & Sanitization',
+          image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
+          headline: 'Intensive Single-Day Home Sanitization',
+          lead: 'Hospital-grade sanitization, floor scrubbing, kitchen degreasing, bathroom descaling, and high-temperature steam upholstery extraction for healthy family living.'
+        },
+        pest: {
+          title: 'Pest Control & Termite Prevention',
+          category: 'Pest Eradication',
+          image: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=80',
+          headline: 'Odorless Eco-Safe Pest & Termite Eradication',
+          lead: 'Safe for children and pets. Micro-gel baiting, wall barrier spraying, and seasonal termite warranties with complete re-service protection.'
+        },
+        painting: {
+          title: 'Painting & Wall Maintenance',
+          category: 'Wall Care & Emulsion Finishes',
+          image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1200&q=80',
+          headline: 'Premium Interior & Exterior Wall Restoration',
+          lead: 'Wall plaster touchups, moisture meter damp curing, waterproof anti-fungal coatings, crack sealing, and premium odorless emulsion paint finishes.'
+        },
+        carpentry: {
+          title: 'Carpentry & Woodwork Services',
+          category: 'Carpentry & Architectural Fitting',
+          image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1200&q=80',
+          headline: 'Precision Woodwork, Door & Lock Fitting',
+          lead: 'Hydraulic hinge alignment, smart biometric lock installations, modular kitchen cabinetry repairs, and structural timber reinforcement.'
+        },
+        appliance: {
+          title: 'Home Appliance Repair & Maintenance',
+          category: 'Electrical & Appliance Care',
+          image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80',
+          headline: 'Certified Inverter & Domestic Appliance Diagnostics',
+          lead: 'Expert diagnosis and genuine manufacturer spare parts for washing machines, inverter refrigerators, dishwashers, microwave ovens, and induction hobs.'
+        },
+        watertank: {
+          title: 'Water Tank Sanitization & Hygiene',
+          category: 'Plumbing & Hydraulic Care',
+          image: 'https://images.unsplash.com/photo-1584467735815-f778f274e296?auto=format&fit=crop&w=1200&q=80',
+          headline: '6-Stage Mechanized High-Pressure Water Tank Scrubbing',
+          lead: 'De-sludging, German high-pressure jet wash, industrial vacuum suction, anti-bacterial spray, and UV sterilization for safe residential drinking water.'
+        },
+        inspection: {
+          title: 'General Home Health & Structural Inspection',
+          category: 'Audit & Health Report',
+          image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80',
+          headline: '120-Point Comprehensive Digital Home Audit',
+          lead: 'Thermal infrared leak imaging, roof and gutter dampness analysis, circuit breaker health checks, and a full 25-page digital audit report with priority repairs.'
+        }
+      };
+
+      if (serviceData[serviceKey]) {
+        const s = serviceData[serviceKey];
+        document.getElementById('serviceHeroTitle').textContent = s.title;
+        document.getElementById('serviceBreadcrumb').textContent = s.title;
+        document.getElementById('serviceHeadline').textContent = s.headline;
+        document.getElementById('serviceLeadParagraph').textContent = s.lead;
+        document.getElementById('serviceCategoryBadge').innerHTML = `<i class="bi bi-check-circle"></i> ${s.category}`;
+        document.getElementById('serviceMainImage').src = s.image;
+        const bBtn = document.getElementById('scheduleServiceBtn');
+        if (bBtn) bBtn.href = `customer/booking.html?service=${encodeURIComponent(s.title)}`;
+      }
+    });
+  </script>
+
+  <!-- Universal Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <div class="footer-brand">
+            <h4 class="d-flex align-items-center gap-2">
+              <i class="bi bi-shield-check text-primary"></i> HomeCare<span class="text-primary">ly</span>
+            </h4>
+            <p class="text-muted small pe-lg-4">
+              HomeCarely is your premier annual home maintenance partner. Certified technicians, guaranteed response windows, and round-the-clock emergency support for modern residences.
+            </p>
+            <div class="d-flex gap-2 mt-3">
+              <a href="#" class="social-pill-link"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="social-pill-link"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="social-pill-link"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="social-pill-link"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5 class="footer-widget-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Overview</a></li>
+            <li><a href="about.html">About Company</a></li>
+            <li><a href="amc-plans.html">AMC Plans</a></li>
+            <li><a href="pricing.html">Pricing Guide</a></li>
+            <li><a href="blog.html">Latest Articles</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h5 class="footer-widget-title">AMC Services</h5>
+          <ul class="footer-links">
+            <li><a href="service-details.html?service=ac">Air Conditioning Maintenance</a></li>
+            <li><a href="service-details.html?service=plumbing">Plumbing Inspections</a></li>
+            <li><a href="service-details.html?service=electrical">Electrical & Breaker Care</a></li>
+            <li><a href="service-details.html?service=cleaning">Deep Home Sanitization</a></li>
+            <li><a href="service-details.html?service=pest">Pest & Termite Control</a></li>
+            <li><a href="services.html">View All 10 Services</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h5 class="footer-widget-title">Newsletter & Offers</h5>
+          <p class="small text-muted mb-3">Subscribe for seasonal maintenance tips and exclusive AMC renewal discounts.</p>
+          <form class="mb-3" onsubmit="event.preventDefault(); showToast('Thank you for subscribing!', 'success');">
+            <div class="input-group">
+              <input type="email" class="form-control form-control-hc rounded-start-pill border-0" placeholder="Your email address" required>
+              <button class="btn btn-primary-hc rounded-end-pill px-3" type="submit"><i class="bi bi-send-fill"></i></button>
+            </div>
+          </form>
+          <div class="small text-muted">
+            <div class="mb-1"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (800) 555-0199</div>
+            <div><i class="bi bi-envelope-fill text-primary me-2"></i> support@homecarely.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="d-flex flex-wrap justify-content-between align-items-center">
+          <p class="mb-0 text-muted">© 2026 HomeCarely AMC Services Ltd. All Rights Reserved.</p>
+          <div class="d-flex gap-3">
+            <a href="faq.html" class="text-muted small">Privacy Policy</a>
+            <span class="text-secondary">·</span>
+            <a href="faq.html" class="text-muted small">Terms of Service</a>
+            <span class="text-secondary">·</span>
+            <a href="faq.html" class="text-muted small">AMC Agreement</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/validation.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/booking.js"></script>
+  <script src="assets/js/subscription.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
