@@ -1,27 +1,48 @@
 /* ===================================================================
-   HomeCarely - Responsive Stylesheet
-   Optimized for 320px, 360px, 375px, 390px, 414px, 576px, 768px, 
-   992px, 1024px, 1152px, 1280px, 1366px, 1440px, 1920px
+   HomeCarely - Master Responsive Stylesheet
+   Optimized for Viewports:
+   320px, 340px, 360px, 375px, 390px, 414px, 430px, 480px, 576px,
+   640px, 768px, 820px, 992px, 1024px, 1152px, 1280px, 1366px, 1440px,
+   1600px, 1920px
    =================================================================== */
 
-/* Large Desktops (1440px - 1920px+) */
+/* Prevent Horizontal Overflow Globally */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden !important;
+}
+
+/* Base Image & Media Safety */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===================================================================
+   1. Large Displays (1440px - 1920px+)
+   =================================================================== */
 @media (min-width: 1400px) {
   .container {
     max-width: 1320px;
   }
   .hero-title {
     font-size: 3.8rem;
+    line-height: 1.15;
   }
 }
 
-/* Desktops & Laptops (1200px - 1399px) */
+/* ===================================================================
+   2. Standard Desktops & Laptops (1200px - 1399px)
+   =================================================================== */
 @media (max-width: 1399.98px) {
   .hero-title {
     font-size: 3.2rem;
   }
 }
 
-/* Medium Desktops & Small Laptops (992px - 1199px) */
+/* ===================================================================
+   3. Small Laptops & Breakpoint for Navbar Collapse (<= 1199.98px)
+   =================================================================== */
 @media (max-width: 1199.98px) {
   .hero-title {
     font-size: 2.8rem;
@@ -30,47 +51,71 @@
     max-width: 440px;
   }
   .nav-link {
-    padding: 0.4rem 0.5rem !important;
-    font-size: 0.84rem;
+    padding: 0.5rem 0.75rem !important;
   }
-  .main-navbar .btn-primary-hc,
-  .main-navbar .btn-outline-hc {
-    padding: 0.4rem 0.75rem !important;
-    font-size: 0.8rem;
-  }
-  .main-navbar .dir-toggle-btn {
-    padding: 0.35rem 0.65rem !important;
-    font-size: 0.78rem;
-  }
-}
 
-/* Tablets & Mobile Navigation (<= 991px) */
-@media (max-width: 991.98px) {
+  /* Main Navbar Mobile Dropdown & Collapse Menu */
   .main-navbar .navbar-collapse {
+    flex-basis: 100% !important;
+    width: 100% !important;
     background: #ffffff;
-    border-radius: var(--hc-radius-lg);
-    box-shadow: var(--hc-shadow-lg);
-    padding: 1.25rem;
-    margin-top: 0.75rem;
-    border: 1px solid var(--hc-border);
+    border-radius: 16px;
+    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.12);
+    padding: 1.25rem 1.5rem;
+    margin-top: 0.85rem;
+    border: 1px solid var(--hc-border, #e2e8f0);
+    max-height: 80vh;
+    overflow-y: auto;
   }
+
+  [data-theme="dark"] .main-navbar .navbar-collapse {
+    background: #0f172a !important;
+    border-color: #1e293b !important;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  }
+
   .main-navbar .navbar-nav {
     margin-left: 0 !important;
     margin-right: 0 !important;
     align-items: flex-start;
+    width: 100%;
+    gap: 0.35rem;
   }
+
   .main-navbar .navbar-nav .nav-link {
     padding: 0.65rem 1rem !important;
     font-size: 0.95rem;
     width: 100%;
+    border-radius: 8px;
   }
-  .main-navbar .d-flex.align-items-center.gap-2 {
+
+  .main-navbar .d-flex.align-items-center.gap-2:not(.nav-mobile-controls) {
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid var(--hc-border);
+    border-top: 1px solid var(--hc-border, #e2e8f0);
     flex-wrap: wrap;
     width: 100%;
+    gap: 0.75rem !important;
   }
+
+  .main-navbar .d-flex.align-items-center.gap-2:not(.nav-mobile-controls) .btn {
+    flex: 1 1 auto;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .main-navbar .btn-icon-pill {
+    flex: 0 0 38px !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+  }
+}
+
+/* ===================================================================
+   4. Tablets (768px - 991px)
+   =================================================================== */
+@media (max-width: 991.98px) {
   .hero-section {
     padding: 3.5rem 0 4rem 0;
     text-align: center;
@@ -81,12 +126,13 @@
   .hero-subtitle {
     margin-left: auto;
     margin-right: auto;
+    max-width: 580px;
   }
   .hero-stats-row {
     justify-content: center;
   }
   .hero-visual-card {
-    margin: 3.5rem auto 0 auto;
+    margin: 3rem auto 0 auto;
     max-width: 480px;
   }
   .section-title {
@@ -99,14 +145,17 @@
   .cta-banner .d-flex {
     justify-content: center !important;
   }
-  /* Dashboard layout */
+
+  /* Customer & Admin Dashboard Mobile Sidebar Drawer */
   .dashboard-sidebar {
     position: fixed;
-    left: -280px;
+    left: -285px;
     top: 0;
     bottom: 0;
-    z-index: 1050;
+    width: 280px;
+    z-index: 1055;
     transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
   }
   .dashboard-sidebar.show {
     left: 0;
@@ -120,13 +169,15 @@
   }
 }
 
-/* Mobile Landscape & Large Phones (576px - 767px) */
+/* ===================================================================
+   5. Mobile Landscape & Phablets (576px - 767px)
+   =================================================================== */
 @media (max-width: 767.98px) {
   .hero-title {
     font-size: 2.15rem;
   }
   .section-padding {
-    padding: 3.5rem 0;
+    padding: 3.25rem 0;
   }
   .section-title {
     font-size: 1.85rem;
@@ -139,13 +190,13 @@
   }
   .hero-stats-row {
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
   .hero-stat-item {
-    flex: 1 1 40%;
+    flex: 1 1 45%;
   }
   .hero-stat-item h3 {
-    font-size: 1.7rem;
+    font-size: 1.65rem;
   }
   .calculator-card,
   .calc-summary-card,
@@ -153,52 +204,114 @@
     padding: 1.5rem;
   }
   .cta-banner {
-    padding: 2.5rem 1.25rem;
+    padding: 2.25rem 1.25rem;
   }
   .comparison-table th, 
   .comparison-table td {
-    padding: 0.85rem 1rem;
+    padding: 0.85rem 0.85rem;
     font-size: 0.85rem;
   }
 }
 
-/* Small to Medium Mobile Phones (375px - 575px) */
+/* ===================================================================
+   6. Standard Mobile Phones (375px - 575px)
+   =================================================================== */
 @media (max-width: 575.98px) {
+  /* Navbar Header Compact Single-Row Layout */
+  .main-navbar {
+    padding: 0.65rem 0;
+  }
+  .brand-logo {
+    font-size: 1.35rem;
+    gap: 0.45rem;
+  }
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    font-size: 1.1rem;
+    border-radius: 9px;
+  }
+
+  .nav-mobile-controls {
+    gap: 0.45rem !important;
+  }
+
+  /* Crucial: Prevent Navbar Buttons from expanding full width */
+  .main-navbar .btn,
+  .main-navbar .nav-hamburger-btn,
+  .nav-mobile-controls .btn,
+  .dashboard-topbar .btn {
+    width: auto !important;
+    min-width: auto !important;
+    max-width: fit-content !important;
+    flex-shrink: 0 !important;
+  }
+
+  .main-navbar .navbar-toggler,
+  .main-navbar .nav-hamburger-btn {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+  }
+
+  .main-navbar .nav-hamburger-icon {
+    font-size: 1.7rem !important;
+  }
+
+  /* Content Buttons can expand on mobile for easy thumb-tapping */
+  .hero-section .d-flex.flex-wrap .btn,
+  .cta-banner .btn,
+  .pricing-card .btn,
+  .calculator-card .btn,
+  form .btn-primary-hc:not(.nav-mobile-controls *),
+  form .btn-outline-hc:not(.nav-mobile-controls *) {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Typography Scaling */
   .hero-title {
     font-size: 1.85rem;
+    letter-spacing: -0.5px;
   }
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.98rem;
+    line-height: 1.55;
   }
   .hero-visual-card {
-    padding: 0.85rem;
+    padding: 0.75rem;
   }
   .hero-image-wrap {
-    height: 320px;
+    height: 290px;
   }
   .floating-stat-badge {
     position: static;
     margin: 0.75rem auto;
-    max-width: 290px;
+    max-width: 100%;
     animation: none;
   }
-  .btn-primary-hc, 
-  .btn-outline-hc {
-    width: 100%;
-    justify-content: center;
-  }
+
+  /* Pricing Cards */
   .pricing-amount {
-    font-size: 2.4rem;
+    font-size: 2.3rem;
   }
   .pricing-card {
-    padding: 1.75rem 1.25rem;
+    padding: 1.5rem 1.25rem;
   }
+
+  /* Service Cards */
   .service-card .card-thumb {
-    height: 170px;
+    height: 180px;
   }
+
+  /* Footer Mobile Centering */
   .main-footer {
-    padding: 3.5rem 0 1.5rem 0;
+    padding: 3rem 0 1.5rem 0;
     text-align: center;
+  }
+  .main-footer .footer-brand p {
+    padding-right: 0 !important;
   }
   .footer-links a {
     justify-content: center;
@@ -208,34 +321,54 @@
   }
   .footer-bottom .d-flex {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.85rem;
     align-items: center !important;
   }
 }
 
-/* Extra Small Phones (320px - 360px) */
+/* ===================================================================
+   7. Extra Small Phones (320px - 360px)
+   =================================================================== */
 @media (max-width: 360px) {
-  .hero-title {
-    font-size: 1.65rem;
+  .main-navbar .container {
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .brand-logo {
-    font-size: 1.3rem;
+    font-size: 1.18rem !important;
+    gap: 0.35rem !important;
   }
   .brand-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 1.1rem;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    font-size: 1rem !important;
+  }
+  .nav-mobile-controls {
+    gap: 0.35rem !important;
+  }
+  .main-navbar .nav-hamburger-btn {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+  }
+  .main-navbar .nav-hamburger-icon {
+    font-size: 1.5rem !important;
+  }
+
+  .hero-title {
+    font-size: 1.55rem !important;
   }
   .section-title {
-    font-size: 1.6rem;
+    font-size: 1.5rem !important;
   }
   .pricing-switch-btn {
-    padding: 0.4rem 0.9rem;
-    font-size: 0.8rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
   }
   .calculator-card,
   .calc-summary-card,
   .process-step-card {
-    padding: 1.25rem;
+    padding: 1.15rem;
   }
 }

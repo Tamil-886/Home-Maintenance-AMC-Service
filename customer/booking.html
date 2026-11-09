@@ -73,60 +73,77 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-  <!-- Top Announcement Bar -->
-  <div class="top-announcement-bar py-2 text-white text-center small fw-medium" style="background: linear-gradient(90deg, #1068eb, #0ea5e9);">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div class="d-none d-md-flex align-items-center gap-3">
-        <span><i class="bi bi-clock-history me-1"></i> 24/7 Emergency Dispatch</span>
-        <span><i class="bi bi-telephone-fill me-1"></i> Priority Support: +1 (800) 555-0199</span>
+  <!-- ================= Main Navigation ================= -->
+  <nav class="navbar navbar-expand-xl main-navbar">
+    <div class="container">
+      <a class="navbar-brand brand-logo" href="../index.html">
+        <div class="brand-icon">
+          <i class="bi bi-shield-check"></i>
+        </div>
+        <span>HomeCare<span class="text-primary">ly</span></span>
+      </a>
+
+      <!-- Mobile Right Controls (Hamburger) -->
+      <div class="nav-mobile-controls d-flex align-items-center d-xl-none ms-auto">
+        <button class="navbar-toggler nav-hamburger-btn border-0 p-0 d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-1 nav-hamburger-icon"></i>
+        </button>
       </div>
-      <div class="mx-auto mx-md-0 d-flex align-items-center gap-2">
-        <span class="badge bg-white text-primary fw-bold">AMC 2026</span>
-        <span>Guaranteed 60-Minute Technician Arrival Guarantee</span>
-      </div>
-      <div class="d-none d-lg-flex align-items-center gap-3">
-        <a href="dashboard.html" class="text-white text-decoration-none hover-underline"><i class="bi bi-grid-1x2 me-1"></i> Customer Portal</a>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+            <ul class="dropdown-menu dropdown-menu-custom">
+              <li><a class="dropdown-item" href="../index.html"><i class="bi bi-house-door"></i> Home Page 1 (General AMC)</a></li>
+              <li><a class="dropdown-item" href="../home-2.html"><i class="bi bi-building"></i> Home Page 2 (Express Service)</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../amc-plans.html">AMC Plans</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-dashboard-link" href="dashboard.html">Dashboard</a>
+          </li>
+        </ul>
+
+        <!-- Action Buttons -->
+        <div class="d-flex align-items-center gap-2">
+          <!-- RTL / LTR Direction Switcher -->
+          <button class="btn btn-sm btn-outline-hc dir-toggle-btn py-2 px-3 small d-inline-flex align-items-center" title="Toggle RTL / LTR layout" aria-label="Toggle RTL / LTR">
+            <i class="bi bi-globe me-1 text-primary"></i> <span class="dir-toggle-text">RTL</span>
+          </button>
+          
+          <!-- Theme Toggle -->
+          <button class="btn btn-icon-pill theme-toggle-btn d-inline-flex" title="Toggle Theme" aria-label="Toggle Dark Mode">
+            <i class="bi bi-moon-stars-fill text-primary"></i>
+          </button>
+
+          <!-- Login / Logout Link (Based on Auth Status) -->
+          <a href="../auth/login.html" class="btn btn-outline-hc py-2 px-3 small nav-auth-btn" id="navAuthBtn">
+            <i class="bi bi-person-circle me-1"></i> <span class="nav-auth-text">Log In</span>
+          </a>
+
+          <!-- Book AMC CTA Button -->
+          <a href="booking.html" class="btn btn-primary-hc py-2 px-4 small">
+            Book AMC <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- Main Website Navbar -->
-  <header class="main-header sticky-top bg-white border-bottom shadow-sm">
-    <nav class="navbar navbar-expand-lg py-3 main-navbar">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-4 text-dark" href="../index.html">
-          <div class="brand-icon-box bg-primary text-white rounded-3 p-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;">
-            <i class="bi bi-shield-check fs-5"></i>
-          </div>
-          <span>HomeCare<span class="text-primary">ly</span></span>
-        </a>
-
-        <div class="d-flex align-items-center gap-2 order-lg-last">
-          <button class="theme-toggle-btn btn btn-light border btn-sm p-2 rounded-circle" id="themeToggleBtn" title="Toggle Theme" aria-label="Toggle Dark Mode">
-            <i class="bi bi-moon-stars-fill text-muted"></i>
-          </button>
-          <a href="dashboard.html" class="btn btn-outline-primary btn-sm px-3 d-none d-sm-inline-flex align-items-center gap-2">
-            <i class="bi bi-person-circle"></i> <span>Customer Portal</span>
-          </a>
-          <button class="navbar-toggler border-0 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarNav" aria-controls="mainNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-
-        <div class="collapse navbar-collapse" id="mainNavbarNav">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
-            <li class="nav-item"><a class="nav-link px-3" href="../index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link px-3" href="../about.html">About Us</a></li>
-            <li class="nav-item"><a class="nav-link px-3" href="../services.html">Services</a></li>
-            <li class="nav-item"><a class="nav-link px-3" href="../amc-plans.html">AMC Plans</a></li>
-            <li class="nav-item"><a class="nav-link px-3" href="../blog.html">Blog</a></li>
-            <li class="nav-item"><a class="nav-link px-3" href="../contact.html">Contact</a></li>
-            <li class="nav-item"><a class="nav-link px-3 nav-dashboard-link" href="dashboard.html">Dashboard</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+  </nav>
 
   <!-- Page Breadcrumb & Header -->
   <section class="py-4 py-lg-5 bg-light-subtle border-bottom">
@@ -216,18 +233,17 @@
                 <div class="row g-3">
                   <div class="col-md-6">
                     <label for="selectService" class="form-label fw-semibold">Select Service <span class="text-danger">*</span></label>
-                    <select class="form-select" id="selectService" required>
-                      <option value="" disabled selected>-- Choose Maintenance Service --</option>
+                                                            <select class="form-select" id="selectService" required>
+                      <option value="" disabled selected>-- Choose Maintenance Service (9 Available) --</option>
                       <option value="Air Conditioning Maintenance" data-category="HVAC">Air Conditioning Maintenance</option>
-                      <option value="Plumbing Inspections & Leak Repair" data-category="Plumbing">Plumbing Inspections & Leak Repair</option>
-                      <option value="Electrical Care & Circuit Diagnostics" data-category="Electrical">Electrical Care & Circuit Diagnostics</option>
-                      <option value="Deep Home Cleaning & Sanitization" data-category="Cleaning">Deep Home Cleaning & Sanitization</option>
-                      <option value="Pest & Termite Control" data-category="Inspection">Pest & Termite Control</option>
-                      <option value="General Residential Home Inspection" data-category="Inspection">General Residential Home Inspection</option>
-                      <option value="Carpentry & Furniture Repair" data-category="General">Carpentry & Furniture Repair</option>
-                      <option value="Professional Painting & Wall Finishing" data-category="General">Professional Painting & Wall Finishing</option>
-                      <option value="Home Appliance Repair & Servicing" data-category="General">Home Appliance Repair & Servicing</option>
-                      <option value="Water Tank & Overhead Reservoir Cleaning" data-category="Cleaning">Water Tank & Overhead Reservoir Cleaning</option>
+                      <option value="Plumbing Services &amp; Leak Inspection" data-category="Plumbing">Plumbing Services &amp; Leak Inspection</option>
+                      <option value="Electrical Maintenance &amp; Breaker Care" data-category="Electrical">Electrical Maintenance &amp; Breaker Care</option>
+                      <option value="Deep Home Cleaning &amp; Sanitization" data-category="Cleaning">Deep Home Cleaning &amp; Sanitization</option>
+                      <option value="Pest Control &amp; Termite Defense" data-category="Cleaning">Pest Control &amp; Termite Defense</option>
+                      <option value="Water Tank &amp; Overhead Reservoir Cleaning" data-category="Plumbing">Water Tank &amp; Overhead Reservoir Cleaning</option>
+                      <option value="Painting &amp; Wall Restoration" data-category="General">Painting &amp; Wall Restoration</option>
+                      <option value="Carpentry &amp; Woodwork Services" data-category="General">Carpentry &amp; Woodwork Services</option>
+                      <option value="General Home Health Inspection" data-category="Inspection">General Home Health Inspection</option>
                     </select>
                     <div class="invalid-feedback">Please select a service.</div>
                   </div>
@@ -501,7 +517,7 @@
             <li><a href="../service-details.html?service=electrical"><i class="bi bi-chevron-right small text-primary"></i> Electrical & Breaker Care</a></li>
             <li><a href="../service-details.html?service=cleaning"><i class="bi bi-chevron-right small text-primary"></i> Deep Home Sanitization</a></li>
             <li><a href="../service-details.html?service=pest"><i class="bi bi-chevron-right small text-primary"></i> Pest & Termite Control</a></li>
-            <li><a href="../services.html"><i class="bi bi-arrow-right small text-primary"></i> View All 10 Services</a></li>
+            <li><a href="../services.html"><i class="bi bi-arrow-right small text-primary"></i> View All 9 Services</a></li>
           </ul>
         </div>
 

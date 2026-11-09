@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Home Maintenance Services - HomeCarely</title>
-  <meta name="description" content="Explore our full spectrum of 10 specialized home maintenance services available for standalone booking or covered under HomeCarely AMC subscription packages.">
+  <meta name="description" content="Explore our 9 core residential home maintenance services available for standalone booking or covered under HomeCarely AMC subscription packages.">
   
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231068eb'><path d='M12 2L2 7v7c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5zm-1 15l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z'/></svg>">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -27,19 +27,12 @@
         <span>HomeCare<span class="text-primary">ly</span></span>
       </a>
 
-      <!-- Mobile Right Controls (RTL + Theme) -->
-      <div class="d-flex align-items-center gap-2 d-xl-none ms-auto me-2">
-        <button class="btn btn-sm btn-outline-hc dir-toggle-btn py-1 px-2" title="Toggle RTL / LTR layout" aria-label="Toggle RTL / LTR">
-          <i class="bi bi-globe me-1 text-primary"></i><span class="dir-toggle-text">RTL</span>
-        </button>
-        <button class="btn btn-sm btn-icon-pill theme-toggle-btn" aria-label="Toggle Theme">
-          <i class="bi bi-moon-stars-fill"></i>
+      <!-- Mobile Right Controls (Hamburger) -->
+      <div class="nav-mobile-controls d-flex align-items-center d-xl-none ms-auto">
+        <button class="navbar-toggler nav-hamburger-btn border-0 p-0 d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-1 nav-hamburger-icon"></i>
         </button>
       </div>
-
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
             <div class="collapse navbar-collapse" id="navbarMain">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
@@ -72,14 +65,14 @@
 
         <!-- Action Buttons -->
         <div class="d-flex align-items-center gap-2">
-          <!-- RTL Direction Switcher -->
-          <button class="btn btn-sm btn-outline-hc dir-toggle-btn py-2 px-3 small d-none d-xl-inline-flex align-items-center" title="Toggle RTL / LTR layout">
+          <!-- RTL / LTR Direction Switcher -->
+          <button class="btn btn-sm btn-outline-hc dir-toggle-btn py-2 px-3 small d-inline-flex align-items-center" title="Toggle RTL / LTR layout" aria-label="Toggle RTL / LTR">
             <i class="bi bi-globe me-1 text-primary"></i> <span class="dir-toggle-text">RTL</span>
           </button>
           
           <!-- Theme Toggle -->
-          <button class="btn btn-icon-pill theme-toggle-btn d-none d-xl-inline-flex" title="Toggle Theme">
-            <i class="bi bi-moon-stars-fill"></i>
+          <button class="btn btn-icon-pill theme-toggle-btn d-inline-flex" title="Toggle Theme" aria-label="Toggle Dark Mode">
+            <i class="bi bi-moon-stars-fill text-primary"></i>
           </button>
 
           <!-- Login / Logout Link (Based on Auth Status) -->
@@ -113,13 +106,13 @@
     <div class="container">
       <div class="row g-3 align-items-center justify-content-between">
         <div class="col-lg-7">
-          <div class="d-flex flex-wrap gap-2" id="serviceFilterButtons">
-            <button class="btn btn-sm btn-primary rounded-pill px-3 active service-filter-btn" data-filter="all">All (10)</button>
-            <button class="btn btn-sm btn-light border rounded-pill px-3 service-filter-btn" data-filter="hvac">HVAC & AC</button>
-            <button class="btn btn-sm btn-light border rounded-pill px-3 service-filter-btn" data-filter="plumbing">Plumbing</button>
+                                        <div class="d-flex flex-wrap gap-2" id="serviceFilterButtons">
+            <button class="btn btn-sm btn-primary rounded-pill px-3 active service-filter-btn" data-filter="all">All (9)</button>
+            <button class="btn btn-sm btn-light border rounded-pill px-3 service-filter-btn" data-filter="hvac">HVAC &amp; Cooling</button>
+            <button class="btn btn-sm btn-light border rounded-pill px-3 service-filter-btn" data-filter="plumbing">Plumbing &amp; Water</button>
             <button class="btn btn-sm btn-light border rounded-pill px-3 service-filter-btn" data-filter="electrical">Electrical</button>
-            <button class="btn btn-sm btn-light border rounded-pill px-3 service-filter-btn" data-filter="cleaning">Cleaning</button>
-            <button class="btn btn-sm btn-light border rounded-pill px-3 service-filter-btn" data-filter="maintenance">Carpentry & Paint</button>
+            <button class="btn btn-sm btn-light border rounded-pill px-3 service-filter-btn" data-filter="cleaning">Cleaning &amp; Pest</button>
+            <button class="btn btn-sm btn-light border rounded-pill px-3 service-filter-btn" data-filter="maintenance">Carpentry &amp; Inspection</button>
           </div>
         </div>
         <div class="col-lg-4">
@@ -132,66 +125,12 @@
     </div>
   </section>
 
-  <!-- Services Grid (All 10 Services) -->
+  <!-- Services Grid (All 9 Services) -->
   <section class="section-padding">
     <div class="container">
       <div class="row g-4" id="servicesCardsContainer">
-        
-        <!-- 1. Electrical Maintenance -->
-        <div class="col-md-6 col-lg-4 service-grid-col" data-cat="electrical">
-          <div class="service-card">
-            <div class="card-thumb">
-              <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80" alt="Electrical Maintenance">
-              <div class="service-icon-pill"><i class="bi bi-lightning-charge"></i></div>
-            </div>
-            <div class="card-body">
-              <span class="badge-tag bg-primary-subtle text-primary mb-2">Electrical</span>
-              <h4 class="h5 fw-bold mb-2">Electrical Maintenance</h4>
-              <p class="text-muted small mb-3">Breaker panel testing, short-circuit diagnostics, appliance rewiring, earthing resistance audits, and surge protection.</p>
-              <ul class="service-features-list">
-                <li><i class="bi bi-check-circle-fill"></i> Infrared thermal load audit</li>
-                <li><i class="bi bi-check-circle-fill"></i> Circuit breaker tripp testing</li>
-                <li><i class="bi bi-check-circle-fill"></i> 24/7 short-circuit emergency callouts</li>
-              </ul>
-              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
-                <span class="fw-bold text-primary">From $49 / visit</span>
-                <div class="d-flex gap-2 align-items-center">
-                  <a href="service-details.html?service=electrical" class="btn btn-sm btn-outline-hc">Details</a>
-                  <a href="customer/booking.html?service=Electrical%20Maintenance" class="btn btn-sm btn-primary-hc">Book Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- 2. Plumbing Services -->
-        <div class="col-md-6 col-lg-4 service-grid-col" data-cat="plumbing">
-          <div class="service-card">
-            <div class="card-thumb">
-              <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=600&q=80" alt="Plumbing Services">
-              <div class="service-icon-pill"><i class="bi bi-droplet"></i></div>
-            </div>
-            <div class="card-body">
-              <span class="badge-tag bg-info-subtle text-info mb-2">Plumbing</span>
-              <h4 class="h5 fw-bold mb-2">Plumbing Services</h4>
-              <p class="text-muted small mb-3">Acoustic leak detection, drain jetting, pressure regulator overhaul, sanitary fixture installations, and geyser servicing.</p>
-              <ul class="service-features-list">
-                <li><i class="bi bi-check-circle-fill"></i> Non-destructive pipe leak tracking</li>
-                <li><i class="bi bi-check-circle-fill"></i> Water heater & boiler descaling</li>
-                <li><i class="bi bi-check-circle-fill"></i> High pressure mainline drain unclogging</li>
-              </ul>
-              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
-                <span class="fw-bold text-primary">From $55 / visit</span>
-                <div class="d-flex gap-2 align-items-center">
-                  <a href="service-details.html?service=plumbing" class="btn btn-sm btn-outline-hc">Details</a>
-                  <a href="customer/booking.html?service=Plumbing%20Services" class="btn btn-sm btn-primary-hc">Book Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. Air Conditioning Maintenance -->
+        <!-- 1. Air Conditioning Maintenance -->
         <div class="col-md-6 col-lg-4 service-grid-col" data-cat="hvac">
           <div class="service-card">
             <div class="card-thumb">
@@ -201,7 +140,7 @@
             <div class="card-body">
               <span class="badge-tag bg-primary-subtle text-primary mb-2">HVAC & Cooling</span>
               <h4 class="h5 fw-bold mb-2">Air Conditioning Maintenance</h4>
-              <p class="text-muted small mb-3">High-pressure jet wash of cooling coils, refrigerant gas top-up, compressor health check, filter disinfection, and PCB check.</p>
+              <p class="text-muted small mb-3">High-pressure jet wash of cooling coils, refrigerant gas top-up, compressor health check, filter disinfection, and PCB diagnostics.</p>
               <ul class="service-features-list">
                 <li><i class="bi bi-check-circle-fill"></i> Jet pump antibacterial chemical wash</li>
                 <li><i class="bi bi-check-circle-fill"></i> Refrigerant pressure & capacitor test</li>
@@ -218,125 +157,71 @@
           </div>
         </div>
 
-        <!-- 4. Painting & Wall Maintenance -->
-        <div class="col-md-6 col-lg-4 service-grid-col" data-cat="maintenance">
-          <div class="service-card">
-            <div class="card-thumb">
-              <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80" alt="Painting & Wall Maintenance">
-              <div class="service-icon-pill"><i class="bi bi-brush"></i></div>
-            </div>
-            <div class="card-body">
-              <span class="badge-tag bg-warning-subtle text-warning mb-2">Wall Care</span>
-              <h4 class="h5 fw-bold mb-2">Painting & Wall Maintenance</h4>
-              <p class="text-muted small mb-3">Wall plaster touchups, waterproof anti-fungal coatings, crack sealing, and premium interior & exterior emulsion paint finishes.</p>
-              <ul class="service-features-list">
-                <li><i class="bi bi-check-circle-fill"></i> Moisture meter wall scan & damp curing</li>
-                <li><i class="bi bi-check-circle-fill"></i> Low-VOC odorless luxury paints</li>
-                <li><i class="bi bi-check-circle-fill"></i> Dust-free mechanical sanding</li>
-              </ul>
-              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
-                <span class="fw-bold text-primary">From $69 / room</span>
-                <div class="d-flex gap-2 align-items-center">
-                  <a href="service-details.html?service=painting" class="btn btn-sm btn-outline-hc">Details</a>
-                  <a href="customer/booking.html?service=Painting%20%26%20Wall%20Maintenance" class="btn btn-sm btn-primary-hc">Book Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. Carpentry Services -->
-        <div class="col-md-6 col-lg-4 service-grid-col" data-cat="maintenance">
-          <div class="service-card">
-            <div class="card-thumb">
-              <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=600&q=80" alt="Carpentry Services">
-              <div class="service-icon-pill"><i class="bi bi-hammer"></i></div>
-            </div>
-            <div class="card-body">
-              <span class="badge-tag bg-secondary-subtle text-dark mb-2">Woodwork</span>
-              <h4 class="h5 fw-bold mb-2">Carpentry Services</h4>
-              <p class="text-muted small mb-3">Door realignment, smart lock installations, modular kitchen hinge replacements, furniture restoration, and bespoke cabinetry repairs.</p>
-              <ul class="service-features-list">
-                <li><i class="bi bi-check-circle-fill"></i> Hydraulic hinge & sliding track tuning</li>
-                <li><i class="bi bi-check-circle-fill"></i> Digital biometric lock fitting</li>
-                <li><i class="bi bi-check-circle-fill"></i> Termite-damaged timber reinforcement</li>
-              </ul>
-              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
-                <span class="fw-bold text-primary">From $45 / visit</span>
-                <div class="d-flex gap-2 align-items-center">
-                  <a href="service-details.html?service=carpentry" class="btn btn-sm btn-outline-hc">Details</a>
-                  <a href="customer/booking.html?service=Carpentry%20Services" class="btn btn-sm btn-primary-hc">Book Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6. Appliance Repair -->
-        <div class="col-md-6 col-lg-4 service-grid-col" data-cat="electrical">
-          <div class="service-card">
-            <div class="card-thumb">
-              <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=80" alt="Appliance Repair">
-              <div class="service-icon-pill"><i class="bi bi-cpu"></i></div>
-            </div>
-            <div class="card-body">
-              <span class="badge-tag bg-primary-subtle text-primary mb-2">Appliances</span>
-              <h4 class="h5 fw-bold mb-2">Appliance Repair</h4>
-              <p class="text-muted small mb-3">Expert diagnosis for washing machines, inverter refrigerators, dishwashers, microwave ovens, and induction hobs.</p>
-              <ul class="service-features-list">
-                <li><i class="bi bi-check-circle-fill"></i> Genuine manufacturer parts used</li>
-                <li><i class="bi bi-check-circle-fill"></i> PCB & motor coil diagnostics</li>
-                <li><i class="bi bi-check-circle-fill"></i> 90-day warranty on replaced parts</li>
-              </ul>
-              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
-                <span class="fw-bold text-primary">From $50 / unit</span>
-                <div class="d-flex gap-2 align-items-center">
-                  <a href="service-details.html?service=appliance" class="btn btn-sm btn-outline-hc">Details</a>
-                  <a href="customer/booking.html?service=Appliance%20Repair" class="btn btn-sm btn-primary-hc">Book Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 7. Water Tank Cleaning -->
+        <!-- 2. Plumbing Services & Leak Inspection -->
         <div class="col-md-6 col-lg-4 service-grid-col" data-cat="plumbing">
           <div class="service-card">
             <div class="card-thumb">
-              <img src="https://images.unsplash.com/photo-1584467735815-f778f274e296?auto=format&fit=crop&w=600&q=80" alt="Water Tank Cleaning">
-              <div class="service-icon-pill"><i class="bi bi-water"></i></div>
+              <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=600&q=80" alt="Plumbing Services & Leak Inspection">
+              <div class="service-icon-pill"><i class="bi bi-droplet"></i></div>
             </div>
             <div class="card-body">
-              <span class="badge-tag bg-info-subtle text-info mb-2">Sanitization</span>
-              <h4 class="h5 fw-bold mb-2">Water Tank Cleaning</h4>
-              <p class="text-muted small mb-3">6-stage mechanized cleaning process: de-sludging, high-pressure jet scrub, vacuum suction, anti-bacterial spray, and UV disinfection.</p>
+              <span class="badge-tag bg-info-subtle text-info mb-2">Plumbing Care</span>
+              <h4 class="h5 fw-bold mb-2">Plumbing Services & Leak Inspection</h4>
+              <p class="text-muted small mb-3">Acoustic leak detection, drain jetting, pressure regulator overhaul, sanitary fixture installations, and geyser servicing.</p>
               <ul class="service-features-list">
-                <li><i class="bi bi-check-circle-fill"></i> German high-pressure jet wash</li>
-                <li><i class="bi bi-check-circle-fill"></i> Food-grade certified disinfectants</li>
-                <li><i class="bi bi-check-circle-fill"></i> Lab water purity test report</li>
+                <li><i class="bi bi-check-circle-fill"></i> Non-destructive pipe leak tracking</li>
+                <li><i class="bi bi-check-circle-fill"></i> Water heater & boiler descaling</li>
+                <li><i class="bi bi-check-circle-fill"></i> High pressure mainline drain unclogging</li>
               </ul>
               <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
-                <span class="fw-bold text-primary">From $60 / tank</span>
+                <span class="fw-bold text-primary">From $55 / visit</span>
                 <div class="d-flex gap-2 align-items-center">
-                  <a href="service-details.html?service=watertank" class="btn btn-sm btn-outline-hc">Details</a>
-                  <a href="customer/booking.html?service=Water%20Tank%20Cleaning" class="btn btn-sm btn-primary-hc">Book Now</a>
+                  <a href="service-details.html?service=plumbing" class="btn btn-sm btn-outline-hc">Details</a>
+                  <a href="customer/booking.html?service=Plumbing%20Services%20%26%20Leak%20Inspection" class="btn btn-sm btn-primary-hc">Book Now</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 8. Deep Home Cleaning -->
+        <!-- 3. Electrical Maintenance & Breaker Care -->
+        <div class="col-md-6 col-lg-4 service-grid-col" data-cat="electrical">
+          <div class="service-card">
+            <div class="card-thumb">
+              <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80" alt="Electrical Maintenance & Breaker Care">
+              <div class="service-icon-pill"><i class="bi bi-lightning-charge"></i></div>
+            </div>
+            <div class="card-body">
+              <span class="badge-tag bg-primary-subtle text-primary mb-2">Electrical</span>
+              <h4 class="h5 fw-bold mb-2">Electrical Maintenance & Breaker Care</h4>
+              <p class="text-muted small mb-3">Breaker panel testing, short-circuit diagnostics, appliance rewiring, earthing resistance audits, and whole-house surge protection.</p>
+              <ul class="service-features-list">
+                <li><i class="bi bi-check-circle-fill"></i> Infrared thermal load audit</li>
+                <li><i class="bi bi-check-circle-fill"></i> Circuit breaker trip testing</li>
+                <li><i class="bi bi-check-circle-fill"></i> 24/7 short-circuit emergency callouts</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                <span class="fw-bold text-primary">From $49 / visit</span>
+                <div class="d-flex gap-2 align-items-center">
+                  <a href="service-details.html?service=electrical" class="btn btn-sm btn-outline-hc">Details</a>
+                  <a href="customer/booking.html?service=Electrical%20Maintenance%20%26%20Breaker%20Care" class="btn btn-sm btn-primary-hc">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Deep Home Cleaning & Sanitization -->
         <div class="col-md-6 col-lg-4 service-grid-col" data-cat="cleaning">
           <div class="service-card">
             <div class="card-thumb">
-              <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80" alt="Deep Home Cleaning">
+              <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80" alt="Deep Home Cleaning & Sanitization">
               <div class="service-icon-pill"><i class="bi bi-stars"></i></div>
             </div>
             <div class="card-body">
-              <span class="badge-tag bg-success-subtle text-success mb-2">Cleaning</span>
-              <h4 class="h5 fw-bold mb-2">Deep Home Cleaning</h4>
-              <p class="text-muted small mb-3">Complete intensive scrub of tiles, sanitaryware, grout, kitchen grease, oven interiors, floor buffing, and upholstery steam extraction.</p>
+              <span class="badge-tag bg-success-subtle text-success mb-2">Deep Cleaning</span>
+              <h4 class="h5 fw-bold mb-2">Deep Home Cleaning & Sanitization</h4>
+              <p class="text-muted small mb-3">Complete intensive scrub of tiles, sanitaryware, grout, kitchen grease, floor buffing, and high-temperature upholstery steam extraction.</p>
               <ul class="service-features-list">
                 <li><i class="bi bi-check-circle-fill"></i> Single-disc floor buffing machine</li>
                 <li><i class="bi bi-check-circle-fill"></i> 140°C upholstery steam disinfection</li>
@@ -346,23 +231,23 @@
                 <span class="fw-bold text-primary">From $89 / visit</span>
                 <div class="d-flex gap-2 align-items-center">
                   <a href="service-details.html?service=cleaning" class="btn btn-sm btn-outline-hc">Details</a>
-                  <a href="customer/booking.html?service=Deep%20Home%20Cleaning" class="btn btn-sm btn-primary-hc">Book Now</a>
+                  <a href="customer/booking.html?service=Deep%20Home%20Cleaning%20%26%20Sanitization" class="btn btn-sm btn-primary-hc">Book Now</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 9. Pest Control -->
+        <!-- 5. Pest Control & Termite Defense -->
         <div class="col-md-6 col-lg-4 service-grid-col" data-cat="cleaning">
           <div class="service-card">
             <div class="card-thumb">
-              <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=600&q=80" alt="Pest Control">
+              <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=600&q=80" alt="Pest Control & Termite Defense">
               <div class="service-icon-pill"><i class="bi bi-bug"></i></div>
             </div>
             <div class="card-body">
-              <span class="badge-tag bg-danger-subtle text-danger mb-2">Extermination</span>
-              <h4 class="h5 fw-bold mb-2">Pest Control & Termite Care</h4>
+              <span class="badge-tag bg-danger-subtle text-danger mb-2">Pest Eradication</span>
+              <h4 class="h5 fw-bold mb-2">Pest Control & Termite Defense</h4>
               <p class="text-muted small mb-3">Targeted chemical eradication of cockroaches, bedbugs, termites, rodents, and ants using odorless Bayer-certified compounds.</p>
               <ul class="service-features-list">
                 <li><i class="bi bi-check-circle-fill"></i> No need to vacate the property</li>
@@ -373,23 +258,104 @@
                 <span class="fw-bold text-primary">From $65 / session</span>
                 <div class="d-flex gap-2 align-items-center">
                   <a href="service-details.html?service=pest" class="btn btn-sm btn-outline-hc">Details</a>
-                  <a href="customer/booking.html?service=Pest%20Control" class="btn btn-sm btn-primary-hc">Book Now</a>
+                  <a href="customer/booking.html?service=Pest%20Control%20%26%20Termite%20Defense" class="btn btn-sm btn-primary-hc">Book Now</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 10. General Home Inspection -->
+        <!-- 6. Water Tank & Overhead Reservoir Cleaning -->
+        <div class="col-md-6 col-lg-4 service-grid-col" data-cat="plumbing">
+          <div class="service-card">
+            <div class="card-thumb">
+              <img src="https://images.unsplash.com/photo-1584467735815-f778f274e296?auto=format&fit=crop&w=600&q=80" alt="Water Tank & Overhead Reservoir Cleaning">
+              <div class="service-icon-pill"><i class="bi bi-water"></i></div>
+            </div>
+            <div class="card-body">
+              <span class="badge-tag bg-info-subtle text-info mb-2">Sanitization</span>
+              <h4 class="h5 fw-bold mb-2">Water Tank & Overhead Reservoir Cleaning</h4>
+              <p class="text-muted small mb-3">6-stage mechanized cleaning process: de-sludging, high-pressure jet scrub, vacuum suction, anti-bacterial spray, and UV disinfection.</p>
+              <ul class="service-features-list">
+                <li><i class="bi bi-check-circle-fill"></i> German high-pressure jet wash</li>
+                <li><i class="bi bi-check-circle-fill"></i> Food-grade certified disinfectants</li>
+                <li><i class="bi bi-check-circle-fill"></i> Lab water purity test report</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                <span class="fw-bold text-primary">From $60 / tank</span>
+                <div class="d-flex gap-2 align-items-center">
+                  <a href="service-details.html?service=watertank" class="btn btn-sm btn-outline-hc">Details</a>
+                  <a href="customer/booking.html?service=Water%20Tank%20%26%20Overhead%20Reservoir%20Cleaning" class="btn btn-sm btn-primary-hc">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Painting & Wall Restoration -->
         <div class="col-md-6 col-lg-4 service-grid-col" data-cat="maintenance">
           <div class="service-card">
             <div class="card-thumb">
-              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="General Home Inspection">
+              <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80" alt="Painting & Wall Restoration">
+              <div class="service-icon-pill"><i class="bi bi-brush"></i></div>
+            </div>
+            <div class="card-body">
+              <span class="badge-tag bg-warning-subtle text-warning mb-2">Wall Care</span>
+              <h4 class="h5 fw-bold mb-2">Painting & Wall Restoration</h4>
+              <p class="text-muted small mb-3">Wall plaster touchups, waterproof anti-fungal coatings, crack sealing, and premium interior & exterior emulsion paint finishes.</p>
+              <ul class="service-features-list">
+                <li><i class="bi bi-check-circle-fill"></i> Moisture meter wall scan & damp curing</li>
+                <li><i class="bi bi-check-circle-fill"></i> Low-VOC odorless luxury paints</li>
+                <li><i class="bi bi-check-circle-fill"></i> Dust-free mechanical sanding</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                <span class="fw-bold text-primary">From $69 / room</span>
+                <div class="d-flex gap-2 align-items-center">
+                  <a href="service-details.html?service=painting" class="btn btn-sm btn-outline-hc">Details</a>
+                  <a href="customer/booking.html?service=Painting%20%26%20Wall%20Restoration" class="btn btn-sm btn-primary-hc">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Carpentry & Woodwork Services -->
+        <div class="col-md-6 col-lg-4 service-grid-col" data-cat="maintenance">
+          <div class="service-card">
+            <div class="card-thumb">
+              <img src="https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=600&q=80" alt="Carpentry & Woodwork Services">
+              <div class="service-icon-pill"><i class="bi bi-hammer"></i></div>
+            </div>
+            <div class="card-body">
+              <span class="badge-tag bg-secondary-subtle text-dark mb-2">Woodwork</span>
+              <h4 class="h5 fw-bold mb-2">Carpentry & Woodwork Services</h4>
+              <p class="text-muted small mb-3">Door realignment, smart lock installations, modular kitchen hinge replacements, furniture restoration, and bespoke cabinetry repairs.</p>
+              <ul class="service-features-list">
+                <li><i class="bi bi-check-circle-fill"></i> Hydraulic hinge & sliding track tuning</li>
+                <li><i class="bi bi-check-circle-fill"></i> Digital biometric lock fitting</li>
+                <li><i class="bi bi-check-circle-fill"></i> Termite-damaged timber reinforcement</li>
+              </ul>
+              <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top">
+                <span class="fw-bold text-primary">From $45 / visit</span>
+                <div class="d-flex gap-2 align-items-center">
+                  <a href="service-details.html?service=carpentry" class="btn btn-sm btn-outline-hc">Details</a>
+                  <a href="customer/booking.html?service=Carpentry%20%26%20Woodwork%20Services" class="btn btn-sm btn-primary-hc">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. General Home Health Inspection -->
+        <div class="col-md-6 col-lg-4 service-grid-col" data-cat="maintenance">
+          <div class="service-card">
+            <div class="card-thumb">
+              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="General Home Health Inspection">
               <div class="service-icon-pill"><i class="bi bi-clipboard2-check"></i></div>
             </div>
             <div class="card-body">
               <span class="badge-tag bg-primary-subtle text-primary mb-2">Audit & Report</span>
-              <h4 class="h5 fw-bold mb-2">General Home Inspection</h4>
+              <h4 class="h5 fw-bold mb-2">General Home Health Inspection</h4>
               <p class="text-muted small mb-3">A thorough 120-point digital inspection covering electrical stability, pipe pressures, structural cracking, roof seepage, and HVAC health.</p>
               <ul class="service-features-list">
                 <li><i class="bi bi-check-circle-fill"></i> Thermal infrared leak imaging</li>
@@ -400,7 +366,7 @@
                 <span class="fw-bold text-primary">From $79 / audit</span>
                 <div class="d-flex gap-2 align-items-center">
                   <a href="service-details.html?service=inspection" class="btn btn-sm btn-outline-hc">Details</a>
-                  <a href="customer/booking.html?service=General%20Home%20Inspection" class="btn btn-sm btn-primary-hc">Book Now</a>
+                  <a href="customer/booking.html?service=General%20Home%20Health%20Inspection" class="btn btn-sm btn-primary-hc">Book Now</a>
                 </div>
               </div>
             </div>
@@ -498,7 +464,7 @@
             <li><a href="service-details.html?service=electrical">Electrical & Breaker Care</a></li>
             <li><a href="service-details.html?service=cleaning">Deep Home Sanitization</a></li>
             <li><a href="service-details.html?service=pest">Pest & Termite Control</a></li>
-            <li><a href="services.html">View All 10 Services</a></li>
+            <li><a href="services.html">View All 9 Services</a></li>
           </ul>
         </div>
 

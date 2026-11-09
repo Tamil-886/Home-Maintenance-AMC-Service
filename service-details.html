@@ -25,19 +25,12 @@
         <span>HomeCare<span class="text-primary">ly</span></span>
       </a>
 
-      <!-- Mobile Right Controls (RTL + Theme) -->
-      <div class="d-flex align-items-center gap-2 d-xl-none ms-auto me-2">
-        <button class="btn btn-sm btn-outline-hc dir-toggle-btn py-1 px-2" title="Toggle RTL / LTR layout" aria-label="Toggle RTL / LTR">
-          <i class="bi bi-globe me-1 text-primary"></i><span class="dir-toggle-text">RTL</span>
-        </button>
-        <button class="btn btn-sm btn-icon-pill theme-toggle-btn" aria-label="Toggle Theme">
-          <i class="bi bi-moon-stars-fill"></i>
+      <!-- Mobile Right Controls (Hamburger) -->
+      <div class="nav-mobile-controls d-flex align-items-center d-xl-none ms-auto">
+        <button class="navbar-toggler nav-hamburger-btn border-0 p-0 d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-1 nav-hamburger-icon"></i>
         </button>
       </div>
-
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
             <div class="collapse navbar-collapse" id="navbarMain">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
@@ -70,14 +63,14 @@
 
         <!-- Action Buttons -->
         <div class="d-flex align-items-center gap-2">
-          <!-- RTL Direction Switcher -->
-          <button class="btn btn-sm btn-outline-hc dir-toggle-btn py-2 px-3 small d-none d-xl-inline-flex align-items-center" title="Toggle RTL / LTR layout">
+          <!-- RTL / LTR Direction Switcher -->
+          <button class="btn btn-sm btn-outline-hc dir-toggle-btn py-2 px-3 small d-inline-flex align-items-center" title="Toggle RTL / LTR layout" aria-label="Toggle RTL / LTR">
             <i class="bi bi-globe me-1 text-primary"></i> <span class="dir-toggle-text">RTL</span>
           </button>
           
           <!-- Theme Toggle -->
-          <button class="btn btn-icon-pill theme-toggle-btn d-none d-xl-inline-flex" title="Toggle Theme">
-            <i class="bi bi-moon-stars-fill"></i>
+          <button class="btn btn-icon-pill theme-toggle-btn d-inline-flex" title="Toggle Theme" aria-label="Toggle Dark Mode">
+            <i class="bi bi-moon-stars-fill text-primary"></i>
           </button>
 
           <!-- Login / Logout Link (Based on Auth Status) -->
@@ -282,7 +275,7 @@
               <a href="service-details.html?service=electrical" class="btn btn-sm text-start btn-light border py-2"><i class="bi bi-lightning text-warning me-2"></i> Electrical Maintenance</a>
               <a href="service-details.html?service=cleaning" class="btn btn-sm text-start btn-light border py-2"><i class="bi bi-stars text-success me-2"></i> Deep Home Cleaning</a>
               <a href="service-details.html?service=pest" class="btn btn-sm text-start btn-light border py-2"><i class="bi bi-bug text-danger me-2"></i> Pest Control Service</a>
-              <a href="services.html" class="btn btn-sm text-start text-primary fw-semibold pt-2"><i class="bi bi-arrow-right-circle me-1"></i> View All 10 Services</a>
+              <a href="services.html" class="btn btn-sm text-start text-primary fw-semibold pt-2"><i class="bi bi-arrow-right-circle me-1"></i> View All 9 Services</a>
             </div>
 
             <!-- Emergency Hotline Card -->
@@ -305,78 +298,176 @@
       const urlParams = new URLSearchParams(window.location.search);
       const serviceKey = urlParams.get('service') || 'ac';
 
-      const serviceData = {
-        ac: {
-          title: 'Air Conditioning Maintenance',
-          category: 'HVAC & Cooling Systems',
-          image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1200&q=80',
-          headline: 'Precision Preventive Air Conditioning Maintenance',
-          lead: 'Keep your residence cool, clean, and energy-efficient. Our certified HVAC master technicians carry out high-pressure jet pump wash, compressor diagnostics, and duct sanitization to extend equipment lifespan by 40%.'
+            const serviceData = {
+        "ac": {
+                "title": "Air Conditioning Maintenance",
+                "category": "HVAC & Cooling Systems",
+                "image": "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Precision Preventive Air Conditioning Maintenance",
+                "lead": "Keep your residence cool, clean, and energy-efficient. Our certified HVAC master technicians carry out high-pressure jet pump wash, compressor diagnostics, and duct sanitization to extend equipment lifespan by 40%."
         },
-        plumbing: {
-          title: 'Plumbing Services & Leak Inspection',
-          category: 'Plumbing & Hydraulic Care',
-          image: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=80',
-          headline: 'Comprehensive Residential Plumbing Overhauls',
-          lead: 'From acoustic pipe leak detection to geyser descaling and mainline drain pressure flushing, our master licensed plumbers ensure seamless water delivery with zero leak seepage.'
+        "heating": {
+                "title": "Central Heating & Furnace Servicing",
+                "category": "HVAC & Heating Systems",
+                "image": "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Safe & Efficient Residential Furnace Care",
+                "lead": "Comprehensive winterization, heat exchanger crack inspection, carbon monoxide safety testing, and burner calibration to ensure cozy, hazard-free warmth throughout cold seasons."
         },
-        electrical: {
-          title: 'Electrical Maintenance & Circuit Safety',
-          category: 'Electrical & Earthing Safety',
-          image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80',
-          headline: 'Full Electrical Load Balancing & Surge Protection',
-          lead: 'Prevent electrical fires and protect expensive smart home appliances. We inspect breaker panels with thermal infrared imaging, verify earth resistance, and eliminate short-circuit hazards.'
+        "airduct": {
+                "title": "Duct Cleaning & Air Quality Sanitization",
+                "category": "Indoor Air Quality",
+                "image": "https://images.unsplash.com/photo-1631545806609-b7b51b34fa32?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Deep Mechanical Duct & Particulate Decontamination",
+                "lead": "Eradicate trapped allergens, pollen, mildew spores, and pet dander from your HVAC supply vents with motorized rotary brushes and hospital-grade botanical disinfectant fogging."
         },
-        cleaning: {
-          title: 'Deep Home Cleaning & Sanitization',
-          category: 'Deep Cleaning & Sanitization',
-          image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
-          headline: 'Intensive Single-Day Home Sanitization',
-          lead: 'Hospital-grade sanitization, floor scrubbing, kitchen degreasing, bathroom descaling, and high-temperature steam upholstery extraction for healthy family living.'
+        "ventilation": {
+                "title": "Ventilation & Exhaust Fan Maintenance",
+                "category": "Ventilation & Airflow",
+                "image": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Kitchen & Bath Exhaust Flow Optimization",
+                "lead": "Heavy kitchen grease removal, centrifugal impeller balance, bathroom damper seal restoration, and CFM airflow velocity tuning to eliminate indoor humidity and cooking fumes."
         },
-        pest: {
-          title: 'Pest Control & Termite Prevention',
-          category: 'Pest Eradication',
-          image: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=80',
-          headline: 'Odorless Eco-Safe Pest & Termite Eradication',
-          lead: 'Safe for children and pets. Micro-gel baiting, wall barrier spraying, and seasonal termite warranties with complete re-service protection.'
+        "plumbing": {
+                "title": "Plumbing Services & Leak Inspection",
+                "category": "Plumbing & Hydraulic Care",
+                "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Comprehensive Residential Plumbing Overhauls",
+                "lead": "From acoustic pipe leak detection to geyser descaling and mainline drain pressure flushing, our master licensed plumbers ensure seamless water delivery with zero leak seepage."
         },
-        painting: {
-          title: 'Painting & Wall Maintenance',
-          category: 'Wall Care & Emulsion Finishes',
-          image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1200&q=80',
-          headline: 'Premium Interior & Exterior Wall Restoration',
-          lead: 'Wall plaster touchups, moisture meter damp curing, waterproof anti-fungal coatings, crack sealing, and premium odorless emulsion paint finishes.'
+        "watertank": {
+                "title": "Water Tank & Overhead Reservoir Cleaning",
+                "category": "Plumbing & Reservoir Sanitization",
+                "image": "https://images.unsplash.com/photo-1584467735815-f778f274e296?auto=format&fit=crop&w=1200&q=80",
+                "headline": "6-Stage Mechanized High-Pressure Water Tank Scrubbing",
+                "lead": "De-sludging, German high-pressure jet wash, industrial vacuum suction, anti-bacterial spray, and UV sterilization for safe, potable residential drinking water."
         },
-        carpentry: {
-          title: 'Carpentry & Woodwork Services',
-          category: 'Carpentry & Architectural Fitting',
-          image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1200&q=80',
-          headline: 'Precision Woodwork, Door & Lock Fitting',
-          lead: 'Hydraulic hinge alignment, smart biometric lock installations, modular kitchen cabinetry repairs, and structural timber reinforcement.'
+        "drainage": {
+                "title": "Drain Unclogging & Hydro-Jetting",
+                "category": "Plumbing & Sewer Care",
+                "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1200&q=80",
+                "headline": "3000 PSI High-Velocity Hydro-Jet Mainline Clearing",
+                "lead": "Clear tough calcified sludge, tree root intrusion, and heavy kitchen grease blocks with non-invasive CCTV camera inspection and commercial-grade pulsating hydro-jetting."
         },
-        appliance: {
-          title: 'Home Appliance Repair & Maintenance',
-          category: 'Electrical & Appliance Care',
-          image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80',
-          headline: 'Certified Inverter & Domestic Appliance Diagnostics',
-          lead: 'Expert diagnosis and genuine manufacturer spare parts for washing machines, inverter refrigerators, dishwashers, microwave ovens, and induction hobs.'
+        "waterpurifier": {
+                "title": "Water Purifier & RO System Servicing",
+                "category": "Water Filtration Systems",
+                "image": "https://images.unsplash.com/photo-1548839140-29a749e1bc4e?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Reverse Osmosis & UV Filter Restoration",
+                "lead": "Multi-stage pre-sediment and carbon block filter swaps, RO membrane chemical flush, digital TDS level recalibration, and UV lamp sterilization for pure home hydration."
         },
-        watertank: {
-          title: 'Water Tank Sanitization & Hygiene',
-          category: 'Plumbing & Hydraulic Care',
-          image: 'https://images.unsplash.com/photo-1584467735815-f778f274e296?auto=format&fit=crop&w=1200&q=80',
-          headline: '6-Stage Mechanized High-Pressure Water Tank Scrubbing',
-          lead: 'De-sludging, German high-pressure jet wash, industrial vacuum suction, anti-bacterial spray, and UV sterilization for safe residential drinking water.'
+        "electrical": {
+                "title": "Electrical Maintenance & Breaker Care",
+                "category": "Electrical & Earthing Safety",
+                "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Full Electrical Load Balancing & Surge Protection",
+                "lead": "Prevent electrical fires and protect expensive smart home appliances. We inspect breaker panels with thermal infrared imaging, verify earth resistance, and eliminate short-circuit hazards."
         },
-        inspection: {
-          title: 'General Home Health & Structural Inspection',
-          category: 'Audit & Health Report',
-          image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80',
-          headline: '120-Point Comprehensive Digital Home Audit',
-          lead: 'Thermal infrared leak imaging, roof and gutter dampness analysis, circuit breaker health checks, and a full 25-page digital audit report with priority repairs.'
+        "appliance": {
+                "title": "Home Appliance Repair & Maintenance",
+                "category": "Electrical & Appliance Care",
+                "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Certified Inverter & Domestic Appliance Diagnostics",
+                "lead": "Expert diagnosis and genuine manufacturer spare parts for washing machines, inverter refrigerators, dishwashers, microwave ovens, and induction hobs."
+        },
+        "generator": {
+                "title": "Inverter & Backup Generator Servicing",
+                "category": "Emergency Power Systems",
+                "image": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Zero-Downtime Backup Power & Battery Health",
+                "lead": "Full diagnostic testing for residential inverters, lead-acid battery banks, automatic transfer switches (ATS), and backup diesel/gas generators to ensure reliable emergency power."
+        },
+        "lighting": {
+                "title": "Indoor & Architectural Lighting Fitting",
+                "category": "Electrical & Ambience Care",
+                "image": "https://images.unsplash.com/photo-1517991104123-1d56a6e81ed9?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Master Chandelier Suspension & LED Architectural Retrofits",
+                "lead": "Heavy chandelier anchor load testing, energy-saving LED strip installs, smart dimmer modules, and weather-resistant landscape illumination for stunning aesthetic illumination."
+        },
+        "cleaning": {
+                "title": "Deep Home Cleaning & Sanitization",
+                "category": "Deep Cleaning & Sanitization",
+                "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Intensive Single-Day Home Sanitization",
+                "lead": "Hospital-grade sanitization, floor scrubbing, kitchen degreasing, bathroom descaling, and high-temperature steam upholstery extraction for healthy family living."
+        },
+        "pest": {
+                "title": "Pest Control & Termite Defense",
+                "category": "Pest Eradication",
+                "image": "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Odorless Eco-Safe Pest & Termite Eradication",
+                "lead": "Safe for children and pets. Micro-gel baiting, wall barrier spraying, and seasonal termite warranties with complete re-service protection."
+        },
+        "carpet": {
+                "title": "Sofa, Carpet & Mattress Steam Cleaning",
+                "category": "Deep Upholstery Sanitization",
+                "image": "https://images.unsplash.com/photo-1558317374-067fb5f30001?auto=format&fit=crop&w=1200&q=80",
+                "headline": "140\u00b0C High-Pressure Injection-Extraction Steam Wash",
+                "lead": "Revitalize luxury fabrics and bedding. Our twin-motor extraction system removes deep trapped soil, pet dander, coffee stains, and micro-contaminants with fast drying times."
+        },
+        "window": {
+                "title": "Facade & Exterior Window Jet Wash",
+                "category": "Exterior Glass Maintenance",
+                "image": "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Pure De-Ionized Water Exterior Glass Washing",
+                "lead": "Restore breathtaking daylight through streak-free exterior window washing. Telescopic carbon poles reach up to 4 stories without scaffolding or property damage."
+        },
+        "painting": {
+                "title": "Painting & Wall Restoration",
+                "category": "Wall Care & Emulsion Finishes",
+                "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Premium Interior & Exterior Wall Restoration",
+                "lead": "Wall plaster touchups, moisture meter damp curing, waterproof anti-fungal coatings, crack sealing, and premium odorless emulsion paint finishes."
+        },
+        "carpentry": {
+                "title": "Carpentry & Architectural Fitting",
+                "category": "Carpentry & Architectural Fitting",
+                "image": "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Precision Woodwork, Door & Lock Fitting",
+                "lead": "Hydraulic hinge alignment, smart biometric lock installations, modular kitchen cabinetry repairs, and structural timber reinforcement."
+        },
+        "waterproofing": {
+                "title": "Roof Waterproofing & Terrace Sealing",
+                "category": "Structural Membrane Defense",
+                "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Seamless Liquid Polyurethane Roof Protection",
+                "lead": "Stop ceiling seepages and damp patches permanently. We apply elastomeric thermal-reflective waterproofing membranes with guaranteed UV stability and leak prevention."
+        },
+        "doorscreen": {
+                "title": "Door, Window & Flyscreen Repair",
+                "category": "Fixtures & Hardware Care",
+                "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Smooth Gliding Rollers & High-Strength Mesh Fitting",
+                "lead": "Repair stubborn sliding patio doors, replace worn wheels, install magnetic bug screens, and seal drafty gaps with acoustic weather-stripping."
+        },
+        "inspection": {
+                "title": "General Home Health Inspection",
+                "category": "Audit & Health Report",
+                "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
+                "headline": "120-Point Comprehensive Digital Home Audit",
+                "lead": "Thermal infrared leak imaging, roof and gutter dampness analysis, circuit breaker health checks, and a full 25-page digital audit report with priority repairs."
+        },
+        "security": {
+                "title": "CCTV & Security Surveillance Care",
+                "category": "Security & Surveillance",
+                "image": "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=80",
+                "headline": "HD Security Camera & Recording System Overhaul",
+                "lead": "Protect your premises 24/7. Optical sensor cleaning, infra-red night vision alignment, network video recorder firmware updates, and smartphone remote setup."
+        },
+        "smarthome": {
+                "title": "Smart Home Automation & IoT Setup",
+                "category": "Smart Home Automation",
+                "image": "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Effortless Smart Device Connectivity & Voice Hubs",
+                "lead": "Optimize Wi-Fi coverage mesh, sync video doorbells with smart deadbolts, integrate automated motorized curtains, and orchestrate custom mood lighting routines."
+        },
+        "firesafety": {
+                "title": "Fire Safety & Smoke Alarm Testing",
+                "category": "Life Safety & Hazard Prevention",
+                "image": "https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=1200&q=80",
+                "headline": "Residential Smoke, Heat & Gas Hazard Verification",
+                "lead": "Mandatory testing of optical smoke alarms, kitchen combustible LPG/methane sensors, fire extinguisher pressure gauges, and emergency exit lighting."
         }
-      };
+};
 
       if (serviceData[serviceKey]) {
         const s = serviceData[serviceKey];
@@ -433,7 +524,7 @@
             <li><a href="service-details.html?service=electrical">Electrical & Breaker Care</a></li>
             <li><a href="service-details.html?service=cleaning">Deep Home Sanitization</a></li>
             <li><a href="service-details.html?service=pest">Pest & Termite Control</a></li>
-            <li><a href="services.html">View All 10 Services</a></li>
+            <li><a href="services.html">View All 9 Services</a></li>
           </ul>
         </div>
 
