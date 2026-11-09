@@ -73,11 +73,6 @@
             <i class="bi bi-moon-stars-fill text-primary"></i>
           </button>
 
-          <!-- Login / Logout Link (Based on Auth Status) -->
-          <a href="auth/login.html" class="btn btn-outline-hc py-2 px-3 small nav-auth-btn" id="navAuthBtn">
-            <i class="bi bi-person-circle me-1"></i> <span class="nav-auth-text">Log In</span>
-          </a>
-
           <!-- Book AMC CTA Button -->
           <a href="customer/booking.html" class="btn btn-primary-hc py-2 px-4 small">
             Book AMC <i class="bi bi-arrow-right ms-1"></i>
@@ -99,53 +94,105 @@
     </div>
   </section>
 
+  <!-- Live Emergency Dispatch Status Bar -->
+  <section class="py-3 bg-dark text-white border-bottom border-secondary border-opacity-25">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+        <div class="d-flex align-items-center gap-3">
+          <span class="live-status-pill">
+            <span class="pulse-dot"></span> <span>System Live &amp; Operational</span>
+          </span>
+          <span class="text-white-50 small d-none d-md-inline">
+            <i class="bi bi-truck me-1 text-info"></i> <strong>15 Mobile Response Units</strong> on Duty Across All Metro Districts
+          </span>
+        </div>
+        <div class="d-flex align-items-center gap-4 small">
+          <div>
+            <span class="text-white-50">Current Average SLA:</span>
+            <strong class="text-warning ms-1"><i class="bi bi-stopwatch-fill me-1"></i>32 Minutes</strong>
+          </div>
+          <div class="vr bg-secondary opacity-50 d-none d-sm-block" style="height: 18px;"></div>
+          <div>
+            <span class="text-white-50">Emergency Hotline:</span>
+            <a href="tel:+18005550198" class="text-danger fw-bold ms-1 text-decoration-none">
+              <i class="bi bi-telephone-fill me-1"></i>+1 (800) 555-0198
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Cards & Form -->
   <section class="section-padding">
     <div class="container">
+      <!-- 4 High-Impact Contact & Hotline Cards -->
       <div class="row g-4 mb-5">
-        <div class="col-md-4">
+        <!-- Card 1: General Desk -->
+        <div class="col-sm-6 col-lg-3">
           <div class="trust-item-card text-center p-4">
             <div class="trust-icon-box mx-auto">
               <i class="bi bi-telephone-inbound-fill"></i>
             </div>
-            <h5 class="fw-bold mb-1">Call Us Anytime</h5>
-            <p class="text-muted small mb-3">24/7 Hotline for emergencies & AMC inquiries</p>
-            <a href="tel:+18005550199" class="fw-bold text-primary fs-5">+1 (800) 555-0199</a>
+            <h5 class="fw-bold mb-1">General Support</h5>
+            <p class="text-muted small mb-3">AMC inquiries & contract plans</p>
+            <a href="tel:+18005550199" class="fw-bold text-primary fs-5 d-block mb-2">+1 (800) 555-0199</a>
+            <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-1 small">24/7 Toll-Free</span>
           </div>
         </div>
 
-        <div class="col-md-4">
+        <!-- Card 2: Priority Emergency Line -->
+        <div class="col-sm-6 col-lg-3">
+          <div class="trust-item-card text-center p-4 border-danger border-opacity-25">
+            <div class="trust-icon-box red mx-auto">
+              <i class="bi bi-lightning-charge-fill"></i>
+            </div>
+            <h5 class="fw-bold mb-1 text-danger">Emergency Dispatch</h5>
+            <p class="text-muted small mb-3">Urgent burst pipe, electrical & AC</p>
+            <a href="tel:+18005550198" class="fw-bold text-danger fs-5 d-block mb-2">+1 (800) 555-0198</a>
+            <span class="badge bg-danger-subtle text-danger border border-danger-subtle rounded-pill px-3 py-1 small">45-Min Arrival SLA</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Email Helpdesk -->
+        <div class="col-sm-6 col-lg-3">
           <div class="trust-item-card text-center p-4">
-            <div class="trust-icon-box mx-auto">
+            <div class="trust-icon-box green mx-auto">
               <i class="bi bi-envelope-check-fill"></i>
             </div>
-            <h5 class="fw-bold mb-1">Email Our Desk</h5>
-            <p class="text-muted small mb-3">For business contracts, billing & custom quotes</p>
-            <a href="mailto:support@homecarely.com" class="fw-bold text-primary">support@homecarely.com</a>
+            <h5 class="fw-bold mb-1">Email Helpdesk</h5>
+            <p class="text-muted small mb-3">Business contracts & billing</p>
+            <a href="mailto:support@homecarely.com" class="fw-bold text-primary d-block mb-2">support@homecarely.com</a>
+            <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1 small">&lt; 30-Min Reply</span>
           </div>
         </div>
 
-        <div class="col-md-4">
+        <!-- Card 4: Operations HQ -->
+        <div class="col-sm-6 col-lg-3">
           <div class="trust-item-card text-center p-4">
-            <div class="trust-icon-box mx-auto">
+            <div class="trust-icon-box amber mx-auto">
               <i class="bi bi-geo-alt-fill"></i>
             </div>
-            <h5 class="fw-bold mb-1">Headquarters</h5>
-            <p class="text-muted small mb-3">Visit our operations & training center</p>
-            <span class="fw-semibold text-dark small">450 Grand Avenue, Suite 800, Metro City, IL</span>
+            <h5 class="fw-bold mb-1">Central HQ</h5>
+            <p class="text-muted small mb-3">742 Evergreen Terrace, Ste 400</p>
+            <span class="fw-semibold text-dark small d-block mb-2">Metro City, NY 10001</span>
+            <span class="badge bg-light text-dark border rounded-pill px-3 py-1 small">Mon – Sun: 24/7</span>
           </div>
         </div>
       </div>
 
-      <!-- Contact Form & Map Row -->
+      <!-- Contact Form & Service Area Hub Row -->
       <div class="row g-5 align-items-stretch">
+        <!-- Contact Form Column -->
         <div class="col-lg-7">
           <div class="card border-0 shadow-lg p-4 p-md-5 rounded-4 bg-white h-100">
-            <span class="badge-tag bg-primary-subtle text-primary mb-2 align-self-start">Get In Touch</span>
-            <h3 class="fw-bold mb-3">Send Us A Message</h3>
+            <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-2 align-self-start">
+              <i class="bi bi-chat-left-dots-fill me-1"></i> Get In Touch
+            </span>
+            <h3 class="fw-bold mb-2">Send Us A Message</h3>
             <p class="text-muted small mb-4">Have questions about our AMC plans or need a customized multi-property quote? Fill out the form below and an engineer will respond within 30 minutes.</p>
 
-            <form id="publicContactForm" onsubmit="event.preventDefault(); showToast('Message received! Our customer success team will reach out shortly.', 'success', 'Inquiry Sent'); this.reset();">
+            <form id="publicContactForm" onsubmit="event.preventDefault(); if(typeof showToast === 'function') { showToast('Message received! Our customer success team will reach out shortly.', 'success', 'Inquiry Sent'); } else { alert('Message received! Our team will contact you shortly.'); } this.reset();">
               <div class="row g-3">
                 <div class="col-md-6">
                   <label class="form-label small fw-semibold">Your Full Name</label>
@@ -160,13 +207,40 @@
                   <input type="tel" class="form-control form-control-hc" placeholder="+1 (555) 000-0000" required>
                 </div>
                 <div class="col-md-6">
+                  <label class="form-label small fw-semibold">Property Type</label>
+                  <select class="form-select form-control-hc" required>
+                    <option value="apartment">Apartment (1-3 BHK)</option>
+                    <option value="villa">Independent Villa / Duplex</option>
+                    <option value="commercial">Commercial Office</option>
+                    <option value="portfolio">Multi-Property Portfolio</option>
+                  </select>
+                </div>
+                <div class="col-12">
                   <label class="form-label small fw-semibold">Subject / Service Interest</label>
                   <select class="form-select form-control-hc" required>
                     <option value="amc">Inquire About AMC Plans</option>
-                    <option value="emergency">Emergency Repair Callout</option>
-                    <option value="commercial">Commercial / Villa Portfolio</option>
+                    <option value="emergency">Emergency Breakdown Callout</option>
+                    <option value="inspection">Book Comprehensive Home Health Audit</option>
                     <option value="billing">Billing & Contract Support</option>
+                    <option value="other">Other Inquiry</option>
                   </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small fw-semibold">Preferred Contact Method</label>
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="preferredContact" id="contactPrefPhone" value="phone" checked>
+                      <label class="form-check-label small" for="contactPrefPhone"><i class="bi bi-telephone me-1 text-primary"></i> Phone Call</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="preferredContact" id="contactPrefWhatsapp" value="whatsapp">
+                      <label class="form-check-label small" for="contactPrefWhatsapp"><i class="bi bi-whatsapp me-1 text-success"></i> WhatsApp</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="preferredContact" id="contactPrefEmail" value="email">
+                      <label class="form-check-label small" for="contactPrefEmail"><i class="bi bi-envelope me-1 text-primary"></i> Email</label>
+                    </div>
+                  </div>
                 </div>
                 <div class="col-12">
                   <label class="form-label small fw-semibold">How Can We Help You?</label>
@@ -182,36 +256,60 @@
           </div>
         </div>
 
+        <!-- Service Area & Dispatch Hub Column -->
         <div class="col-lg-5">
-          <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
-            <!-- 24/7 Rapid Response Grid Visual -->
-            <div class="p-4 text-white text-center d-flex flex-column justify-content-center align-items-center position-relative overflow-hidden" style="min-height: 260px; background: linear-gradient(135deg, rgba(15, 23, 42, 0.88) 0%, rgba(30, 58, 138, 0.82) 100%), url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80') center center / cover no-repeat;">
-              <i class="bi bi-shield-check fs-1 text-primary mb-2" style="z-index: 2;"></i>
-              <h5 class="fw-bold text-white mb-1" style="z-index: 2;">24/7 Rapid Response Dispatch Grid</h5>
-              <p class="small text-white-50 max-w-300 mx-auto mb-3" style="z-index: 2;">Our 15 mobile engineering vans are stationed across all metro districts for sub-60-minute emergency arrival.</p>
-              <span class="badge bg-success px-3 py-2 rounded-pill shadow" style="z-index: 2;"><i class="bi bi-broadcast me-1"></i> 15 Mobile Response Units Live</span>
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white d-flex flex-column">
+            <!-- Interactive Service Area Map -->
+            <div class="p-4 bg-light border-bottom">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h6 class="fw-bold mb-0 text-dark"><i class="bi bi-map-fill text-primary me-2"></i>Metro Coverage & Dispatch Radius</h6>
+                <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill">15 Units Live</span>
+              </div>
+              <p class="text-muted smaller mb-3" style="font-size: 0.8rem;">Every residence within our 35-mile radius is covered by our 45-min arrival SLA.</p>
+              <div class="rounded-3 overflow-hidden shadow-sm border" style="height: 190px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25437351494!2d-74.11976373099955!3d40.69766374934789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1690000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              </div>
             </div>
 
-            <div class="p-4">
-              <h6 class="fw-bold mb-3">Operational Working Hours</h6>
-              <ul class="list-unstyled mb-0 d-flex flex-column gap-2 text-secondary small">
-                <li class="d-flex justify-content-between border-bottom pb-2">
-                  <span>Emergency Breakdown Dispatch:</span>
-                  <strong class="text-success">24/7 / 365 Days</strong>
-                </li>
-                <li class="d-flex justify-content-between border-bottom pb-2">
-                  <span>Scheduled AMC Maintenance Visits:</span>
-                  <strong>Mon – Sun (8:00 AM – 8:00 PM)</strong>
-                </li>
-                <li class="d-flex justify-content-between pb-2">
-                  <span>Corporate Office & Helpdesk:</span>
-                  <strong>Mon – Sat (9:00 AM – 6:00 PM)</strong>
-                </li>
-              </ul>
+            <!-- Regional Dispatch Hubs -->
+            <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+              <div>
+                <h6 class="fw-bold mb-3 text-dark">Metro Dispatch Depots</h6>
+                <div class="d-flex flex-column gap-2 small text-secondary mb-4">
+                  <div class="d-flex justify-content-between align-items-center p-2 rounded bg-light-subtle border">
+                    <div><i class="bi bi-geo-alt-fill text-primary me-2"></i><strong>Central Downtown Depot</strong></div>
+                    <span class="badge bg-primary text-white rounded-pill">25 Min Avg</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center p-2 rounded bg-light-subtle border">
+                    <div><i class="bi bi-geo-alt-fill text-primary me-2"></i><strong>North Residential Hub</strong></div>
+                    <span class="badge bg-primary text-white rounded-pill">30 Min Avg</span>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center p-2 rounded bg-light-subtle border">
+                    <div><i class="bi bi-geo-alt-fill text-primary me-2"></i><strong>South Suburbs Station</strong></div>
+                    <span class="badge bg-primary text-white rounded-pill">35 Min Avg</span>
+                  </div>
+                </div>
+
+                <h6 class="fw-bold mb-2 text-dark">Operational Hours</h6>
+                <ul class="list-unstyled mb-0 d-flex flex-column gap-1 text-secondary small">
+                  <li class="d-flex justify-content-between pb-1 border-bottom">
+                    <span>Emergency Breakdown Dispatch:</span>
+                    <strong class="text-success">24/7 / 365 Days</strong>
+                  </li>
+                  <li class="d-flex justify-content-between pb-1 border-bottom">
+                    <span>Scheduled AMC Visits:</span>
+                    <strong>Mon – Sun (8am – 8pm)</strong>
+                  </li>
+                  <li class="d-flex justify-content-between">
+                    <span>Customer Desk:</span>
+                    <strong>24/7 Toll-Free</strong>
+                  </li>
+                </ul>
+              </div>
 
               <div class="mt-4 pt-3 border-top">
-                <a href="https://wa.me/18005550199" target="_blank" class="btn btn-outline-success w-100 rounded-pill py-2">
-                  <i class="bi bi-whatsapp me-2"></i> Chat with Us on WhatsApp
+                <a href="https://wa.me/18005550199" target="_blank" class="btn btn-outline-success w-100 rounded-pill py-2 fw-semibold">
+                  <i class="bi bi-whatsapp me-2"></i> Instant WhatsApp Dispatch Chat
                 </a>
               </div>
             </div>
@@ -221,76 +319,267 @@
     </div>
   </section>
 
-  <!-- Universal Footer -->
-  <footer class="main-footer">
+  <!-- Quick Help FAQ Accordion Section -->
+  <section class="section-padding bg-light-subtle border-top">
     <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <div class="footer-brand">
-            <h4 class="d-flex align-items-center gap-2">
-              <i class="bi bi-shield-check text-primary"></i> HomeCare<span class="text-primary">ly</span>
-            </h4>
-            <p class="text-muted small pe-lg-4">
-              HomeCarely is your premier annual home maintenance partner. Certified technicians, guaranteed response windows, and round-the-clock emergency support for modern residences.
-            </p>
-            <div class="d-flex gap-2 mt-3">
-              <a href="#" class="social-pill-link"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="social-pill-link"><i class="bi bi-twitter-x"></i></a>
-              <a href="#" class="social-pill-link"><i class="bi bi-instagram"></i></a>
-              <a href="#" class="social-pill-link"><i class="bi bi-linkedin"></i></a>
+      <div class="text-center section-header mb-5">
+        <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-2">
+          <i class="bi bi-question-circle-fill me-1"></i> Fast Answers
+        </span>
+        <h2 class="section-title fw-bold">Frequently Asked Support & Dispatch Questions</h2>
+        <p class="text-muted max-w-600 mx-auto">
+          Instant answers to common questions about technician response times, emergency coverages, and weekend service.
+        </p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="accordion" id="contactFaqAccordion">
+            <div class="accordion-item border rounded-3 mb-3">
+              <h2 class="accordion-header">
+                <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#cfq1">
+                  How quickly does a technician arrive during an urgent emergency?
+                </button>
+              </h2>
+              <div id="cfq1" class="accordion-collapse collapse show" data-bs-parent="#contactFaqAccordion">
+                <div class="accordion-body text-secondary">
+                  Active AMC subscribers receive our guaranteed 45-minute on-site arrival SLA for all domestic emergencies (such as total AC cooling failure, burst water pipes, or main electrical breaker trips). Our fleet of 15 GPS-tracked mobile engineering units is stationed strategically across all metro districts to guarantee this window.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border rounded-3 mb-3">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#cfq2">
+                  Are emergency repair callout charges included in my AMC plan?
+                </button>
+              </h2>
+              <div id="cfq2" class="accordion-collapse collapse" data-bs-parent="#contactFaqAccordion">
+                <div class="accordion-body text-secondary">
+                  Yes! All labor callouts, diagnostic assessments, and scheduled preventive inspections are 100% covered under our Essential, Premium, and Ultimate annual maintenance packages with zero hidden fees.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border rounded-3 mb-3">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#cfq3">
+                  Do you provide maintenance and breakdown services on weekends and holidays?
+                </button>
+              </h2>
+              <div id="cfq3" class="accordion-collapse collapse" data-bs-parent="#contactFaqAccordion">
+                <div class="accordion-body text-secondary">
+                  Yes, 24 hours a day, 365 days a year. Our mobile response team never closes, and AMC subscribers are never subject to weekend or holiday surge pricing.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border rounded-3 mb-3">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#cfq4">
+                  How do I track my assigned technician in real-time?
+                </button>
+              </h2>
+              <div id="cfq4" class="accordion-collapse collapse" data-bs-parent="#contactFaqAccordion">
+                <div class="accordion-body text-secondary">
+                  Once a maintenance visit is confirmed, you receive an automated SMS with a secure live GPS tracking link. You can view your technician's photo credentials, van number, and exact estimated arrival time in real-time.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item border rounded-3 mb-3">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#cfq5">
+                  Can I schedule routine maintenance visits outside standard office hours?
+                </button>
+              </h2>
+              <div id="cfq5" class="accordion-collapse collapse" data-bs-parent="#contactFaqAccordion">
+                <div class="accordion-body text-secondary">
+                  Yes! We provide flexible 2-hour arrival windows from 8:00 AM to 8:00 PM Monday through Sunday. You can select your preferred day and time slot conveniently through our online booking portal or by calling our desk.
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="col-6 col-md-3 col-lg-2">
-          <h5 class="footer-widget-title">Quick Links</h5>
-          <ul class="footer-links">
-            <li><a href="index.html">Home Overview</a></li>
-            <li><a href="about.html">About Company</a></li>
-            <li><a href="amc-plans.html">AMC Plans</a></li>
-            <li><a href="pricing.html">Pricing Guide</a></li>
-            <li><a href="blog.html">Latest Articles</a></li>
-            <li><a href="contact.html">Contact Support</a></li>
-          </ul>
-        </div>
-
-        <div class="col-6 col-md-3 col-lg-3">
-          <h5 class="footer-widget-title">AMC Services</h5>
-          <ul class="footer-links">
-            <li><a href="service-details.html?service=ac">Air Conditioning Maintenance</a></li>
-            <li><a href="service-details.html?service=plumbing">Plumbing Inspections</a></li>
-            <li><a href="service-details.html?service=electrical">Electrical & Breaker Care</a></li>
-            <li><a href="service-details.html?service=cleaning">Deep Home Sanitization</a></li>
-            <li><a href="service-details.html?service=pest">Pest & Termite Control</a></li>
-            <li><a href="services.html">View All 9 Services</a></li>
-          </ul>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <h5 class="footer-widget-title">Newsletter & Offers</h5>
-          <p class="small text-muted mb-3">Subscribe for seasonal maintenance tips and exclusive AMC renewal discounts.</p>
-          <form class="mb-3" onsubmit="event.preventDefault(); showToast('Thank you for subscribing!', 'success');">
-            <div class="input-group">
-              <input type="email" class="form-control form-control-hc rounded-start-pill border-0" placeholder="Your email address" required>
-              <button class="btn btn-primary-hc rounded-end-pill px-3" type="submit"><i class="bi bi-send-fill"></i></button>
+  <!-- Universal Footer -->
+  <!-- Universal Footer -->
+    <!-- Main Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <!-- Trust & Guarantee Strip -->
+      <div class="footer-guarantee-strip">
+        <div class="row g-4">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-guarantee-card">
+              <div class="footer-guarantee-icon">
+                <i class="bi bi-clock-history"></i>
+              </div>
+              <div>
+                <h6 class="footer-guarantee-title">24/7 Rapid Dispatch</h6>
+                <p class="footer-guarantee-desc">Guaranteed 45-min arrival SLA</p>
+              </div>
             </div>
-          </form>
-          <div class="small text-muted">
-            <div class="mb-1"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (800) 555-0199</div>
-            <div><i class="bi bi-envelope-fill text-primary me-2"></i> support@homecarely.com</div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-guarantee-card">
+              <div class="footer-guarantee-icon">
+                <i class="bi bi-patch-check-fill"></i>
+              </div>
+              <div>
+                <h6 class="footer-guarantee-title">100% Vetted Pros</h6>
+                <p class="footer-guarantee-desc">Certified & background-checked</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-guarantee-card">
+              <div class="footer-guarantee-icon">
+                <i class="bi bi-shield-lock-fill"></i>
+              </div>
+              <div>
+                <h6 class="footer-guarantee-title">$2M Insured & Bonded</h6>
+                <p class="footer-guarantee-desc">Comprehensive home protection</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="footer-guarantee-card">
+              <div class="footer-guarantee-icon">
+                <i class="bi bi-award-fill"></i>
+              </div>
+              <div>
+                <h6 class="footer-guarantee-title">30-Day Guarantee</h6>
+                <p class="footer-guarantee-desc">Free callback & re-service</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
+      <div class="row g-4">
+        <!-- Col 1: Brand Info -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+          <div class="footer-brand">
+            <h4 class="d-flex align-items-center gap-2 mb-3">
+              <i class="bi bi-shield-check text-primary"></i> HomeCare<span class="text-primary">ly</span>
+            </h4>
+            <p class="text-muted small pe-lg-3 mb-3">
+              HomeCarely is your premier annual home maintenance partner. Certified technicians, guaranteed response windows, and round-the-clock emergency support for modern residences.
+            </p>
+            <div class="d-flex gap-2 mb-3">
+              <a href="https://facebook.com" class="social-pill-link" aria-label="Facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
+              <a href="https://twitter.com" class="social-pill-link" aria-label="Twitter" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i></a>
+              <a href="https://instagram.com" class="social-pill-link" aria-label="Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+              <a href="https://linkedin.com" class="social-pill-link" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+              <a href="https://youtube.com" class="social-pill-link" aria-label="YouTube" target="_blank" rel="noopener"><i class="bi bi-youtube"></i></a>
+            </div>
+            <div class="footer-badge-pill">
+              <i class="bi bi-check-circle-fill text-success"></i> ISO 9001:2015 Certified AMC Provider
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-6 col-md-6 col-lg-2 mb-4 mb-lg-0">
+          <h5 class="footer-widget-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="bi bi-chevron-right small text-primary"></i> Home Overview</a></li>
+            <li><a href="about.html"><i class="bi bi-chevron-right small text-primary"></i> About Company</a></li>
+            <li><a href="amc-plans.html"><i class="bi bi-chevron-right small text-primary"></i> AMC Plans</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right small text-primary"></i> Pricing Guide</a></li>
+            <li><a href="customer/booking.html"><i class="bi bi-chevron-right small text-primary"></i> Book Service</a></li>
+            <li><a href="faq.html"><i class="bi bi-chevron-right small text-primary"></i> FAQs & Help</a></li>
+            <li><a href="blog.html"><i class="bi bi-chevron-right small text-primary"></i> Maintenance Blog</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right small text-primary"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: AMC Services (All 9 Services) -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <h5 class="footer-widget-title">AMC Services (9)</h5>
+          <div class="row g-2">
+            <div class="col-6">
+              <ul class="footer-links">
+                <li><a href="service-details.html?service=ac"><i class="bi bi-chevron-right small text-primary"></i> AC Maintenance</a></li>
+                <li><a href="service-details.html?service=plumbing"><i class="bi bi-chevron-right small text-primary"></i> Plumbing Care</a></li>
+                <li><a href="service-details.html?service=electrical"><i class="bi bi-chevron-right small text-primary"></i> Electrical & Breakers</a></li>
+                <li><a href="service-details.html?service=cleaning"><i class="bi bi-chevron-right small text-primary"></i> Deep Sanitization</a></li>
+                <li><a href="service-details.html?service=pest"><i class="bi bi-chevron-right small text-primary"></i> Pest & Termite</a></li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <ul class="footer-links">
+                <li><a href="service-details.html?service=watertank"><i class="bi bi-chevron-right small text-primary"></i> Water Tank Care</a></li>
+                <li><a href="service-details.html?service=painting"><i class="bi bi-chevron-right small text-primary"></i> Painting Works</a></li>
+                <li><a href="service-details.html?service=carpentry"><i class="bi bi-chevron-right small text-primary"></i> Custom Carpentry</a></li>
+                <li><a href="service-details.html?service=inspection"><i class="bi bi-chevron-right small text-primary"></i> Safety Inspection</a></li>
+                <li><a href="services.html" class="fw-semibold text-primary"><i class="bi bi-arrow-right small text-primary"></i> All Services Grid</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 4: Contact & Newsletter -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5 class="footer-widget-title">Emergency & Contact</h5>
+          <div class="footer-contact-info mb-3">
+            <div class="footer-contact-item">
+              <i class="bi bi-telephone-fill"></i>
+              <div>
+                <a href="tel:+18005550199">+1 (800) 555-0199</a>
+                <div><span class="footer-contact-badge bg-primary-subtle text-primary border border-primary-subtle">24/7 Toll-Free</span></div>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <i class="bi bi-lightning-charge-fill text-warning"></i>
+              <div>
+                <a href="tel:+18005550198">+1 (800) 555-0198</a>
+                <div><span class="footer-contact-badge bg-danger-subtle text-danger border border-danger-subtle">Priority AMC Line</span></div>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <i class="bi bi-envelope-fill"></i>
+              <div>
+                <a href="mailto:support@homecarely.com" class="text-muted fw-normal">support@homecarely.com</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <i class="bi bi-geo-alt-fill"></i>
+              <span class="text-muted small">742 Evergreen Terrace, Suite 400, Metro City, NY 10001</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="bi bi-clock-fill"></i>
+              <span class="text-muted small"><strong>Hours:</strong> Mon – Sun, 24/7 Emergency Dispatch</span>
+            </div>
+          </div>
+          <div class="footer-newsletter">
+            <p class="small text-muted mb-2">Subscribe for seasonal maintenance tips & AMC discounts:</p>
+            <form onsubmit="event.preventDefault(); if (typeof showToast === 'function') { showToast('Thank you for subscribing to HomeCarely updates!', 'success'); } else { alert('Thank you for subscribing to HomeCarely updates!'); }">
+              <div class="input-group">
+                <input type="email" class="form-control form-control-hc rounded-start-pill border-0" placeholder="Your email address" required>
+                <button class="btn btn-primary-hc rounded-end-pill px-3" type="submit" aria-label="Subscribe"><i class="bi bi-send-fill"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
       <div class="footer-bottom">
-        <div class="d-flex flex-wrap justify-content-between align-items-center">
-          <p class="mb-0 text-muted">© 2026 HomeCarely AMC Services Ltd. All Rights Reserved.</p>
-          <div class="d-flex gap-3">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+          <p class="mb-0 text-muted">© 2026 <strong>HomeCarely AMC Services Ltd.</strong> All Rights Reserved. Fully Licensed, Bonded & Insured.</p>
+          <div class="d-flex flex-wrap gap-3 align-items-center">
             <a href="faq.html" class="text-muted small">Privacy Policy</a>
-            <span class="text-secondary">·</span>
+            <span class="text-secondary opacity-50">·</span>
             <a href="faq.html" class="text-muted small">Terms of Service</a>
-            <span class="text-secondary">·</span>
-            <a href="faq.html" class="text-muted small">AMC Agreement</a>
+            <span class="text-secondary opacity-50">·</span>
+            <a href="amc-plans.html" class="text-muted small">AMC Agreement & SLA</a>
+            <span class="text-secondary opacity-50">·</span>
+            <a href="contact.html" class="text-muted small">Emergency Support</a>
           </div>
         </div>
       </div>

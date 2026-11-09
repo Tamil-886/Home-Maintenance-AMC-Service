@@ -28,73 +28,30 @@
       </div>
 
       <ul class="sidebar-menu">
-        <li class="sidebar-heading">Overview</li>
+        <li class="sidebar-heading">Portal Menu</li>
         <li class="sidebar-item">
           <a href="dashboard.html" class="sidebar-link active">
             <i class="bi bi-grid-1x2-fill"></i>
             <span>Dashboard</span>
           </a>
         </li>
-
-        <li class="sidebar-heading">Maintenance</li>
-        <li class="sidebar-item">
-          <a href="booking.html" class="sidebar-link">
-            <i class="bi bi-calendar-plus-fill"></i>
-            <span>Schedule a Service</span>
-            <span class="badge bg-primary rounded-pill">New</span>
-          </a>
-        </li>
         <li class="sidebar-item">
           <a href="bookings.html" class="sidebar-link">
             <i class="bi bi-calendar2-check-fill"></i>
-            <span>My Bookings</span>
+            <span>Bookings & Schedule</span>
+            <span class="badge bg-primary rounded-pill">Active</span>
           </a>
         </li>
-        <li class="sidebar-item">
-          <a href="service-history.html" class="sidebar-link">
-            <i class="bi bi-clock-history"></i>
-            <span>Service History</span>
-          </a>
-        </li>
-
-        <li class="sidebar-heading">AMC & Coverage</li>
         <li class="sidebar-item">
           <a href="my-plans.html" class="sidebar-link">
             <i class="bi bi-shield-fill-check"></i>
-            <span>My AMC Plans</span>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a href="contracts.html" class="sidebar-link">
-            <i class="bi bi-file-earmark-text-fill"></i>
-            <span>Active Contracts</span>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a href="renewal.html" class="sidebar-link">
-            <i class="bi bi-arrow-repeat"></i>
-            <span>Renewal & Add-ons</span>
-          </a>
-        </li>
-
-        <li class="sidebar-heading">Account & Help</li>
-        <li class="sidebar-item">
-          <a href="profile.html" class="sidebar-link">
-            <i class="bi bi-person-fill"></i>
-            <span>My Profile</span>
-          </a>
-        </li>
-        <li class="sidebar-item">
-          <a href="notifications.html" class="sidebar-link">
-            <i class="bi bi-bell-fill"></i>
-            <span>Notifications</span>
-            <span class="badge bg-danger rounded-pill">3</span>
+            <span>My AMC Plan</span>
           </a>
         </li>
         <li class="sidebar-item">
           <a href="messages.html" class="sidebar-link">
             <i class="bi bi-chat-dots-fill"></i>
-            <span>Support & Messages</span>
+            <span>Support & Chat</span>
           </a>
         </li>
         <li class="sidebar-item">
@@ -129,16 +86,15 @@
           <button class="btn btn-sm btn-light border d-lg-none" id="sidebarToggleBtn">
             <i class="bi bi-list fs-5"></i>
           </button>
-          <div class="dashboard-search-box d-none d-md-block">
-            <i class="bi bi-search"></i>
-            <input type="text" class="form-control" placeholder="Search bookings, invoices, contracts...">
-          </div>
+          <a href="booking.html" class="btn btn-sm btn-primary-hc rounded-pill px-3 py-1-5 d-none d-sm-inline-flex align-items-center gap-2 shadow-sm">
+            <i class="bi bi-plus-circle-fill"></i> <span>Book Maintenance</span>
+          </a>
         </div>
 
         <div class="d-flex align-items-center gap-2">
           <!-- Notifications Dropdown -->
           <div class="dropdown">
-            <button class="btn btn-icon-pill position-relative" data-bs-toggle="dropdown">
+            <button class="btn btn-icon-pill position-relative" data-bs-toggle="dropdown" aria-label="Notifications">
               <i class="bi bi-bell"></i>
               <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
             </button>
@@ -168,9 +124,11 @@
             </ul>
           </div>
 
-          <!-- User Menu -->
+          <!-- Quick Toggles -->
           <button class="btn btn-icon-pill theme-toggle-btn" title="Toggle Dark/Light Mode"><i class="bi bi-moon-stars-fill"></i></button>
           <button class="btn btn-sm btn-outline-hc dir-toggle-btn" title="Toggle LTR/RTL Layout"><i class="bi bi-globe me-1"></i> <span class="dir-toggle-text">RTL</span></button>
+          
+          <!-- User Profile Dropdown -->
           <div class="dropdown ms-2">
             <button class="btn btn-light border rounded-pill d-flex align-items-center gap-2 py-1 px-2" data-bs-toggle="dropdown">
               <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" class="rounded-circle auth-user-avatar" width="30" height="30" alt="Avatar">
@@ -191,84 +149,62 @@
       <!-- Dashboard Body -->
       <main class="dashboard-body">
         
-        <!-- Welcome Hero Banner -->
-        <div class="card border-0 shadow-sm p-4 rounded-4 mb-4" style="background: linear-gradient(135deg, #1068eb 0%, #0284c7 100%); color: white;">
-          <div class="row align-items-center">
-            <div class="col-lg-8">
-              <span class="badge bg-white text-primary rounded-pill px-3 py-1 fw-bold mb-2">Active AMC Member</span>
-              <h2 class="fw-bold mb-1">Hello, <span class="auth-user-name">Alex Morgan</span>!</h2>
-              <p class="mb-0 text-white-50">
-                Your home is currently protected under the <strong class="text-white c-plan-name">Premium Plan</strong> (<span class="c-plan-id">AMC-2026-8842</span>). You have <strong class="text-white"><span class="c-visits-remaining">6</span> scheduled maintenance visits remaining</strong> for this contract term.
+        <!-- Simplified Member & Plan Overview -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-white">
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+            <div>
+              <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+                <h3 class="fw-bold mb-0 text-dark">Welcome back, <span class="auth-user-name">Alex Morgan</span></h3>
+                <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1 fw-semibold">
+                  <i class="bi bi-shield-check me-1"></i> <span class="c-plan-name">Premium</span> Active
+                </span>
+              </div>
+              <p class="text-muted small mb-0">
+                Contract ID: <span class="fw-semibold text-dark c-plan-id">AMC-2026-8842</span> &bull; Valid through <span class="c-plan-expiry">2027-04-15</span> (Auto-Renew Active)
               </p>
             </div>
-            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
-              <a href="booking.html" class="btn btn-light text-primary fw-bold rounded-pill px-4 py-2 me-2">
-                <i class="bi bi-plus-circle me-1"></i> Schedule a Service
+            <div class="d-flex gap-2">
+              <a href="booking.html" class="btn btn-primary-hc rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2 shadow-sm">
+                <i class="bi bi-calendar-plus"></i> Schedule Visit
               </a>
-              <a href="contracts.html" class="btn btn-outline-light rounded-pill px-3 py-2">
-                Agreement
+              <a href="my-plans.html" class="btn btn-outline-hc rounded-pill px-3 py-2 fw-semibold">
+                Plan Coverage
               </a>
             </div>
           </div>
-        </div>
 
-        <!-- 4 Stat Summary Cards -->
-        <div class="row g-4 mb-4">
-          <div class="col-sm-6 col-xl-3">
-            <div class="stat-card">
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <span class="text-muted small fw-semibold">Active Plan</span>
-                  <div class="stat-value fs-4 c-plan-name">Premium</div>
-                  <span class="stat-trend up"><i class="bi bi-shield-check"></i> 100% Active</span>
-                </div>
-                <div class="stat-icon blue">
-                  <i class="bi bi-award-fill"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-xl-3">
-            <div class="stat-card">
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <span class="text-muted small fw-semibold">Visits Remaining</span>
-                  <div class="stat-value c-visits-remaining">6</div>
-                  <span class="text-muted small">Out of <span class="c-visits-total">8</span> Total</span>
-                </div>
-                <div class="stat-icon green">
+          <!-- Quick Metrics Bar -->
+          <div class="row g-3 mt-3 pt-3 border-top">
+            <div class="col-sm-4">
+              <div class="p-3 bg-light-subtle rounded-3 d-flex align-items-center gap-3 h-100 border">
+                <div class="stat-icon blue" style="width: 44px; height: 44px; min-width: 44px; font-size: 1.25rem;">
                   <i class="bi bi-calendar-check-fill"></i>
                 </div>
+                <div>
+                  <div class="text-muted small fw-semibold">Visits Remaining</div>
+                  <div class="fs-4 fw-bold text-dark"><span class="c-visits-remaining">6</span> <span class="fs-6 text-muted fw-normal">/ <span class="c-visits-total">8</span> Total</span></div>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="col-sm-6 col-xl-3">
-            <div class="stat-card">
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <span class="text-muted small fw-semibold">Completed Services</span>
-                  <div class="stat-value c-visits-used">2</div>
-                  <span class="stat-trend up"><i class="bi bi-check2-all"></i> Both 5-Star Rated</span>
-                </div>
-                <div class="stat-icon purple">
+            <div class="col-sm-4">
+              <div class="p-3 bg-light-subtle rounded-3 d-flex align-items-center gap-3 h-100 border">
+                <div class="stat-icon green" style="width: 44px; height: 44px; min-width: 44px; font-size: 1.25rem;">
                   <i class="bi bi-tools"></i>
                 </div>
+                <div>
+                  <div class="text-muted small fw-semibold">Completed Services</div>
+                  <div class="fs-4 fw-bold text-dark"><span class="c-visits-used">2</span> <span class="fs-6 text-success fw-semibold">(5-Star Rated)</span></div>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="col-sm-6 col-xl-3">
-            <div class="stat-card">
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <span class="text-muted small fw-semibold">Contract Expiry</span>
-                  <div class="stat-value fs-5 mt-2 c-plan-expiry">2027-04-15</div>
-                  <span class="stat-trend up"><i class="bi bi-arrow-repeat"></i> Auto-Renew ON</span>
-                </div>
-                <div class="stat-icon orange">
+            <div class="col-sm-4">
+              <div class="p-3 bg-light-subtle rounded-3 d-flex align-items-center gap-3 h-100 border">
+                <div class="stat-icon orange" style="width: 44px; height: 44px; min-width: 44px; font-size: 1.25rem;">
                   <i class="bi bi-clock-history"></i>
+                </div>
+                <div>
+                  <div class="text-muted small fw-semibold">Emergency Dispatch</div>
+                  <div class="fs-5 fw-bold text-primary">45-Min Response SLA</div>
                 </div>
               </div>
             </div>

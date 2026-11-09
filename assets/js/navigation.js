@@ -68,33 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
       link.onclick = null; // Direct standard navigation to Customer Dashboard without login requirement
     });
 
-    // 2. Login / Logout Button in Navbar
-    document.querySelectorAll('.nav-auth-btn').forEach(btn => {
-      const textSpan = btn.querySelector('.nav-auth-text');
-      const icon = btn.querySelector('i');
-
-      if (isLoggedIn) {
-        if (textSpan) textSpan.textContent = 'Log Out';
-        if (icon) icon.className = 'bi bi-box-arrow-right me-1';
-        btn.href = '#';
-        btn.title = `Logged in as ${user ? user.name : 'Customer'} - Click to Log Out`;
-        btn.onclick = function (e) {
-          e.preventDefault();
-          if (window.HomeCarelyAuth) {
-            window.HomeCarelyAuth.logout(isSubDir ? '../index.html' : 'index.html');
-          } else {
-            localStorage.removeItem('homecarely_session');
-            window.location.reload();
-          }
-        };
-      } else {
-        if (textSpan) textSpan.textContent = 'Log In';
-        if (icon) icon.className = 'bi bi-person-circle me-1';
-        btn.href = loginPath;
-        btn.onclick = null;
-        btn.title = 'Customer or Admin Login';
-      }
-    });
+    // Remove any leftover nav-auth-btn elements completely from the navbar
+    document.querySelectorAll('.nav-auth-btn').forEach(btn => btn.remove());
   }
 
   initNavbarAuth();

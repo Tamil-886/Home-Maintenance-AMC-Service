@@ -377,3 +377,44 @@
 [data-theme="dark"] .main-footer .footer-bottom a:hover {
   color: #38bdf8 !important;
 }
+
+[data-theme="dark"] .main-footer .footer-guarantee-strip {
+  background: rgba(15, 23, 42, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+[data-theme="dark"] .main-footer .footer-badge-pill {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+
+[data-theme="dark"] .table-light,
+[data-theme="dark"] .table-light td {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+
+[data-theme="dark"] .hero-feature-card {
+  background: #0f172a !important;
+  border-color: #1e293b !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .hero-feature-card:hover {
+  border-color: rgba(56, 189, 248, 0.35) !important;
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.1) !important;
+}
+
+[data-theme="dark"] .hero-feature-title {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .hero-feature-desc {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .hero-feature-footer {
+  border-top-color: #1e293b !important;
+}

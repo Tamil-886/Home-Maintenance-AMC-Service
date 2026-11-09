@@ -307,14 +307,20 @@ img, video, iframe {
 
   /* Footer Mobile Centering */
   .main-footer {
-    padding: 3rem 0 1.5rem 0;
-    text-align: center;
+    padding: 3.5rem 0 1.5rem 0;
+  }
+  .main-footer .footer-guarantee-strip {
+    padding: 1.25rem 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .main-footer .footer-guarantee-card {
+    text-align: left;
   }
   .main-footer .footer-brand p {
     padding-right: 0 !important;
   }
   .footer-links a {
-    justify-content: center;
+    justify-content: flex-start;
   }
   .social-pill-link {
     margin: 0 4px;

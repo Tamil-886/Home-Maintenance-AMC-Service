@@ -146,3 +146,17 @@
   right: auto;
   left: 25px;
 }
+
+
+/* Footer RTL Alignment */
+[dir="rtl"] .main-footer .footer-links a:hover {
+  transform: translateX(-4px);
+}
+
+[dir="rtl"] .main-footer .footer-guarantee-card {
+  text-align: right;
+}
+
+[dir="rtl"] .main-footer .footer-contact-item {
+  text-align: right;
+}
