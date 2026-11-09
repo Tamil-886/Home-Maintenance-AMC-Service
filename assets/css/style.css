@@ -180,6 +180,7 @@ img {
   align-items: center;
   gap: 0.6rem;
   transition: var(--transition-normal);
+  white-space: nowrap !important;
 }
 
 .btn-primary-hc:hover {
@@ -200,6 +201,7 @@ img {
   align-items: center;
   gap: 0.6rem;
   transition: var(--transition-normal);
+  white-space: nowrap !important;
 }
 
 .btn-outline-hc:hover {
@@ -208,6 +210,18 @@ img {
   color: var(--hc-primary) !important;
   box-shadow: var(--hc-shadow-md);
   transform: translateY(-2px);
+}
+
+.btn-primary-hc.btn-sm,
+.btn-outline-hc.btn-sm,
+.btn-sm.btn-primary-hc,
+.btn-sm.btn-outline-hc {
+  padding: 0.38rem 0.85rem !important;
+  font-size: 0.82rem !important;
+  line-height: 1.25 !important;
+  height: 34px;
+  gap: 0.35rem;
+  white-space: nowrap !important;
 }
 
 .btn-icon-pill {
@@ -296,7 +310,7 @@ img {
   margin-right: auto;
 }
 
-.nav-link {
+.main-navbar .nav-link {
   font-size: 0.9rem;
   font-weight: 600;
   color: #475569 !important;
@@ -309,10 +323,59 @@ img {
   line-height: 1.2;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.main-navbar .nav-link:hover,
+.main-navbar .nav-link.active {
   color: var(--hc-primary) !important;
   background: var(--hc-primary-soft);
+}
+
+.nav-link {
+  transition: var(--transition-fast);
+}
+
+/* ===================================================================
+   Nav Pills & Tab Controls
+   =================================================================== */
+.nav-pills {
+  gap: 0.35rem;
+}
+
+.nav-pills .nav-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #64748b !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 1px solid transparent;
+  border-radius: 50rem !important;
+  padding: 0.55rem 1.25rem !important;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2;
+  box-shadow: none !important;
+  white-space: nowrap !important;
+}
+
+.nav-pills:not(.bg-light) .nav-link {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0;
+}
+
+.nav-pills .nav-link:hover {
+  color: var(--hc-primary) !important;
+  background-color: rgba(16, 104, 235, 0.08) !important;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #ffffff !important;
+  background: var(--hc-primary) !important;
+  background-color: var(--hc-primary) !important;
+  border-color: var(--hc-primary) !important;
+  box-shadow: 0 4px 14px rgba(16, 104, 235, 0.3) !important;
 }
 
 .main-navbar .btn,
@@ -824,6 +887,77 @@ img {
 .service-features-list li i {
   color: var(--hc-success);
   font-size: 1rem;
+}
+
+.service-card-footer,
+.service-card .card-body > .border-top {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0.5rem !important;
+  margin-top: auto !important;
+  padding-top: 1rem !important;
+  border-top: 1px solid var(--hc-card-border, #e2e8f0) !important;
+}
+
+.service-card-footer .service-price,
+.service-card .card-body > .border-top > span {
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  color: var(--hc-primary) !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+}
+
+.service-card-footer .service-actions,
+.service-card .card-body > .border-top > .d-flex {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
+}
+
+.service-card .btn-sm {
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  padding: 0.35rem 0.75rem !important;
+  height: 32px !important;
+  line-height: 1 !important;
+  border-radius: 50rem !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.25rem !important;
+}
+
+.service-card .btn-outline-hc.btn-sm {
+  background: #ffffff;
+  color: var(--hc-heading-color, #1e293b) !important;
+  border: 1px solid var(--hc-border, #cbd5e1);
+  box-shadow: none;
+}
+
+.service-card .btn-outline-hc.btn-sm:hover {
+  background: var(--hc-primary-light, #eaf2ff);
+  border-color: var(--hc-primary);
+  color: var(--hc-primary) !important;
+}
+
+.service-card .btn-primary-hc.btn-sm {
+  background: linear-gradient(135deg, var(--hc-primary) 0%, #0284c7 100%);
+  color: #ffffff !important;
+  border: none;
+  box-shadow: 0 2px 8px rgba(16, 104, 235, 0.25);
+}
+
+.service-card .btn-primary-hc.btn-sm:hover {
+  background: linear-gradient(135deg, #0d59c9 0%, #0369a1 100%);
+  box-shadow: 0 4px 12px rgba(16, 104, 235, 0.35);
+  transform: translateY(-1px);
 }
 
 /* ================= AMC Plans & Pricing Cards ================= */
@@ -1849,4 +1983,60 @@ img {
 @keyframes slideInRight {
   from { transform: translateX(100%); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
+}
+
+/* ===================================================================
+   120-Point Audit Showcase Component Styles
+   =================================================================== */
+.audit-feature-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid var(--hc-border, #e2e8f0);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--hc-primary);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+#auditTabs {
+  background-color: #f1f5f9 !important;
+  border: 1px solid #e2e8f0;
+  gap: 4px !important;
+}
+
+#auditTabs .nav-item {
+  flex: 1 1 0 !important;
+  text-align: center;
+}
+
+#auditTabs .nav-link {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 0.55rem 0.65rem !important;
+  font-size: 0.88rem !important;
+}
+
+.audit-check-item {
+  min-height: 54px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  background-color: #f8fafc;
+}
+
+.audit-check-item:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1;
+}
+
+.audit-trust-strip {
+  border-top: 1px solid var(--hc-border, #e2e8f0) !important;
 }

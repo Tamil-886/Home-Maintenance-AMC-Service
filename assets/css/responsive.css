@@ -50,7 +50,7 @@ img, video, iframe {
   .hero-visual-card {
     max-width: 440px;
   }
-  .nav-link {
+  .main-navbar .nav-link {
     padding: 0.5rem 0.75rem !important;
   }
 
@@ -376,5 +376,18 @@ img, video, iframe {
   .calc-summary-card,
   .process-step-card {
     padding: 1.15rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #auditTabs {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    padding-bottom: 4px;
+  }
+  #auditTabs .nav-item {
+    flex: 0 0 auto !important;
   }
 }

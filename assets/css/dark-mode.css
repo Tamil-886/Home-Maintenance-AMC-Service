@@ -46,14 +46,45 @@
   color: #ffffff !important;
 }
 
-[data-theme="dark"] .nav-link {
+[data-theme="dark"] .main-navbar .nav-link {
   color: #cbd5e1 !important;
 }
 
-[data-theme="dark"] .nav-link:hover,
-[data-theme="dark"] .nav-link.active {
+[data-theme="dark"] .main-navbar .nav-link:hover,
+[data-theme="dark"] .main-navbar .nav-link.active {
   background: rgba(255, 255, 255, 0.08) !important;
   color: #38bdf8 !important;
+}
+
+/* Nav Pills in Dark Mode */
+[data-theme="dark"] .nav-pills.bg-light {
+  background-color: #1e293b !important;
+}
+
+[data-theme="dark"] .nav-pills .nav-link {
+  color: #94a3b8 !important;
+  background-color: transparent !important;
+  border-color: transparent;
+}
+
+[data-theme="dark"] .nav-pills:not(.bg-light) .nav-link {
+  background-color: #1e293b !important;
+  border-color: #334155;
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .nav-pills .nav-link:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .nav-pills .nav-link.active,
+[data-theme="dark"] .nav-pills .show > .nav-link {
+  color: #ffffff !important;
+  background: var(--hc-primary) !important;
+  background-color: var(--hc-primary) !important;
+  border-color: var(--hc-primary) !important;
+  box-shadow: 0 4px 16px rgba(16, 104, 235, 0.45) !important;
 }
 
 [data-theme="dark"] .dropdown-menu-custom {
@@ -417,4 +448,50 @@
 
 [data-theme="dark"] .hero-feature-footer {
   border-top-color: #1e293b !important;
+}
+
+/* Dark mode service card footer */
+[data-theme="dark"] .service-card-footer,
+[data-theme="dark"] .service-card .card-body > .border-top {
+  border-color: #1e293b !important;
+}
+
+[data-theme="dark"] .service-card .btn-outline-hc.btn-sm {
+  background: #1e293b;
+  color: #e2e8f0 !important;
+  border-color: #334155;
+}
+
+[data-theme="dark"] .service-card .btn-outline-hc.btn-sm:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #38bdf8 !important;
+  border-color: #38bdf8;
+}
+
+/* Dark mode 120-Point Audit Showcase */
+[data-theme="dark"] .audit-feature-icon {
+  background: #1e293b;
+  border-color: #334155;
+  color: #38bdf8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] #auditTabs {
+  background-color: #0b1329 !important;
+  border-color: #1e293b !important;
+}
+
+[data-theme="dark"] .audit-check-item {
+  background-color: #1e293b !important;
+  color: #f1f5f9 !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .audit-check-item:hover {
+  background-color: #27354f !important;
+  border-color: #475569 !important;
+}
+
+[data-theme="dark"] .audit-trust-strip {
+  border-color: #1e293b !important;
 }
