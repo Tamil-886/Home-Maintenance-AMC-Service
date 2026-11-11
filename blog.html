@@ -73,6 +73,11 @@
             <i class="bi bi-moon-stars-fill text-primary"></i>
           </button>
 
+          <!-- Log In Button -->
+          <a href="auth/login.html" class="btn btn-outline-hc py-2 px-3 small d-inline-flex align-items-center gap-1 nav-login-btn">
+            <i class="bi bi-box-arrow-in-right"></i> <span>Log In</span>
+          </a>
+
           <!-- Book AMC CTA Button -->
           <a href="customer/booking.html" class="btn btn-primary-hc py-2 px-4 small">
             Book AMC <i class="bi bi-arrow-right ms-1"></i>
@@ -94,11 +99,23 @@
     </div>
   </section>
 
-  <!-- Search Section -->
+  <!-- Filter & Search Bar -->
   <section class="py-4 border-bottom bg-white">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-5">
+      <div class="row g-3 align-items-center justify-content-between">
+        <div class="col-12 col-lg-8 col-xl-9">
+          <div class="service-filter-scroll-wrapper" id="blogFilterButtons">
+            <button class="btn btn-sm btn-primary rounded-pill px-3 active blog-category-filter" data-category="all">All (10)</button>
+            <button class="btn btn-sm btn-light border rounded-pill px-3 blog-category-filter" data-category="hvac">HVAC &amp; Cooling</button>
+            <button class="btn btn-sm btn-light border rounded-pill px-3 blog-category-filter" data-category="plumbing">Plumbing &amp; Water</button>
+            <button class="btn btn-sm btn-light border rounded-pill px-3 blog-category-filter" data-category="electrical">Electrical Safety</button>
+            <button class="btn btn-sm btn-light border rounded-pill px-3 blog-category-filter" data-category="cleaning">Deep Cleaning</button>
+            <button class="btn btn-sm btn-light border rounded-pill px-3 blog-category-filter" data-category="amc">AMC &amp; Value</button>
+            <button class="btn btn-sm btn-light border rounded-pill px-3 blog-category-filter" data-category="painting">Painting</button>
+            <button class="btn btn-sm btn-light border rounded-pill px-3 blog-category-filter" data-category="carpentry">Carpentry</button>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4 col-xl-3">
           <div class="input-icon-group">
             <i class="bi bi-search"></i>
             <input type="text" id="blogSearchInput" class="form-control form-control-hc rounded-pill" placeholder="Search blog articles...">
@@ -109,7 +126,7 @@
   </section>
 
   <!-- Blog Listing Grid -->
-  <section class="section-padding">
+  <section class="section-padding bg-soft-blue">
     <div class="container">
       <div class="row g-4 align-items-stretch" id="blogCardsContainer">
 
@@ -123,9 +140,12 @@
               <span class="blog-badge position-absolute top-0 start-0 m-3 badge bg-primary px-3 py-2 rounded-pill">HVAC & Cooling</span>
             </div>
             <div class="blog-body p-4 d-flex flex-column flex-grow-1">
-              <div class="blog-meta small text-muted d-flex gap-3 mb-2">
+              <div class="blog-meta small text-muted d-flex flex-wrap align-items-center gap-2 mb-2">
                 <span><i class="bi bi-calendar3 me-1"></i> Nov 02, 2026</span>
-                <span><i class="bi bi-person me-1"></i> Marcus Vance</span>
+                <span class="blog-author-highlight">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Marcus Vance">
+                  <span class="blog-author-name">Marcus Vance</span>
+                </span>
                 <span><i class="bi bi-clock me-1"></i> 6 min read</span>
               </div>
               <div class="blog-title-box mb-2">
@@ -155,9 +175,12 @@
               <span class="blog-badge position-absolute top-0 start-0 m-3 badge bg-primary px-3 py-2 rounded-pill">Plumbing</span>
             </div>
             <div class="blog-body p-4 d-flex flex-column flex-grow-1">
-              <div class="blog-meta small text-muted d-flex gap-3 mb-2">
+              <div class="blog-meta small text-muted d-flex flex-wrap align-items-center gap-2 mb-2">
                 <span><i class="bi bi-calendar3 me-1"></i> Oct 28, 2026</span>
-                <span><i class="bi bi-person me-1"></i> David Miller</span>
+                <span class="blog-author-highlight">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="David Miller">
+                  <span class="blog-author-name">David Miller</span>
+                </span>
                 <span><i class="bi bi-clock me-1"></i> 5 min read</span>
               </div>
               <div class="blog-title-box mb-2">
@@ -187,9 +210,12 @@
               <span class="blog-badge position-absolute top-0 start-0 m-3 badge bg-primary px-3 py-2 rounded-pill">Electrical Safety</span>
             </div>
             <div class="blog-body p-4 d-flex flex-column flex-grow-1">
-              <div class="blog-meta small text-muted d-flex gap-3 mb-2">
+              <div class="blog-meta small text-muted d-flex flex-wrap align-items-center gap-2 mb-2">
                 <span><i class="bi bi-calendar3 me-1"></i> Oct 19, 2026</span>
-                <span><i class="bi bi-person me-1"></i> Robert Chen</span>
+                <span class="blog-author-highlight">
+                  <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80" alt="Robert Chen">
+                  <span class="blog-author-name">Robert Chen</span>
+                </span>
                 <span><i class="bi bi-clock me-1"></i> 7 min read</span>
               </div>
               <div class="blog-title-box mb-2">
@@ -219,9 +245,12 @@
               <span class="blog-badge position-absolute top-0 start-0 m-3 badge bg-primary px-3 py-2 rounded-pill">Home Maintenance</span>
             </div>
             <div class="blog-body p-4 d-flex flex-column flex-grow-1">
-              <div class="blog-meta small text-muted d-flex gap-3 mb-2">
+              <div class="blog-meta small text-muted d-flex flex-wrap align-items-center gap-2 mb-2">
                 <span><i class="bi bi-calendar3 me-1"></i> Oct 15, 2026</span>
-                <span><i class="bi bi-person me-1"></i> Elena Rostova</span>
+                <span class="blog-author-highlight">
+                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="Elena Rostova">
+                  <span class="blog-author-name">Elena Rostova</span>
+                </span>
                 <span><i class="bi bi-clock me-1"></i> 8 min read</span>
               </div>
               <div class="blog-title-box mb-2">
@@ -251,9 +280,12 @@
               <span class="blog-badge position-absolute top-0 start-0 m-3 badge bg-primary px-3 py-2 rounded-pill">AMC Benefits</span>
             </div>
             <div class="blog-body p-4 d-flex flex-column flex-grow-1">
-              <div class="blog-meta small text-muted d-flex gap-3 mb-2">
+              <div class="blog-meta small text-muted d-flex flex-wrap align-items-center gap-2 mb-2">
                 <span><i class="bi bi-calendar3 me-1"></i> Oct 11, 2026</span>
-                <span><i class="bi bi-person me-1"></i> Jonathan Vance</span>
+                <span class="blog-author-highlight">
+                  <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=120&q=80" alt="Jonathan Vance">
+                  <span class="blog-author-name">Jonathan Vance</span>
+                </span>
                 <span><i class="bi bi-clock me-1"></i> 5 min read</span>
               </div>
               <div class="blog-title-box mb-2">
@@ -283,9 +315,12 @@
               <span class="blog-badge position-absolute top-0 start-0 m-3 badge bg-primary px-3 py-2 rounded-pill">Painting & Finishing</span>
             </div>
             <div class="blog-body p-4 d-flex flex-column flex-grow-1">
-              <div class="blog-meta small text-muted d-flex gap-3 mb-2">
+              <div class="blog-meta small text-muted d-flex flex-wrap align-items-center gap-2 mb-2">
                 <span><i class="bi bi-calendar3 me-1"></i> Oct 05, 2026</span>
-                <span><i class="bi bi-person me-1"></i> Carlos Mendez</span>
+                <span class="blog-author-highlight">
+                  <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80" alt="Carlos Mendez">
+                  <span class="blog-author-name">Carlos Mendez</span>
+                </span>
                 <span><i class="bi bi-clock me-1"></i> 6 min read</span>
               </div>
               <div class="blog-title-box mb-2">
@@ -315,9 +350,12 @@
               <span class="blog-badge position-absolute top-0 start-0 m-3 badge bg-primary px-3 py-2 rounded-pill">Deep Cleaning</span>
             </div>
             <div class="blog-body p-4 d-flex flex-column flex-grow-1">
-              <div class="blog-meta small text-muted d-flex gap-3 mb-2">
+              <div class="blog-meta small text-muted d-flex flex-wrap align-items-center gap-2 mb-2">
                 <span><i class="bi bi-calendar3 me-1"></i> Sep 30, 2026</span>
-                <span><i class="bi bi-person me-1"></i> Priya Sharma</span>
+                <span class="blog-author-highlight">
+                  <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=120&q=80" alt="Priya Sharma">
+                  <span class="blog-author-name">Priya Sharma</span>
+                </span>
                 <span><i class="bi bi-clock me-1"></i> 6 min read</span>
               </div>
               <div class="blog-title-box mb-2">
@@ -347,9 +385,12 @@
               <span class="blog-badge position-absolute top-0 start-0 m-3 badge bg-primary px-3 py-2 rounded-pill">HVAC & Cooling</span>
             </div>
             <div class="blog-body p-4 d-flex flex-column flex-grow-1">
-              <div class="blog-meta small text-muted d-flex gap-3 mb-2">
+              <div class="blog-meta small text-muted d-flex flex-wrap align-items-center gap-2 mb-2">
                 <span><i class="bi bi-calendar3 me-1"></i> Sep 24, 2026</span>
-                <span><i class="bi bi-person me-1"></i> Marcus Vance</span>
+                <span class="blog-author-highlight">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Marcus Vance">
+                  <span class="blog-author-name">Marcus Vance</span>
+                </span>
                 <span><i class="bi bi-clock me-1"></i> 5 min read</span>
               </div>
               <div class="blog-title-box mb-2">
@@ -379,9 +420,12 @@
               <span class="blog-badge position-absolute top-0 start-0 m-3 badge bg-primary px-3 py-2 rounded-pill">Plumbing & Hygiene</span>
             </div>
             <div class="blog-body p-4 d-flex flex-column flex-grow-1">
-              <div class="blog-meta small text-muted d-flex gap-3 mb-2">
+              <div class="blog-meta small text-muted d-flex flex-wrap align-items-center gap-2 mb-2">
                 <span><i class="bi bi-calendar3 me-1"></i> Sep 18, 2026</span>
-                <span><i class="bi bi-person me-1"></i> David Miller</span>
+                <span class="blog-author-highlight">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="David Miller">
+                  <span class="blog-author-name">David Miller</span>
+                </span>
                 <span><i class="bi bi-clock me-1"></i> 5 min read</span>
               </div>
               <div class="blog-title-box mb-2">
@@ -411,9 +455,12 @@
               <span class="blog-badge position-absolute top-0 start-0 m-3 badge bg-primary px-3 py-2 rounded-pill">Carpentry & Woodcare</span>
             </div>
             <div class="blog-body p-4 d-flex flex-column flex-grow-1">
-              <div class="blog-meta small text-muted d-flex gap-3 mb-2">
+              <div class="blog-meta small text-muted d-flex flex-wrap align-items-center gap-2 mb-2">
                 <span><i class="bi bi-calendar3 me-1"></i> Sep 12, 2026</span>
-                <span><i class="bi bi-person me-1"></i> Arthur Pendelton</span>
+                <span class="blog-author-highlight">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Arthur Pendelton">
+                  <span class="blog-author-name">Arthur Pendelton</span>
+                </span>
                 <span><i class="bi bi-clock me-1"></i> 6 min read</span>
               </div>
               <div class="blog-title-box mb-2">
@@ -430,6 +477,26 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- Pagination Navigation -->
+        <div class="col-12 mt-5">
+          <nav aria-label="Blog Page Navigation">
+            <ul class="pagination justify-content-center gap-2">
+              <li class="page-item disabled">
+                <a class="page-link rounded-pill px-3" href="#" tabindex="-1" aria-disabled="true"><i class="bi bi-arrow-left me-1"></i> Previous</a>
+              </li>
+              <li class="page-item active" aria-current="page">
+                <a class="page-link rounded-pill px-3" href="#">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link rounded-pill px-3" href="#">2</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link rounded-pill px-3" href="#">Next <i class="bi bi-arrow-right ms-1"></i></a>
+              </li>
+            </ul>
+          </nav>
         </div>
 
       </div>

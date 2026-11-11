@@ -104,7 +104,7 @@
                 <a href="notifications.html" class="small text-primary">View All</a>
               </li>
               <li class="mb-2">
-                <a href="booking-details.html?id=BK-9482" class="d-flex gap-2 text-decoration-none text-dark small">
+                <a href="booking-details.html?id=BK-9482" class="d-flex gap-2 text-decoration-none small">
                   <i class="bi bi-calendar-check text-primary fs-5"></i>
                   <div>
                     <strong>AC Tune-up Confirmed</strong>
@@ -113,7 +113,7 @@
                 </a>
               </li>
               <li>
-                <a href="renewal.html" class="d-flex gap-2 text-decoration-none text-dark small">
+                <a href="renewal.html" class="d-flex gap-2 text-decoration-none small">
                   <i class="bi bi-shield-check text-success fs-5"></i>
                   <div>
                     <strong>Welcome Audit Available</strong>
@@ -150,17 +150,17 @@
       <main class="dashboard-body">
         
         <!-- Simplified Member & Plan Overview -->
-        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-white">
+        <div class="card border-0 shadow-sm rounded-4 p-4 mb-4 bg-white dashboard-hero-card">
           <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
             <div>
               <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
-                <h3 class="fw-bold mb-0 text-dark">Welcome back, <span class="auth-user-name">Alex Morgan</span></h3>
+                <h3 class="fw-bold mb-0">Welcome back, <span class="auth-user-name">Alex Morgan</span></h3>
                 <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1 fw-semibold">
                   <i class="bi bi-shield-check me-1"></i> <span class="c-plan-name">Premium</span> Active
                 </span>
               </div>
               <p class="text-muted small mb-0">
-                Contract ID: <span class="fw-semibold text-dark c-plan-id">AMC-2026-8842</span> &bull; Valid through <span class="c-plan-expiry">2027-04-15</span> (Auto-Renew Active)
+                Contract ID: <span class="fw-semibold c-plan-id">AMC-2026-8842</span> &bull; Valid through <span class="c-plan-expiry">2027-04-15</span> (Auto-Renew Active)
               </p>
             </div>
             <div class="d-flex gap-2">
@@ -182,7 +182,7 @@
                 </div>
                 <div>
                   <div class="text-muted small fw-semibold">Visits Remaining</div>
-                  <div class="fs-4 fw-bold text-dark"><span class="c-visits-remaining">6</span> <span class="fs-6 text-muted fw-normal">/ <span class="c-visits-total">8</span> Total</span></div>
+                  <div class="fs-4 fw-bold"><span class="c-visits-remaining">6</span> <span class="fs-6 text-muted fw-normal">/ <span class="c-visits-total">8</span> Total</span></div>
                 </div>
               </div>
             </div>
@@ -193,7 +193,7 @@
                 </div>
                 <div>
                   <div class="text-muted small fw-semibold">Completed Services</div>
-                  <div class="fs-4 fw-bold text-dark"><span class="c-visits-used">2</span> <span class="fs-6 text-success fw-semibold">(5-Star Rated)</span></div>
+                  <div class="fs-4 fw-bold"><span class="c-visits-used">2</span> <span class="fs-6 text-success fw-semibold">(5-Star Rated)</span></div>
                 </div>
               </div>
             </div>
@@ -215,42 +215,42 @@
         <div class="row g-4 mb-4">
           <!-- Next Upcoming Visit Card -->
           <div class="col-lg-7">
-            <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
+            <div class="card border-0 shadow-sm rounded-4 p-4 pb-3 h-100 bg-white d-flex flex-column">
               <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
                 <h5 class="fw-bold mb-0">Upcoming Maintenance Appointment</h5>
                 <span class="badge-status active" id="upcomingStatusBadge">Confirmed</span>
               </div>
 
-              <div class="d-flex flex-wrap gap-4 align-items-center">
+              <div class="d-flex flex-wrap gap-4 align-items-center flex-grow-1 mb-3">
                 <div class="p-3 bg-light rounded-4 text-center" style="min-width: 110px;">
                   <span class="d-block text-primary fw-bold display-6" id="upcomingDay">12</span>
                   <span class="fw-semibold small text-muted" id="upcomingMonthYear">NOV 2026</span>
                 </div>
                 <div class="flex-grow-1">
-                  <h5 class="fw-bold text-dark mb-1" id="upcomingServiceTitle">Air Conditioning Jet Chemical Servicing</h5>
+                  <h5 class="fw-bold mb-1" id="upcomingServiceTitle">Air Conditioning Jet Chemical Servicing</h5>
                   <p class="text-muted small mb-2"><i class="bi bi-clock me-1 text-primary"></i> <span id="upcomingTimeSlot">10:00 AM - 12:00 PM (2-Hour Window)</span></p>
                   <p class="text-muted small mb-3"><i class="bi bi-geo-alt me-1 text-primary"></i> <span id="upcomingAddress">742 Evergreen Terrace, Springfield, IL</span></p>
                   
                   <div class="d-flex align-items-center gap-3">
                     <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" class="rounded-circle" width="36" height="36" alt="Marcus" id="upcomingTechAvatar">
                     <div>
-                      <strong class="d-block small" id="upcomingTechName">Marcus Vance (Lead HVAC)</strong>
+                      <strong class="d-block small mb-1" id="upcomingTechName">Marcus Vance (Lead HVAC)</strong>
                       <span class="smaller text-success" style="font-size:0.75rem;"><i class="bi bi-patch-check-fill"></i> Police Verified Master Tech</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="d-flex gap-2 justify-content-end mt-4 pt-3 border-top">
-                <a href="booking-details.html?id=BK-9482" class="btn btn-sm btn-outline-primary" id="upcomingDetailsBtn">View Details & Checklist</a>
-                <a href="messages.html" class="btn btn-sm btn-light border"><i class="bi bi-chat-text"></i> Message Tech</a>
+              <div class="d-flex gap-3 justify-content-end align-items-center mt-auto pt-3 border-top">
+                <a href="booking-details.html?id=BK-9482" class="btn btn-sm btn-outline-primary px-3 py-1-5 fw-semibold" id="upcomingDetailsBtn">View Details & Checklist</a>
+                <a href="messages.html" class="btn btn-sm btn-light border px-3 py-1-5 fw-semibold"><i class="bi bi-chat-text me-1"></i> Message Tech</a>
               </div>
             </div>
           </div>
 
           <!-- Digital Home Health Score Widget -->
           <div class="col-lg-5">
-            <div class="card border-0 shadow-sm rounded-4 p-4 h-100 bg-white">
+            <div class="card border-0 shadow-sm rounded-4 p-4 pb-3 h-100 bg-white d-flex flex-column">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <h5 class="fw-bold mb-0">Home Health Score</h5>
                 <span class="badge bg-success">Optimal</span>
@@ -261,7 +261,7 @@
                 <p class="text-muted small">Based on your recent 120-point digital baseline inspection</p>
               </div>
 
-              <div class="d-flex flex-column gap-2 small">
+              <div class="d-flex flex-column gap-2 small flex-grow-1">
                 <div>
                   <div class="d-flex justify-content-between mb-1">
                     <span>HVAC Cooling Performance</span>
@@ -291,7 +291,7 @@
                 </div>
               </div>
 
-              <div class="mt-4 pt-3 border-top text-center">
+              <div class="mt-auto pt-3 border-top text-center">
                 <a href="service-history.html" class="small text-primary fw-semibold text-decoration-none">
                   Download 120-Point Inspection PDF Report <i class="bi bi-download ms-1"></i>
                 </a>

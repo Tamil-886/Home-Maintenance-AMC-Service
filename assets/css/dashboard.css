@@ -6,7 +6,11 @@
 .dashboard-wrapper {
   display: flex;
   min-height: 100vh;
-  background-color: var(--hc-body-bg);
+  background-color: #f1f5f9;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(16, 104, 235, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.05) 0px, transparent 50%);
+  background-attachment: fixed;
 }
 
 /* ================= Dashboard Sidebar ================= */
@@ -16,13 +20,35 @@
   border-right: 1px solid var(--hc-border);
   display: flex;
   flex-direction: column;
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
-  bottom: 0;
-  left: 0;
+  height: 100vh;
+  max-height: 100vh;
+  flex-shrink: 0;
+  align-self: flex-start;
   z-index: 1030;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.dashboard-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.dashboard-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dashboard-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 4px;
+}
+
+.dashboard-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
 }
 
 .sidebar-header {
@@ -31,6 +57,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 10;
 }
 
 .sidebar-menu {
@@ -47,6 +78,11 @@
   color: #94a3b8;
   padding: 0.75rem 0.85rem 0.35rem 0.85rem;
   letter-spacing: 0.8px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 73px;
+  background: #ffffff;
+  z-index: 8;
 }
 
 .sidebar-item {
@@ -101,12 +137,17 @@
   padding: 1rem 1.25rem;
   border-top: 1px solid var(--hc-border);
   background: #f8faff;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  margin-top: auto;
 }
 
 /* ================= Dashboard Main Content ================= */
 .dashboard-main {
-  flex-grow: 1;
-  margin-left: 270px;
+  flex: 1 1 0%;
+  margin-left: 0;
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -116,8 +157,10 @@
 /* Dashboard Topbar */
 .dashboard-topbar {
   height: 72px;
-  background: #ffffff;
-  border-bottom: 1px solid var(--hc-border);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
   padding: 0 1.75rem;
   display: flex;
   align-items: center;
@@ -125,6 +168,7 @@
   position: sticky;
   top: 0;
   z-index: 1020;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
 }
 
 .dashboard-search-box {
@@ -153,13 +197,44 @@
   flex-grow: 1;
 }
 
+/* ================= Dashboard Hero Banner Card ================= */
+.dashboard-hero-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%) !important;
+  border: 1px solid rgba(16, 104, 235, 0.16) !important;
+  box-shadow: 0 10px 30px -5px rgba(16, 104, 235, 0.07), 0 4px 10px -2px rgba(15, 23, 42, 0.03) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-hero-card::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(16, 104, 235, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ================= General Dashboard Cards ================= */
+.dashboard-body .card {
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dashboard-body .card:hover {
+  box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.07), 0 4px 10px -2px rgba(15, 23, 42, 0.03);
+}
+
 /* ================= Stat Cards ================= */
 .stat-card {
   background: #ffffff;
   border-radius: var(--hc-radius-lg);
   padding: 1.5rem;
-  border: 1px solid var(--hc-card-border);
-  box-shadow: var(--hc-shadow-sm);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04);
   transition: var(--transition-normal);
   position: relative;
   overflow: hidden;
@@ -167,7 +242,8 @@
 
 .stat-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--hc-shadow-md);
+  box-shadow: 0 12px 28px -4px rgba(16, 104, 235, 0.12);
+  border-color: rgba(16, 104, 235, 0.3);
 }
 
 .stat-icon {
@@ -258,14 +334,19 @@
 .table-card {
   background: #ffffff;
   border-radius: var(--hc-radius-lg);
-  border: 1px solid var(--hc-card-border);
-  box-shadow: var(--hc-shadow-sm);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
   overflow: hidden;
+  transition: box-shadow 0.25s ease;
+}
+
+.table-card:hover {
+  box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.07);
 }
 
 .table-card .card-header {
   background: #ffffff;
-  border-bottom: 1px solid var(--hc-border);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
   padding: 1.25rem 1.5rem;
   display: flex;
   align-items: center;
@@ -376,7 +457,8 @@
   display: flex;
   background: #ffffff;
   border-radius: var(--hc-radius-lg);
-  border: 1px solid var(--hc-border);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
   height: 650px;
   overflow: hidden;
 }

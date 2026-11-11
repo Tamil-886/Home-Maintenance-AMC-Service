@@ -68,21 +68,42 @@ document.addEventListener('DOMContentLoaded', function () {
       link.onclick = null; // Direct standard navigation to Customer Dashboard without login requirement
     });
 
-    // Remove any leftover nav-auth-btn elements completely from the navbar
+    // 2. Dynamic Log In / Log Out button in Navbar
+    document.querySelectorAll('.nav-login-btn').forEach(btn => {
+      if (isLoggedIn) {
+        btn.href = '#';
+        btn.innerHTML = '<i class="bi bi-box-arrow-right"></i> <span>Log Out</span>';
+        btn.classList.add('logout-trigger-btn');
+        btn.setAttribute('data-redirect', isSubDir ? '../index.html' : 'index.html');
+        btn.title = 'Sign Out (' + (user ? user.name : 'Active User') + ')';
+      } else {
+        btn.href = loginPath;
+        btn.innerHTML = '<i class="bi bi-box-arrow-in-right"></i> <span>Log In</span>';
+        btn.classList.remove('logout-trigger-btn');
+        btn.removeAttribute('data-redirect');
+        btn.title = 'Log In to Member Portal';
+      }
+    });
+
+    // Remove any leftover legacy nav-auth-btn elements
     document.querySelectorAll('.nav-auth-btn').forEach(btn => btn.remove());
   }
 
   initNavbarAuth();
 
-  // Global Logout Handlers
-  document.querySelectorAll('.logout-trigger-btn').forEach(btn => {
-    btn.addEventListener('click', function (e) {
+  // Global Logout Handlers (Direct & Delegated)
+  document.addEventListener('click', function (e) {
+    const logoutBtn = e.target.closest('.logout-trigger-btn');
+    if (logoutBtn) {
       e.preventDefault();
-      const redirect = this.getAttribute('data-redirect') || '../index.html';
+      const redirect = logoutBtn.getAttribute('data-redirect') || '../index.html';
       if (window.HomeCarelyAuth) {
         window.HomeCarelyAuth.logout(redirect);
+      } else {
+        localStorage.removeItem('homecarely_session');
+        window.location.href = redirect;
       }
-    });
+    }
   });
 
   // Back to Top Floating Button

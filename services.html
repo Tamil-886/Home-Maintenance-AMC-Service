@@ -75,6 +75,11 @@
             <i class="bi bi-moon-stars-fill text-primary"></i>
           </button>
 
+          <!-- Log In Button -->
+          <a href="auth/login.html" class="btn btn-outline-hc py-2 px-3 small d-inline-flex align-items-center gap-1 nav-login-btn">
+            <i class="bi bi-box-arrow-in-right"></i> <span>Log In</span>
+          </a>
+
           <!-- Book AMC CTA Button -->
           <a href="customer/booking.html" class="btn btn-primary-hc py-2 px-4 small">
             Book AMC <i class="bi bi-arrow-right ms-1"></i>
@@ -100,8 +105,8 @@
   <section class="py-4 border-bottom bg-white">
     <div class="container">
       <div class="row g-3 align-items-center justify-content-between">
-        <div class="col-lg-7">
-                                        <div class="d-flex flex-wrap gap-2" id="serviceFilterButtons">
+        <div class="col-12 col-lg-8 col-xl-9">
+          <div class="service-filter-scroll-wrapper" id="serviceFilterButtons">
             <button class="btn btn-sm btn-primary rounded-pill px-3 active service-filter-btn" data-filter="all">All (9)</button>
             <button class="btn btn-sm btn-light border rounded-pill px-3 service-filter-btn" data-filter="hvac">HVAC &amp; Cooling</button>
             <button class="btn btn-sm btn-light border rounded-pill px-3 service-filter-btn" data-filter="plumbing">Plumbing &amp; Water</button>
@@ -110,7 +115,7 @@
             <button class="btn btn-sm btn-light border rounded-pill px-3 service-filter-btn" data-filter="maintenance">Carpentry &amp; Inspection</button>
           </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-12 col-lg-4 col-xl-3">
           <div class="input-icon-group">
             <i class="bi bi-search"></i>
             <input type="text" id="serviceSearchInput" class="form-control form-control-hc rounded-pill" placeholder="Search maintenance services...">
@@ -121,7 +126,7 @@
   </section>
 
   <!-- Services Grid (All 9 Services) -->
-  <section class="section-padding">
+  <section class="section-padding bg-soft-blue">
     <div class="container">
       <div class="row g-4" id="servicesCardsContainer">
 
@@ -133,7 +138,7 @@
               <div class="service-icon-pill"><i class="bi bi-snow"></i></div>
             </div>
             <div class="card-body">
-              <span class="badge-tag bg-primary-subtle text-primary mb-2">HVAC & Cooling</span>
+              <span class="badge-tag bg-primary-subtle text-primary mb-2 align-self-start">HVAC & Cooling</span>
               <h4 class="h5 fw-bold mb-2">Air Conditioning Maintenance</h4>
               <p class="text-muted small mb-3">High-pressure jet wash of cooling coils, refrigerant gas top-up, compressor health check, filter disinfection, and PCB diagnostics.</p>
               <ul class="service-features-list">
@@ -160,7 +165,7 @@
               <div class="service-icon-pill"><i class="bi bi-droplet"></i></div>
             </div>
             <div class="card-body">
-              <span class="badge-tag bg-info-subtle text-info mb-2">Plumbing Care</span>
+              <span class="badge-tag bg-info-subtle text-info mb-2 align-self-start">Plumbing Care</span>
               <h4 class="h5 fw-bold mb-2">Plumbing Services & Leak Inspection</h4>
               <p class="text-muted small mb-3">Acoustic leak detection, drain jetting, pressure regulator overhaul, sanitary fixture installations, and geyser servicing.</p>
               <ul class="service-features-list">
@@ -187,7 +192,7 @@
               <div class="service-icon-pill"><i class="bi bi-lightning-charge"></i></div>
             </div>
             <div class="card-body">
-              <span class="badge-tag bg-primary-subtle text-primary mb-2">Electrical</span>
+              <span class="badge-tag bg-primary-subtle text-primary mb-2 align-self-start">Electrical</span>
               <h4 class="h5 fw-bold mb-2">Electrical Maintenance & Breaker Care</h4>
               <p class="text-muted small mb-3">Breaker panel testing, short-circuit diagnostics, appliance rewiring, earthing resistance audits, and whole-house surge protection.</p>
               <ul class="service-features-list">
@@ -214,7 +219,7 @@
               <div class="service-icon-pill"><i class="bi bi-stars"></i></div>
             </div>
             <div class="card-body">
-              <span class="badge-tag bg-success-subtle text-success mb-2">Deep Cleaning</span>
+              <span class="badge-tag bg-success-subtle text-success mb-2 align-self-start">Deep Cleaning</span>
               <h4 class="h5 fw-bold mb-2">Deep Home Cleaning & Sanitization</h4>
               <p class="text-muted small mb-3">Complete intensive scrub of tiles, sanitaryware, grout, kitchen grease, floor buffing, and high-temperature upholstery steam extraction.</p>
               <ul class="service-features-list">
@@ -241,7 +246,7 @@
               <div class="service-icon-pill"><i class="bi bi-bug"></i></div>
             </div>
             <div class="card-body">
-              <span class="badge-tag bg-danger-subtle text-danger mb-2">Pest Eradication</span>
+              <span class="badge-tag bg-danger-subtle text-danger mb-2 align-self-start">Pest Eradication</span>
               <h4 class="h5 fw-bold mb-2">Pest Control & Termite Defense</h4>
               <p class="text-muted small mb-3">Targeted chemical eradication of cockroaches, bedbugs, termites, rodents, and ants using odorless Bayer-certified compounds.</p>
               <ul class="service-features-list">
@@ -268,7 +273,7 @@
               <div class="service-icon-pill"><i class="bi bi-water"></i></div>
             </div>
             <div class="card-body">
-              <span class="badge-tag bg-info-subtle text-info mb-2">Sanitization</span>
+              <span class="badge-tag bg-info-subtle text-info mb-2 align-self-start">Sanitization</span>
               <h4 class="h5 fw-bold mb-2">Water Tank & Overhead Reservoir Cleaning</h4>
               <p class="text-muted small mb-3">6-stage mechanized cleaning process: de-sludging, high-pressure jet scrub, vacuum suction, anti-bacterial spray, and UV disinfection.</p>
               <ul class="service-features-list">
@@ -295,7 +300,7 @@
               <div class="service-icon-pill"><i class="bi bi-brush"></i></div>
             </div>
             <div class="card-body">
-              <span class="badge-tag bg-warning-subtle text-warning mb-2">Wall Care</span>
+              <span class="badge-tag bg-warning-subtle text-warning mb-2 align-self-start">Wall Care</span>
               <h4 class="h5 fw-bold mb-2">Painting & Wall Restoration</h4>
               <p class="text-muted small mb-3">Wall plaster touchups, waterproof anti-fungal coatings, crack sealing, and premium interior & exterior emulsion paint finishes.</p>
               <ul class="service-features-list">
@@ -322,7 +327,7 @@
               <div class="service-icon-pill"><i class="bi bi-hammer"></i></div>
             </div>
             <div class="card-body">
-              <span class="badge-tag bg-secondary-subtle text-dark mb-2">Woodwork</span>
+              <span class="badge-tag bg-secondary-subtle text-dark mb-2 align-self-start">Woodwork</span>
               <h4 class="h5 fw-bold mb-2">Carpentry & Woodwork Services</h4>
               <p class="text-muted small mb-3">Door realignment, smart lock installations, modular kitchen hinge replacements, furniture restoration, and bespoke cabinetry repairs.</p>
               <ul class="service-features-list">
@@ -349,7 +354,7 @@
               <div class="service-icon-pill"><i class="bi bi-clipboard2-check"></i></div>
             </div>
             <div class="card-body">
-              <span class="badge-tag bg-primary-subtle text-primary mb-2">Audit & Report</span>
+              <span class="badge-tag bg-primary-subtle text-primary mb-2 align-self-start">Audit & Report</span>
               <h4 class="h5 fw-bold mb-2">General Home Health Inspection</h4>
               <p class="text-muted small mb-3">A thorough 120-point digital inspection covering electrical stability, pipe pressures, structural cracking, roof seepage, and HVAC health.</p>
               <ul class="service-features-list">

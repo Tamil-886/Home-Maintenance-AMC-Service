@@ -80,6 +80,11 @@
             <i class="bi bi-moon-stars-fill text-primary"></i>
           </button>
 
+          <!-- Log In Button -->
+          <a href="auth/login.html" class="btn btn-outline-hc py-2 px-3 small d-inline-flex align-items-center gap-1 nav-login-btn">
+            <i class="bi bi-box-arrow-in-right"></i> <span>Log In</span>
+          </a>
+
           <!-- Book AMC CTA Button -->
           <a href="customer/booking.html" class="btn btn-primary-hc py-2 px-4 small">
             Book AMC <i class="bi bi-arrow-right ms-1"></i>
@@ -892,6 +897,82 @@
     </div>
   </section>
 
+  <!-- ================= Frequently Asked Questions ================= -->
+  <section class="section-padding bg-light-subtle border-top" id="faq">
+    <div class="container" style="max-width: 860px;">
+      <div class="text-center section-header mb-5">
+        <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-semibold mb-2">
+          <i class="bi bi-question-circle-fill me-1"></i> Quick Answers
+        </span>
+        <h2 class="section-title fw-bold">Frequently Asked Questions</h2>
+        <p class="text-muted max-w-600 mx-auto">
+          Everything you need to know about HomeCarely service protocols, spare parts coverage, and emergency response.
+        </p>
+      </div>
+
+      <div class="accordion mb-4" id="homeFaqAccordion">
+        <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-sm bg-white">
+          <h2 class="accordion-header" id="hfaqHead1">
+            <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#hfaq1" aria-expanded="true" aria-controls="hfaq1">
+              How often should residential AC units be serviced?
+            </button>
+          </h2>
+          <div id="hfaq1" class="accordion-collapse collapse show" aria-labelledby="hfaqHead1" data-bs-parent="#homeFaqAccordion">
+            <div class="accordion-body text-secondary small">
+              In hot and dusty climates, residential units require chemical coil servicing at least once every 3 to 4 months. Our Standard and Premium AMC packages schedule these automatically so you never have to remember.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-sm bg-white">
+          <h2 class="accordion-header" id="hfaqHead2">
+            <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#hfaq2" aria-expanded="false" aria-controls="hfaq2">
+              Are replacement spare parts covered under AMC contracts?
+            </button>
+          </h2>
+          <div id="hfaq2" class="accordion-collapse collapse" aria-labelledby="hfaqHead2" data-bs-parent="#homeFaqAccordion">
+            <div class="accordion-body text-secondary small">
+              All labor, diagnostics, and routine chemical consumables are 100% free under your AMC. When major hardware parts like capacitors, fan motors, or compressors need replacement, AMC members receive an exclusive 15% to 30% discount on genuine manufacturer parts.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-sm bg-white">
+          <h2 class="accordion-header" id="hfaqHead3">
+            <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#hfaq3" aria-expanded="false" aria-controls="hfaq3">
+              What if my AC stops cooling on a weekend?
+            </button>
+          </h2>
+          <div id="hfaq3" class="accordion-collapse collapse" aria-labelledby="hfaqHead3" data-bs-parent="#homeFaqAccordion">
+            <div class="accordion-body text-secondary small">
+              Our emergency dispatch operates 24/7/365. AMC subscribers have priority dispatch queue status with technician arrival within 60 minutes.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border rounded-3 mb-3 overflow-hidden shadow-sm bg-white">
+          <h2 class="accordion-header" id="hfaqHead4">
+            <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#hfaq4" aria-expanded="false" aria-controls="hfaq4">
+              Can I transfer my AMC contract if I move or sell my home?
+            </button>
+          </h2>
+          <div id="hfaq4" class="accordion-collapse collapse" aria-labelledby="hfaqHead4" data-bs-parent="#homeFaqAccordion">
+            <div class="accordion-body text-secondary small">
+              Yes, 100%. All HomeCarely AMC contracts are transferable to new owners or to your new residence within our active service territories at zero penalty fee.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <p class="text-muted small mb-2">Have a question that is not answered here?</p>
+        <a href="faq.html" class="btn btn-outline-hc btn-sm">
+          Visit Full FAQ Hub <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= CTA Banner ================= -->
   <section class="container pb-5">
     <div class="cta-banner">
@@ -919,10 +1000,10 @@
 
   <!-- ================= Footer ================= -->
     <!-- Main Footer -->
-  <footer class="main-footer">
+    <!-- ================= Pre-Footer Trust & Guarantee Strip ================= -->
+  <section class="pre-footer-trust-section pb-5">
     <div class="container">
-      <!-- Trust & Guarantee Strip -->
-      <div class="footer-guarantee-strip">
+      <div class="footer-guarantee-strip mb-0">
         <div class="row g-4">
           <div class="col-12 col-sm-6 col-lg-3">
             <div class="footer-guarantee-card">
@@ -970,7 +1051,11 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
+  <footer class="main-footer">
+    <div class="container">
       <div class="row g-4">
         <!-- Col 1: Brand Info -->
         <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">

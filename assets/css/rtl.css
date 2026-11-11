@@ -41,7 +41,7 @@
 
 [dir="rtl"] .service-card .service-icon-pill {
   right: auto;
-  left: 25px;
+  left: 24px;
 }
 
 [dir="rtl"] .service-features-list li,
@@ -53,7 +53,7 @@
   margin-left: 0.5rem;
 }
 
-[dir="rtl"] .input-icon-group i {
+[dir="rtl"] .input-icon-group > i {
   left: auto;
   right: 1rem;
 }
@@ -63,9 +63,26 @@
   padding-right: 2.75rem;
 }
 
+[dir="rtl"] .input-icon-group .password-toggle-btn,
+[dir="rtl"] .input-icon-group #togglePassBtn,
+[dir="rtl"] .input-icon-group .btn[onclick*="togglePasswordVisibility"] {
+  right: auto !important;
+  left: 0.85rem !important;
+}
+
+[dir="rtl"] .input-icon-group input[type="password"],
+[dir="rtl"] .input-icon-group input[type="text"][id*="Pass"],
+[dir="rtl"] .input-icon-group input[type="text"][id*="pass"],
+[dir="rtl"] .input-icon-group:has(.password-toggle-btn) .form-control-hc,
+[dir="rtl"] .input-icon-group:has(#togglePassBtn) .form-control-hc,
+[dir="rtl"] .input-icon-group:has(.btn[onclick*="togglePasswordVisibility"]) .form-control-hc {
+  padding-left: 2.85rem;
+  padding-right: 2.75rem;
+}
+
 [dir="rtl"] .hc-toast-container {
   right: auto;
-  left: 25px;
+  left: 24px;
 }
 
 [dir="rtl"] .hc-toast {
@@ -81,24 +98,24 @@
 
 /* Dashboard RTL */
 [dir="rtl"] .dashboard-sidebar {
-  left: auto;
-  right: 0;
   border-right: none;
   border-left: 1px solid var(--hc-border);
 }
 
 [dir="rtl"] .dashboard-main {
-  margin-left: 0;
-  margin-right: 270px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 @media (max-width: 991.98px) {
   [dir="rtl"] .dashboard-sidebar {
-    right: -280px;
+    position: fixed;
+    right: -285px;
     left: auto;
   }
   [dir="rtl"] .dashboard-sidebar.show {
     right: 0;
+    left: auto;
   }
   [dir="rtl"] .dashboard-main {
     margin-right: 0 !important;
@@ -144,7 +161,7 @@
 
 [dir="rtl"] .back-to-top-btn {
   right: auto;
-  left: 25px;
+  left: 24px;
 }
 
 
@@ -153,6 +170,7 @@
   transform: translateX(-4px);
 }
 
+[dir="rtl"] .footer-guarantee-card,
 [dir="rtl"] .main-footer .footer-guarantee-card {
   text-align: right;
 }

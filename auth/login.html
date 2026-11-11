@@ -17,14 +17,26 @@
 <body class="bg-soft-blue d-flex flex-column min-vh-100 justify-content-between">
 
   <!-- Top bar -->
-  <header class="py-3 border-bottom bg-white">
+  <header class="py-3 border-bottom bg-white auth-header">
     <div class="container d-flex justify-content-between align-items-center">
       <a class="brand-logo text-decoration-none" href="../index.html">
         <div class="brand-icon"><i class="bi bi-shield-check"></i></div>
         <span>HomeCare<span class="text-primary">ly</span></span>
       </a>
       <div class="d-flex align-items-center gap-2">
-        <a href="../index.html" class="btn btn-sm btn-light border ms-2">Back to Website</a>
+        <!-- RTL / LTR Direction Switcher -->
+        <button class="btn btn-sm btn-outline-hc dir-toggle-btn py-1-5 px-3 small d-inline-flex align-items-center" title="Toggle RTL / LTR layout" aria-label="Toggle RTL / LTR">
+          <i class="bi bi-globe me-1 text-primary"></i> <span class="dir-toggle-text">RTL</span>
+        </button>
+
+        <!-- Dark Mode Toggle Button -->
+        <button class="btn btn-icon-pill theme-toggle-btn d-inline-flex" title="Toggle Theme" aria-label="Toggle Dark Mode">
+          <i class="bi bi-moon-stars-fill text-primary"></i>
+        </button>
+
+        <a href="../index.html" class="btn btn-sm btn-outline-hc ms-1 d-inline-flex align-items-center gap-1">
+          <i class="bi bi-arrow-left"></i> <span>Back to Website</span>
+        </a>
       </div>
     </div>
   </header>
@@ -34,7 +46,7 @@
     <div class="container" style="max-width: 490px;">
 
       <!-- Main Login Box -->
-      <div class="card border-0 shadow-lg p-4 p-md-5 rounded-4 bg-white">
+      <div class="card border-0 shadow-lg p-4 p-md-5 rounded-4 bg-white auth-card">
         <div class="text-center mb-4">
           <h3 class="fw-bold mb-1">Welcome Back</h3>
           <p class="text-muted small">Access your maintenance visits, AMC contracts, or administrative console.</p>
@@ -48,7 +60,7 @@
             <label class="form-label small fw-semibold">Email Address</label>
             <div class="input-icon-group">
               <i class="bi bi-envelope"></i>
-              <input type="email" class="form-control form-control-hc" id="loginEmail" placeholder="name@example.com" required>
+              <input type="email" class="form-control form-control-hc" id="loginEmail" placeholder="name@example.com" required autocomplete="username">
             </div>
           </div>
 
@@ -59,8 +71,8 @@
             </div>
             <div class="input-icon-group mt-1">
               <i class="bi bi-lock"></i>
-              <input type="password" class="form-control form-control-hc" id="loginPassword" placeholder="Enter your password" required>
-              <button type="button" class="btn btn-sm border-0 position-absolute end-0 top-50 translate-middle-y me-2 text-muted" id="togglePassBtn" onclick="togglePasswordVisibility('#loginPassword', '#passToggleIcon')">
+              <input type="password" class="form-control form-control-hc" id="loginPassword" placeholder="Enter your password" required autocomplete="current-password">
+              <button type="button" class="password-toggle-btn" id="togglePassBtn" onclick="togglePasswordVisibility('#loginPassword', '#passToggleIcon')" title="Toggle password visibility" tabindex="-1">
                 <i class="bi bi-eye" id="passToggleIcon"></i>
               </button>
             </div>
@@ -86,7 +98,7 @@
     </div>
   </main>
 
-  <footer class="py-3 border-top text-center text-muted small bg-white">
+  <footer class="py-3 border-top text-center text-muted small bg-white auth-footer">
     <div class="container">
       © 2026 HomeCarely AMC Services Ltd. Frontend LocalStorage Demonstration.
     </div>

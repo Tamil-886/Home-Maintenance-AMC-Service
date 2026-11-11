@@ -309,10 +309,12 @@ img, video, iframe {
   .main-footer {
     padding: 3.5rem 0 1.5rem 0;
   }
+  .footer-guarantee-strip,
   .main-footer .footer-guarantee-strip {
     padding: 1.25rem 1rem;
     margin-bottom: 2.5rem;
   }
+  .footer-guarantee-card,
   .main-footer .footer-guarantee-card {
     text-align: left;
   }

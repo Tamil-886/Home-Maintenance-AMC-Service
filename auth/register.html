@@ -17,14 +17,26 @@
 <body class="bg-soft-blue d-flex flex-column min-vh-100 justify-content-between">
 
   <!-- Header -->
-  <header class="py-3 border-bottom bg-white">
+  <header class="py-3 border-bottom bg-white auth-header">
     <div class="container d-flex justify-content-between align-items-center">
       <a class="brand-logo text-decoration-none" href="../index.html">
         <div class="brand-icon"><i class="bi bi-shield-check"></i></div>
         <span>HomeCare<span class="text-primary">ly</span></span>
       </a>
       <div class="d-flex align-items-center gap-2">
-        <a href="login.html" class="btn btn-sm btn-light border ms-2">Log In</a>
+        <!-- RTL / LTR Direction Switcher -->
+        <button class="btn btn-sm btn-outline-hc dir-toggle-btn py-1-5 px-3 small d-inline-flex align-items-center" title="Toggle RTL / LTR layout" aria-label="Toggle RTL / LTR">
+          <i class="bi bi-globe me-1 text-primary"></i> <span class="dir-toggle-text">RTL</span>
+        </button>
+
+        <!-- Dark Mode Toggle Button -->
+        <button class="btn btn-icon-pill theme-toggle-btn d-inline-flex" title="Toggle Theme" aria-label="Toggle Dark Mode">
+          <i class="bi bi-moon-stars-fill text-primary"></i>
+        </button>
+
+        <a href="login.html" class="btn btn-sm btn-outline-hc ms-1 d-inline-flex align-items-center gap-1">
+          <i class="bi bi-box-arrow-in-right"></i> <span>Log In</span>
+        </a>
       </div>
     </div>
   </header>
@@ -32,7 +44,7 @@
   <!-- Register Form Container -->
   <main class="my-auto py-5">
     <div class="container" style="max-width: 540px;">
-      <div class="card border-0 shadow-lg p-4 p-md-5 rounded-4 bg-white">
+      <div class="card border-0 shadow-lg p-4 p-md-5 rounded-4 bg-white auth-card">
         <div class="text-center mb-4">
           <span class="badge-tag bg-primary-subtle text-primary mb-2">Homeowner Registration</span>
           <h3 class="fw-bold mb-1">Create Your Account</h3>
@@ -76,23 +88,31 @@
             </div>
 
             <div class="col-md-6">
-              <label class="form-label small fw-semibold">Password</label>
+              <label class="form-label small fw-semibold" for="regPassword">Password</label>
               <div class="input-icon-group">
                 <i class="bi bi-lock"></i>
-                <input type="password" class="form-control form-control-hc" id="regPassword" placeholder="Min. 8 characters" required>
+                <input type="password" class="form-control form-control-hc" id="regPassword" placeholder="Min. 8 characters" minlength="8" required autocomplete="new-password">
+                <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('#regPassword', '#regPassToggleIcon')" title="Toggle password visibility" tabindex="-1">
+                  <i class="bi bi-eye" id="regPassToggleIcon"></i>
+                </button>
               </div>
+              <div id="regPassFeedback" class="small mt-1" style="min-height: 1.25rem;"></div>
             </div>
 
             <div class="col-md-6">
-              <label class="form-label small fw-semibold">Confirm Password</label>
+              <label class="form-label small fw-semibold" for="regConfirmPassword">Confirm Password</label>
               <div class="input-icon-group">
                 <i class="bi bi-shield-lock"></i>
-                <input type="password" class="form-control form-control-hc" id="regConfirmPassword" placeholder="Repeat password" required>
+                <input type="password" class="form-control form-control-hc" id="regConfirmPassword" placeholder="Re-enter password" minlength="8" required autocomplete="new-password">
+                <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('#regConfirmPassword', '#regConfirmPassToggleIcon')" title="Toggle password visibility" tabindex="-1">
+                  <i class="bi bi-eye" id="regConfirmPassToggleIcon"></i>
+                </button>
               </div>
+              <div id="regConfirmPassFeedback" class="small mt-1" style="min-height: 1.25rem;"></div>
             </div>
 
             <div class="col-12">
-              <div class="form-check mt-2">
+              <div class="form-check mt-1">
                 <input class="form-check-input" type="checkbox" id="regAgree" checked required>
                 <label class="form-check-label small text-muted" for="regAgree">
                   I agree to the <a href="../faq.html" class="text-primary">Terms of Service</a> and <a href="../faq.html" class="text-primary">AMC Privacy Policy</a>.
@@ -100,7 +120,7 @@
               </div>
             </div>
 
-            <div class="col-12 mt-4">
+            <div class="col-12 mt-3">
               <button type="submit" class="btn btn-primary-hc w-100 justify-content-center py-3">
                 Register & Open Customer Dashboard <i class="bi bi-arrow-right"></i>
               </button>
@@ -115,7 +135,7 @@
     </div>
   </main>
 
-  <footer class="py-3 border-top text-center text-muted small bg-white">
+  <footer class="py-3 border-top text-center text-muted small bg-white auth-footer">
     <div class="container">
       © 2026 HomeCarely AMC Services Ltd.
     </div>
@@ -130,18 +150,40 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('registerForm');
+      const passInput = document.getElementById('regPassword');
+      const confirmPassInput = document.getElementById('regConfirmPassword');
+
+      // Initialize real-time validator
+      const validator = window.initPasswordMatchValidator('#regPassword', '#regConfirmPassword', '#regPassFeedback', '#regConfirmPassFeedback');
+
       if (form) {
         form.addEventListener('submit', function (e) {
           e.preventDefault();
+
           const name = document.getElementById('regFullName').value.trim();
           const email = document.getElementById('regEmail').value.trim();
           const phone = document.getElementById('regPhone').value.trim();
           const plan = document.getElementById('regPlan').value;
-          const pass = document.getElementById('regPassword').value;
-          const confirmPass = document.getElementById('regConfirmPassword').value;
+          const pass = passInput.value;
+          const confirmPass = confirmPassInput.value;
 
+          // 1. Check given password length
+          if (pass.length < 8) {
+            passInput.focus();
+            passInput.classList.add('is-invalid');
+            if (window.showToast) {
+              window.showToast('Password is too short. Please provide at least 8 characters.', 'warning', 'Password Validation');
+            }
+            return;
+          }
+
+          // 2. Check password and re-entered password match
           if (pass !== confirmPass) {
-            if (window.showToast) window.showToast('Passwords do not match. Please check again.', 'warning');
+            confirmPassInput.focus();
+            confirmPassInput.classList.add('is-invalid');
+            if (window.showToast) {
+              window.showToast('Passwords do not match! Please check your given password and re-enter it correctly.', 'danger', 'Mismatch Detected');
+            }
             return;
           }
 
